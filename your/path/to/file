@@ -1,0 +1,3 @@
+# GitHub Pages Configuration
+
+This configuration sets up automatic deployment to GitHub Pages under a subfolder. Corrects `astro.config` for base paths and site settings, adds `robots.txt` with a sitemap, improving basic SEO and deployment efficiency.
