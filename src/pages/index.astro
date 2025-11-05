@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+---
+<Base title="Terapia Floral Silvia Adame — Inicio">
+  <Nav />
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-4 py-14">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight">Florece tu interior</h1>
+      <p class="mt-4 text-slate-700">Acompañamiento con esencias florales de Bach para el equilibrio emocional. Sesiones en Bizkaia (y online).</p>
+      <div class="mt-6 flex gap-3">
+        <a href="/servicios" class="rounded-xl px-4 py-2 bg-[#9FB8AD] text-white">Ver sesiones</a>
+        <a href="/contacto" class="rounded-xl px-4 py-2 border border-slate-300">Pedir información</a>
+      </div>
+      <ul class="mt-6 text-sm text-slate-500 list-disc list-inside">
+        <li>Primera toma de contacto gratis (10 min por WhatsApp/llamada)</li>
+        <li>Complementaria — no sustituye tratamiento médico</li>
+      </ul>
+    </div>
+    <img class="rounded-2xl shadow h-80 w-full object-cover" alt="Flores y frascos"
+      src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" />
+  </section>
+
+  <!-- Mini servicios -->
+  <section id="servicios" class="bg-white py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold">Sesiones y Bonos</h2>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
+          <h3 class="font-semibold">Sesión Inicial (60–75 min)</h3>
+          <p class="mt-2 text-sm text-slate-700">Historia personal y fórmula personalizada.</p>
+          <a href="/contacto" class="mt-4 inline-block rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Reservar</a>
+        </article>
+        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
+          <h3 class="font-semibold">Seguimiento (45–60 min)</h3>
+          <p class="mt-2 text-sm text-slate-700">Ajuste de mezcla y revisión.</p>
+          <a href="/contacto" class="mt-4 inline-block rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Reservar</a>
+        </article>
+        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
+          <h3 class="font-semibold">Bono 4 sesiones</h3>
+          <p class="mt-2 text-sm text-slate-700">Acompañamiento con ahorro.</p>
+          <a href="/contacto" class="mt-4 inline-block rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Reservar</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
+
+

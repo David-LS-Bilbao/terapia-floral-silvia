@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+const servicios = [
+  { t: "Sesión Inicial (60–75 min)", d: "Historia personal, objetivos y fórmula personalizada." },
+  { t: "Seguimiento (45–60 min)", d: "Ajuste de mezcla y revisión de avances." },
+  { t: "Bono 4 sesiones", d: "Acompañamiento continuo con ahorro. Válido 6 meses." }
+];
+---
+<Base title="Servicios — Silvia Adame">
+  <Nav />
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-semibold">Sesiones y Bonos</h1>
+    <p class="text-slate-600 mt-2">Precios y duración **a confirmar** con la clienta.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {servicios.map(s => (
+        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
+          <h2 class="font-semibold">{s.t}</h2>
+          <p class="mt-2 text-sm text-slate-700">{s.d}</p>
+          <a href="/contacto" class="inline-block mt-4 rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Quiero esta sesión</a>
+        </article>
+      ))}
+    </div>
+  </main>
+</Base>
