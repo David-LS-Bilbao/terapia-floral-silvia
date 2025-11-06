@@ -90,7 +90,7 @@ Ayuda a cuidar con serenidad, enviando pensamientos de seguridad y respeto por l
   es: "Ceratostigma",
   en: "Cerato",
   grupo: "Incertidumbre",
-  img: img("cerato"),
+  img: "flores/cerato.png",
   breve: "Duda de su propio juicio; busca validación constante.",
   detalle: `Para quienes, aun siendo capaces, desconfían de su criterio y preguntan a otros a cada paso. 
 Ayuda a escuchar y seguir la intuición, sosteniendo decisiones con seguridad tranquila.`
@@ -100,7 +100,7 @@ Ayuda a escuchar y seguir la intuición, sosteniendo decisiones con seguridad tr
   es: "Escleranto",
   en: "Scleranthus",
   grupo: "Incertidumbre",
-  img: img("scleranthus"),
+  img: "flores/scleranthus.png",
   breve: "Indecisión entre opciones; vaivenes de ánimo/energía.",
   detalle: `Para la oscilación interna (sí/no) y cambios de humor o energía que dificultan elegir. 
 Favorece equilibrio, concentración y una decisión clara sin dudas intermitentes.`
@@ -110,7 +110,7 @@ Favorece equilibrio, concentración y una decisión clara sin dudas intermitente
   es: "Genciana",
   en: "Gentian",
   grupo: "Incertidumbre",
-  img: img("gentian"),
+  img: "flores/gentian.png",
   breve: "Desánimo tras contratiempos; se pierde la fe enseguida.",
   detalle: `Cuando un tropiezo desmoraliza y aparece el pesimismo. 
 Aporta perseverancia, realismo y ánimo para seguir avanzando paso a paso.`
@@ -120,7 +120,7 @@ Aporta perseverancia, realismo y ánimo para seguir avanzando paso a paso.`
   es: "Aulaga",
   en: "Gorse",
   grupo: "Incertidumbre",
-  img: img("gorse"),
+  img: "flores/gorse.png",
   breve: "Desesperanza/fatalismo: “ya no hay nada que hacer”.",
   detalle: `Para la resignación y la visión sombría del futuro. 
 Reaviva la esperanza y la apertura a nuevas posibilidades: “lo intentaré una vez más”.`
@@ -130,7 +130,7 @@ Reaviva la esperanza y la apertura a nuevas posibilidades: “lo intentaré una 
   es: "Hojarazo",
   en: "Hornbeam",
   grupo: "Incertidumbre",
-  img: img("hornbeam"),
+  img: "flores/hornbeam.png",
   breve: "Cansancio mental al empezar (síndrome del lunes).",
   detalle: `Sensación de falta de fuerzas antes de iniciar tareas que luego sí se pueden hacer. 
 Devuelve frescura mental, ganas y agilidad para arrancar sin postergar.`
@@ -140,7 +140,7 @@ Devuelve frescura mental, ganas y agilidad para arrancar sin postergar.`
   es: "Avena Silvestre",
   en: "Wild Oat",
   grupo: "Incertidumbre",
-  img: img("wild-oat"),
+  img: "flores/wildoat.png",
   breve: "Indecisión vocacional y falta de rumbo; aporta claridad de propósito.",
   detalle: `Para personas capaces con muchos intereses que no encuentran una dirección definida.
 Genera insatisfacción, probar sin comprometerse y sensación de no encajar. 
