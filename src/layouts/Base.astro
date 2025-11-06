@@ -1,6 +1,21 @@
 ---
 import "../styles/global.css";
-const { title = "Terapia Floral Silvia Adame", description = "Flores de Bach en Bizkaia y online." } = Astro.props;
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Terapia Floral Silvia Adame",
+  description = "Flores de Bach en Bizkaia y online."
+} = Astro.props;
+
+// Helper para respetar el base path en GitHub Pages
+const withBase = (path: string) => {
+  const base = import.meta.env.BASE_URL || "/";
+  return base + path.replace(/^\/+/, "");
+};
 ---
 <html lang="es">
   <head>
@@ -11,13 +26,15 @@ const { title = "Terapia Floral Silvia Adame", description = "Flores de Bach en 
   </head>
   <body class="bg-[#FFF7F1] text-slate-800">
     <slot />
+
     <footer class="bg-slate-900 text-slate-100 mt-16">
       <div class="max-w-6xl mx-auto px-4 py-8 text-sm flex flex-wrap gap-6 justify-between">
         <div>© {new Date().getFullYear()} Terapia Floral Silvia Adame</div>
+
         <nav class="flex gap-4 underline text-slate-300">
-          <a href="/legal/aviso-legal">Aviso legal</a>
-          <a href="/legal/privacidad">Privacidad</a>
-          <a href="/legal/cookies">Cookies</a>
+          <a href={withBase("legal/aviso-legal/")}>Aviso legal</a>
+          <a href={withBase("legal/privacidad/")}>Privacidad</a>
+          <a href={withBase("legal/cookies/")}>Cookies</a>
         </nav>
       </div>
     </footer>
