@@ -31,11 +31,25 @@ export const gruposOrden: Grupo[] = [
 
 export const flores: Flor[] = [
   // 1) Miedo
-  { slug: "rock-rose", es: "Heliantemo", en: "Rock Rose", grupo: "Miedo", img: img("rock-rose") },
-  { slug: "mimulus", es: "Mímulo", en: "Mimulus", grupo: "Miedo", img: img("mimulus") },
-  { slug: "cherry-plum", es: "Cerasífera", en: "Cherry Plum", grupo: "Miedo", img: img("cherry-plum") },
-  { slug: "aspen", es: "Álamo Temblón", en: "Aspen", grupo: "Miedo", img: img("aspen") },
-  { slug: "red-chestnut", es: "Castaño Rojo", en: "Red Chestnut", grupo: "Miedo", img: img("red-chestnut") },
+{ slug: "rock-rose", es: "Heliantemo", en: "Rock Rose", grupo: "Miedo",
+  img: "flores/rock-rose.webp",
+  breve: "Para pánico o terror agudo. Aporta calma y valentía en crisis." }, // :contentReference[oaicite:5]{index=5}
+
+{ slug: "mimulus", es: "Mímulo", en: "Mimulus", grupo: "Miedo",
+  img: "flores/mimulus.webp",
+  breve: "Para miedos concretos (dentista, hablar en público...). Fomenta una valentía tranquila." }, // :contentReference[oaicite:6]{index=6}
+
+{ slug: "cherry-plum", es: "Cerasífera", en: "Cherry Plum", grupo: "Miedo",
+  img: "flores/cherry-plum.webp",
+  breve: "Para el temor a perder el control. Trae serenidad y autocontrol." }, // :contentReference[oaicite:7]{index=7}
+
+{ slug: "aspen", es: "Álamo Temblón", en: "Aspen", grupo: "Miedo",
+  img: "flores/aspen.webp",
+  breve: "Para miedos vagos o inexplicables. Aporta seguridad interior y paz." }, // :contentReference[oaicite:8]{index=8}
+
+{ slug: "red-chestnut", es: "Castaño Rojo", en: "Red Chestnut", grupo: "Miedo",
+  img: "flores/red-chestnut.webp",
+  breve: "Para la preocupación excesiva por los seres queridos. Facilita confianza y cuidado sereno." }, // :contentReference[oaicite:9]{index=9}
 
   // 2) Incertidumbre
   { slug: "cerato", es: "Ceratostigma", en: "Cerato", grupo: "Incertidumbre", img: img("cerato") },
