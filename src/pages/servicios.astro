@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro";
+
+import Nav from "../components/Nav.astro";
+
+
+
+const base = (import.meta as any).env.BASE_URL || "/";
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
+---
+<Base title="Servicios — Silvia Adame" description="Sesiones de Terapia Floral (Flores de Bach) y Mindfulness. Atención en Bizkaia y online.">
+  <Nav />
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+    <section class="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+      <h1 class="text-2xl font-semibold">Servicios</h1>
+      <p class="mt-2 text-slate-600">Acompañamiento cercano y práctico. Sin tecnicismos.</p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Flores de Bach -->
+        <article class="rounded-xl border border-slate-200 p-5 bg-[#F7F0FF]/40">
+          <h2 class="text-lg font-semibold">Terapia Floral (Flores de Bach)</h2>
+          <ul class="mt-2 list-disc ml-5 text-slate-700 space-y-1">
+            <li>Sesión inicial: valoración y objetivo.</li>
+            <li>Entrega de preparado personalizado.</li>
+            <li>Seguimiento por WhatsApp.</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a href={`${base}que-es/`} class="text-sm underline">¿Qué es la Terapia Floral?</a>
+            <a href={whatsapp} class="text-sm underline">Pedir cita</a>
+          </div>
+        </article>
+
+        <!-- Mindfulness -->
+        <article class="rounded-xl border border-slate-200 p-5 bg-[#EAF4EF]/60">
+          <h2 class="text-lg font-semibold">Mindfulness</h2>
+          <ul class="mt-2 list-disc ml-5 text-slate-700 space-y-1">
+            <li>Ejercicios sencillos y progresivos.</li>
+            <li>Estrategias de respiración y presencia.</li>
+            <li>Hábitos para casa, con seguimiento.</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a href={`${base}mindfulness/`} class="text-sm underline">Saber más</a>
+            <a href={whatsapp} class="text-sm underline">Pedir cita</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="text-center rounded-2xl bg-white border border-slate-200 p-6">
+      <h3 class="text-xl font-semibold">¿Hablamos?</h3>
+      <p class="mt-1 text-slate-600">Te explico el proceso y resolvemos dudas.</p>
+      <a href={whatsapp} class="inline-block mt-4 px-5 py-3 rounded-xl bg-[#9FB8AD] text-white shadow hover:opacity-90">
+        Pedir cita por WhatsApp
+      </a>
+    </section>
+  </main>
+</Base>

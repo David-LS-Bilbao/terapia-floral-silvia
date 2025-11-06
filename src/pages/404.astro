@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+const base = (import.meta as any).env?.BASE_URL || "/";
+---
+<Base title="Página no encontrada — Silvia Adame" description="La página que buscas no existe.">
+  <Nav />
+  <main class="max-w-3xl mx-auto px-4 py-20 text-center space-y-4">
+    <h1 class="text-3xl font-semibold">Página no encontrada</h1>
+    <p class="text-slate-600">Puede que el enlace haya cambiado o no exista.</p>
+    <a href={base} class="inline-block mt-2 underline">Volver al inicio</a>
+  </main>
+</Base>

@@ -1,0 +1,59 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+// @ts-ignore
+import { flores, gruposOrden } from "../../data/flores";
+
+const base = "/terapia-floral-silvia/";
+
+// Agrupar por categoría sin tipos estrictos
+const porGrupo: any = {};
+// @ts-ignore
+for (const g of gruposOrden) {
+  // @ts-ignore
+  porGrupo[g] = flores.filter((f) => f.grupo === g);
+}
+---
+<Base title="Flores de Bach — Catálogo" description="Listado de las 38 Flores de Bach agrupadas por categorías.">
+  <Nav />
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <header class="max-w-3xl mb-8">
+      <h1 class="text-2xl font-semibold">Flores de Bach</h1>
+      <p class="text-slate-600 mt-2">Explora las 38 flores agrupadas por su finalidad.</p>
+    </header>
+
+    <section class="space-y-10">
+      {/* @ts-ignore */}
+      {gruposOrden.map((grupo) => (
+        <div>
+          <h2 class="text-xl font-semibold mb-4">{grupo}</h2>
+          <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {porGrupo[grupo].map((f) => (
+              <li class="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                <a href={`${base}flores/${f.slug}/`} class="block group">
+                  {f.img ? (
+                    <img
+                      src={`${base}${f.img}`}
+                      alt={`${f.es} — ${f.en}`}
+                      class="w-full h-36 object-cover"
+                      loading="lazy"
+                      width="480"
+                      height="240"
+                    />
+                  ) : (
+                    <div class="h-36 bg-[#FFF7F1]" />
+                  )}
+                  <div class="p-3">
+                    <h3 class="font-medium text-slate-900">{f.es}</h3>
+                    <p class="text-xs text-slate-600">{f.en}</p>
+                    {f.breve && <p class="text-sm text-slate-700 mt-1 line-clamp-2">{f.breve}</p>}
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  </main>
+</Base>

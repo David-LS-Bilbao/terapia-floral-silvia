@@ -1,0 +1,53 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+// @ts-ignore
+import { flores } from "../../data/flores";
+
+export async function getStaticPaths() {
+  // @ts-ignore
+  return flores.map((flor) => ({
+    params: { slug: flor.slug },
+    props: { flor },
+  }));
+}
+
+const base = "/terapia-floral-silvia/";
+// @ts-ignore
+const { flor } = Astro.props;
+const title = `${flor.es} — Flores de Bach`;
+const description = `Información básica sobre ${flor.es} (${flor.en}).`;
+---
+<Base {title} {description}>
+  <Nav />
+ <main class="max-w-3xl mx-auto px-4 py-12 prose">
+  <a href={`${base}flores/`} class="text-sm underline">&larr; Volver al listado</a>
+  <h1>{flor.es}</h1>
+  <p class="text-slate-600"><em>{flor.en}</em> — Grupo: <strong>{flor.grupo}</strong></p>
+
+  {flor.img && (
+    <img
+      src={`${base}${flor.img}`}
+      alt={`${flor.es} — ${flor.en}`}
+      class="w-full rounded my-4"
+      loading="lazy"
+      width="960"
+      height="540"
+    />
+  )}
+
+  <h2>Descripción</h2>
+  {flor.detalle ? (
+    <p>{flor.detalle}</p>
+  ) : (
+    <p>Pendiente de completar con lenguaje claro.</p>
+  )}
+
+  <h2>Usos habituales (resumen)</h2>
+  {flor.breve ? <p>{flor.breve}</p> : <p>Pendiente de completar con lenguaje claro.</p>}
+
+  <h2>Cómo se suele utilizar</h2>
+  <p>Dentro del acompañamiento personalizado. No sustituye tratamiento médico.</p>
+</main>
+
+</Base>

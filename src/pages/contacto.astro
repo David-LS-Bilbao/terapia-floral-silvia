@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
+const email = "burdeos.3@hotmail.com";
+---
+
+<Base title="Contacto — Silvia Adame" description="Pide información o reserva tu cita por WhatsApp o email. Atención en Bizkaia y online.">
+  <Nav />
+
+  <main class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+    <!-- Columna: CTA contacto directo -->
+    <section class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
+      <h1 class="text-2xl font-semibold">Pide tu cita o información</h1>
+      <p class="mt-2 text-slate-600">Bizkaia (y online). Burgos próximamente.</p>
+
+      <div class="mt-4 space-y-3">
+        <a
+          class="block text-center rounded-xl px-4 py-3 bg-[#9FB8AD] text-white"
+          href={whatsapp}
+          aria-label="Abrir WhatsApp para contactar con Silvia"
+        >
+          WhatsApp
+        </a>
+
+        <a
+          class="block text-center rounded-xl px-4 py-3 bg-[#C77DFF] text-white break-all"
+          href={`mailto:${email}?subject=Información%20Terapia%20Floral`}
+          aria-label={`Enviar email a ${email}`}
+        >
+          {email}
+        </a>
+      </div>
+
+      <p class="mt-4 text-xs text-slate-500">
+        Al contactar aceptas la Política de privacidad.
+      </p>
+    </section>
+
+    <!-- Columna: Placeholder de calendario -->
+    <section class="rounded-2xl border border-dashed border-slate-300 p-6 bg-[#FFFAFE] text-slate-500">
+      <p class="font-medium">Hueco para calendario embebido</p>
+      <p class="text-sm mt-2">Insertaremos Calendly / Cal.com (MVP).</p>
+      <div class="mt-6 h-56 bg-white rounded-xl grid place-content-center text-sm border border-slate-200">
+        Widget de reservas
+      </div>
+    </section>
+  </main>
+</Base>
+

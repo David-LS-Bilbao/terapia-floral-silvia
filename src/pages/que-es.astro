@@ -1,0 +1,28 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+
+const base = import.meta.env.BASE_URL || "/";
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
+---
+<Base title="¿Qué es la Terapia Floral? — Silvia Adame" description="Explicación sencilla sobre Flores de Bach y cómo se trabaja en consulta.">
+  <Nav />
+  <main class="max-w-3xl mx-auto px-4 py-12 prose">
+    <h1>¿Qué es la Terapia Floral?</h1>
+    <p>
+      Es un acompañamiento emocional que utiliza preparados de <strong>Flores de Bach</strong>.
+      El objetivo es aportar equilibrio y bienestar en momentos de estrés, cambios o bloqueos.
+    </p>
+    <h2>Cómo trabajamos</h2>
+    <ul>
+      <li>Sesión inicial para comprender tu situación y objetivo.</li>
+      <li>Elección de esencias y preparado personalizado.</li>
+      <li>Revisión y ajustes en sesiones de seguimiento.</li>
+    </ul>
+    <p class="text-sm text-slate-500">*No sustituye tratamiento médico.</p>
+
+    <h2>Quiero conocer las flores</h2>
+    <p>Pronto encontrarás un catálogo sencillo con usos habituales (lenguaje claro).</p>
+    <p><a href={`${base}servicios/`}>Volver a Servicios</a> · <a href={whatsapp}>Pedir cita por WhatsApp</a></p>
+  </main>
+</Base>
