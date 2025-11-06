@@ -1,50 +1,158 @@
 ---
 import Base from "../layouts/Base.astro";
-import Nav from "../components/Nav.astro";
----
-<Base title="Terapia Floral Silvia Adame — Inicio">
-  <Nav />
-  <!-- Hero -->
-  <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-4 py-14">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight">Florece tu interior</h1>
-      <p class="mt-4 text-slate-700">Acompañamiento con esencias florales de Bach para el equilibrio emocional. Sesiones en Bizkaia (y online).</p>
-      <div class="mt-6 flex gap-3">
-        <a href="/servicios" class="rounded-xl px-4 py-2 bg-[#9FB8AD] text-white">Ver sesiones</a>
-        <a href="/contacto" class="rounded-xl px-4 py-2 border border-slate-300">Pedir información</a>
-      </div>
-      <ul class="mt-6 text-sm text-slate-500 list-disc list-inside">
-        <li>Primera toma de contacto gratis (10 min por WhatsApp/llamada)</li>
-        <li>Complementaria — no sustituye tratamiento médico</li>
-      </ul>
-    </div>
-    <img class="rounded-2xl shadow h-80 w-full object-cover" alt="Flores y frascos"
-      src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" />
-  </section>
 
-  <!-- Mini servicios -->
-  <section id="servicios" class="bg-white py-14">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold">Sesiones y Bonos</h2>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
-          <h3 class="font-semibold">Sesión Inicial (60–75 min)</h3>
-          <p class="mt-2 text-sm text-slate-700">Historia personal y fórmula personalizada.</p>
-          <a href="/contacto" class="mt-4 inline-block rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Reservar</a>
-        </article>
-        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
-          <h3 class="font-semibold">Seguimiento (45–60 min)</h3>
-          <p class="mt-2 text-sm text-slate-700">Ajuste de mezcla y revisión.</p>
-          <a href="/contacto" class="mt-4 inline-block rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Reservar</a>
-        </article>
-        <article class="rounded-2xl p-5 border border-slate-200 shadow-sm bg-[#FFFAFE]">
-          <h3 class="font-semibold">Bono 4 sesiones</h3>
-          <p class="mt-2 text-sm text-slate-700">Acompañamiento con ahorro.</p>
-          <a href="/contacto" class="mt-4 inline-block rounded-xl px-3 py-2 bg-[#C77DFF] text-white text-sm">Reservar</a>
-        </article>
-      </div>
+import Nav from "../components/Nav.astro";
+
+
+const base = (import.meta as any).env.BASE_URL || "/";
+
+// Contacto (usa los definitivos que ya manejas)
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
+
+// Links internos
+const linkServicios = `${base}servicios/`;
+const linkQueEs = `${base}que-es/`;
+const linkMindfulness = `${base}mindfulness/`;
+const linkContacto = `${base}contacto/`;
+const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
+---
+
+<Base
+  title="Terapia Floral Silvia Adame — Flores de Bach en Bizkaia y online"
+  description="Acompañamiento emocional con Flores de Bach y Mindfulness. Atención en Bizkaia y online."
+>
+  <Nav />
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <!-- fondo suave -->
+      <div class="h-full w-full bg-[#FFF7F1]" />
+      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full opacity-30 blur-3xl bg-[#9FB8AD]" />
+      <div class="absolute -bottom-24 -left-12 w-72 h-72 rounded-full opacity-40 blur-3xl bg-[#C77DFF]" />
     </div>
-  </section>
+
+    <section class="relative max-w-6xl mx-auto px-4 pt-16 pb-12">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-semibold text-slate-900 leading-tight">
+            Bienestar emocional con <span class="text-[#9FB8AD]">Flores de Bach</span> y <span class="text-[#C77DFF]">Mindfulness</span>
+          </h1>
+          <p class="mt-4 text-slate-700">
+            Acompañamiento cercano y personalizado. Sesiones en Bizkaia y modalidad online.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href={whatsapp}
+              class="px-5 py-3 rounded-xl bg-[#9FB8AD] text-white font-medium shadow hover:opacity-90"
+              aria-label="Abrir WhatsApp para contactar con Silvia"
+            >
+              Pedir cita por WhatsApp
+            </a>
+            <a
+              href={linkQueEs}
+              class="px-5 py-3 rounded-xl bg-white text-slate-800 border border-slate-200 hover:bg-slate-50"
+            >
+              ¿Qué es la Terapia Floral?
+            </a>
+          </div>
+
+          <!-- Tira de info rápida -->
+          <ul class="mt-6 text-sm text-slate-600 grid sm:grid-cols-3 gap-3">
+            <li class="rounded-lg bg-white border border-slate-200 p-3">
+              <p class="font-medium text-slate-800">Horario</p>
+              <p>L–V · 10:00–20:00</p>
+            </li>
+            <li class="rounded-lg bg-white border border-slate-200 p-3">
+              <p class="font-medium text-slate-800">Zona</p>
+              <p>Bizkaia · Online</p>
+            </li>
+            <li class="rounded-lg bg-white border border-slate-200 p-3">
+              <p class="font-medium text-slate-800">Contacto</p>
+              <a class="underline" href={linkContacto}>Ver opciones</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ilustración / placeholder -->
+        <div class="order-first md:order-last">
+          <div class="aspect-[4/3] rounded-2xl border border-slate-200 bg-white shadow-sm grid place-content-center text-slate-400">
+            Imagen/ilustración (luego)
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <!-- BLOQUES PRINCIPALES -->
+  <main class="max-w-6xl mx-auto px-4 py-12 space-y-12">
+
+    <!-- Tarjetas: Servicios principales -->
+    <section>
+      <h2 class="text-2xl font-semibold text-slate-900">Servicios</h2>
+      <p class="mt-1 text-slate-600">Comienza por donde mejor encaje contigo.</p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Tarjeta Flores de Bach -->
+        <a href={linkServicios} class="block group rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition overflow-hidden">
+          <div class="h-40 bg-[#F7F0FF] grid place-content-center text-slate-500">
+            Foto de gotero / flor (luego)
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Terapia Floral · Flores de Bach</h3>
+            <p class="mt-1 text-slate-600">
+              Sesiones de acompañamiento emocional con esencias florales.
+            </p>
+            <div class="mt-3 text-sm text-[#7C3AED] underline">
+              Ver detalles
+            </div>
+          </div>
+        </a>
+
+        <!-- Tarjeta Mindfulness -->
+        <a href={linkMindfulness} class="block group rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition overflow-hidden">
+          <div class="h-40 bg-[#EAF4EF] grid place-content-center text-slate-500">
+            Foto de respiración/conexión (luego)
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Mindfulness</h3>
+            <p class="mt-1 text-slate-600">
+              Prácticas sencillas para reducir estrés y cultivar presencia.
+            </p>
+            <div class="mt-3 text-sm text-[#0F766E] underline">
+              Ver detalles
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- CTA secundaria a la sección de Flores (catálogo) -->
+      <div class="mt-6">
+        <a href={linkFlores} class="inline-flex items-center gap-2 text-sm underline text-slate-700">
+          Explorar Flores de Bach (catálogo)
+          <span aria-hidden>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bloque final con CTA -->
+    <section class="rounded-2xl bg-white border border-slate-200 p-6 text-center">
+      <h3 class="text-xl font-semibold text-slate-900">¿Empezamos?</h3>
+      <p class="mt-1 text-slate-600">
+        Escríbeme y te explico cómo trabajamos y cuál puede ser el siguiente paso.
+      </p>
+      <div class="mt-4">
+        <a
+          href={whatsapp}
+          class="inline-block px-5 py-3 rounded-xl bg-[#9FB8AD] text-white font-medium shadow hover:opacity-90"
+        >
+          Pedir cita por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
 </Base>
+
 
 

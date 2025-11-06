@@ -1,4 +1,4 @@
-<!-----
+<!--
 <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
@@ -16,11 +16,11 @@
     </nav>
   </div>
 </header>
-
---- -->
+-->
 
 ---
-const base = import.meta.env.BASE_URL || "/";
+// Evita falsos positivos de TS en VS Code con import.meta.env
+const base = (import.meta as any).env?.BASE_URL || "/";
 
 // Normaliza con barra final para comparar correctamente
 const normalize = (p: string) => (p.endsWith("/") ? p : p + "/");
@@ -65,5 +65,10 @@ const isActive = (href: string) => here === href;
     </nav>
   </div>
 </header>
+
+
+
+
+
 
 

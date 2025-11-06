@@ -1,34 +1,28 @@
 ---
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
+
+const base = import.meta.env.BASE_URL || "/";
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
 ---
-<Base title="¿Qué es la terapia floral? — Silvia Adame">
+<Base title="¿Qué es la Terapia Floral? — Silvia Adame" description="Explicación sencilla sobre Flores de Bach y cómo se trabaja en consulta.">
   <Nav />
-  <main class="max-w-5xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-start">
-    <section>
-      <h1 class="text-3xl font-semibold">¿Qué es la terapia floral?</h1>
-      <p class="mt-3 text-slate-700">
-        La terapia floral es un método natural que utiliza esencias de flores silvestres para ayudar a equilibrar las emociones y recuperar la armonía interior. Su creador, el médico inglés <b>Edward Bach</b>, descubrió que muchas dolencias tienen un origen emocional.
-      </p>
-      <h2 class="mt-6 font-semibold">🌼 Las 38 Esencias de Bach</h2>
-      <p class="mt-2 text-slate-700">Cada esencia se asocia a un estado emocional (miedo, inseguridad, tristeza, apatía, impaciencia…). Pueden combinarse para crear una fórmula personalizada.</p>
-      <h3 class="mt-6 font-semibold">5 grupos</h3>
-      <ul class="mt-2 list-disc list-inside text-slate-700 space-y-2">
-        <li><b>Miedo:</b> Mimulus, Rock Rose, Cherry Plum…</li>
-        <li><b>Incertidumbre:</b> Scleranthus, Cerato…</li>
-        <li><b>Falta de interés en el presente:</b> Clematis, Honeysuckle…</li>
-        <li><b>Soledad:</b> Water Violet, Heather…</li>
-        <li><b>Hipersensibilidad:</b> Walnut, Centaury…</li>
-      </ul>
-      <h3 class="mt-6 font-semibold">💧 ¿Cómo se toman?</h3>
-      <ul class="mt-2 list-disc list-inside text-slate-700 space-y-1">
-        <li>Diluidas en agua o bajo la lengua.</li>
-        <li>Varias tomas al día en gotas.</li>
-        <li>También en cremas, baños o masajes.</li>
-      </ul>
-      <p class="mt-4 text-xs text-slate-500 border-l-2 pl-3 border-slate-300">La terapia floral no reemplaza un tratamiento médico; es un complemento suave y seguro.</p>
-    </section>
-    <img class="rounded-2xl shadow h-96 w-full object-cover" alt="Gotas de esencias florales"
-      src="https://images.unsplash.com/photo-1603031612830-2aa996a1423b?q=80&w=1200&auto=format&fit=crop" />
+  <main class="max-w-3xl mx-auto px-4 py-12 prose">
+    <h1>¿Qué es la Terapia Floral?</h1>
+    <p>
+      Es un acompañamiento emocional que utiliza preparados de <strong>Flores de Bach</strong>.
+      El objetivo es aportar equilibrio y bienestar en momentos de estrés, cambios o bloqueos.
+    </p>
+    <h2>Cómo trabajamos</h2>
+    <ul>
+      <li>Sesión inicial para comprender tu situación y objetivo.</li>
+      <li>Elección de esencias y preparado personalizado.</li>
+      <li>Revisión y ajustes en sesiones de seguimiento.</li>
+    </ul>
+    <p class="text-sm text-slate-500">*No sustituye tratamiento médico.</p>
+
+    <h2>Quiero conocer las flores</h2>
+    <p>Pronto encontrarás un catálogo sencillo con usos habituales (lenguaje claro).</p>
+    <p><a href={`${base}servicios/`}>Volver a Servicios</a> · <a href={whatsapp}>Pedir cita por WhatsApp</a></p>
   </main>
 </Base>
