@@ -260,14 +260,52 @@ conectando genuinamente con los demás.`, // :contentReference[oaicite:2]{index=
 ,
 
   // 5) Hipersensibilidad
-  { slug: "agrimony", es: "Agrimonia", en: "Agrimony", grupo: "Hipersensibilidad", img: img("agrimony") },
-  { slug: "centaury", es: "Centaura", en: "Centaury", grupo: "Hipersensibilidad", img: img("centaury") },
-  { slug: "walnut", es: "Nogal", en: "Walnut", grupo: "Hipersensibilidad", img: img("walnut") },
-  { slug: "holly", es: "Acebo", en: "Holly", grupo: "Hipersensibilidad", img: img("holly") },
+{
+  slug: "agrimony",
+  es: "Agrimonia",
+  en: "Agrimony",
+  grupo: "Hipersensibilidad",
+  img: "flores/agrimonia.png",
+  breve: "Sonríe por fuera y sufre por dentro; ayuda a mostrarte auténtico.",
+  detalle: `Para quienes ocultan inquietud o dolor tras humor y buena cara, evitando el conflicto y
+rellenando el vacío con distracciones (comida, trabajo, adicciones). Favorece paz interior,
+honestidad emocional y alegría genuina.` // basado en tu doc
+},
+{
+  slug: "centaury",
+  es: "Centaura",
+  en: "Centaury",
+  grupo: "Hipersensibilidad",
+  img: "flores/centaury.png",
+  breve: "Dificultad para decir \"no\"; fortalece la voluntad y los límites.",
+  detalle: `Personas amables que se exceden por complacer y acaban agotadas o dominadas por otros.
+Ayuda a servir desde la elección consciente, con autoafirmación y límites saludables.` // basado en tu doc
+},
+{
+  slug: "walnut",
+  es: "Nogal",
+  en: "Walnut",
+  grupo: "Hipersensibilidad",
+  img: "flores/nogal.png",
+  breve: "Protección ante influencias externas; facilita los cambios de etapa.",
+  detalle: `Para quienes se desvían por opiniones ajenas o se desestabilizan en transiciones (mudanzas, duelos,
+pubertad, menopausia). Actúa como "escudo" para seguir tu propio camino con firmeza.` // basado en tu doc
+},
+{
+  slug: "holly",
+  es: "Acebo",
+  en: "Holly",
+  grupo: "Hipersensibilidad",
+  img: "flores/acebo.png",
+  breve: "Celos, ira o envidia; abre el corazón hacia la empatía y el perdón.",
+  detalle: `Para sentimientos intensos de irritación, sospecha o deseo de venganza.
+Ayuda a transformar la reactividad en comprensión, compasión y armonía interna.` // basado en tu doc
+}
+,
 
   // 6) Desaliento o desesperación
   { slug: "larch", es: "Alerce", en: "Larch", grupo: "Desaliento o desesperación", img: img("larch") },
-  { slug: "pine", es: "Pino", en: "Pine", grupo: "Desaliento o desesperación", img: img("pine") },
+  { slug: "pine", es: "Pino", en: "Pine", grupo: "Desaliento o desesperación", img: "flores/pino.png" },
   { slug: "elm", es: "Olmo", en: "Elm", grupo: "Desaliento o desesperación", img: img("elm") },
   { slug: "sweet-chestnut", es: "Castaño Dulce", en: "Sweet Chestnut", grupo: "Desaliento o desesperación", img: img("sweet-chestnut") },
   { slug: "star-of-bethlehem", es: "Estrella de Belén", en: "Star of Bethlehem", grupo: "Desaliento o desesperación", img: img("star-of-bethlehem") },
