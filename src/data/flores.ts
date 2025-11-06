@@ -148,18 +148,116 @@ Ayuda a reconocer la propia vocación, enfocar la energía y comprometerse con u
 },
 
   // 3) Falta de interés en el presente
-  { slug: "clematis", es: "Clemátide", en: "Clematis", grupo: "Falta de interés en el presente", img: img("clematis") },
-  { slug: "honeysuckle", es: "Madreselva", en: "Honeysuckle", grupo: "Falta de interés en el presente", img: img("honeysuckle") },
-  { slug: "wild-rose", es: "Rosa Silvestre", en: "Wild Rose", grupo: "Falta de interés en el presente", img: img("wild-rose") },
-  { slug: "olive", es: "Olivo", en: "Olive", grupo: "Falta de interés en el presente", img: img("olive") },
-  { slug: "white-chestnut", es: "Castaño de Indias", en: "White Chestnut", grupo: "Falta de interés en el presente", img: img("white-chestnut") },
-  { slug: "mustard", es: "Mostaza", en: "Mustard", grupo: "Falta de interés en el presente", img: img("mustard") },
-  { slug: "chestnut-bud", es: "Brote de Castaño", en: "Chestnut Bud", grupo: "Falta de interés en el presente", img: img("chestnut-bud") },
+{
+  slug: "clematis",
+  es: "Clemátide",
+  en: "Clematis",
+  grupo: "Falta de interés en el presente",
+  img: "flores/clematis.png",
+  breve: "Soñar despierto, vivir en el futuro; ayuda a anclarte al presente.",
+  detalle: `Para quienes viven más en la fantasía que en el “aquí y ahora”, con distracción, letargo o desinterés por la realidad.
+Ayuda a enfocarse, a manifestar los ideales en acciones concretas y a disfrutar del presente.`
+},
+{
+  slug: "honeysuckle",
+  es: "Madreselva",
+  en: "Honeysuckle",
+  grupo: "Falta de interés en el presente",
+  img: "flores/honeysuckle.png",
+  breve: "Nostalgia y apego al pasado; facilita avanzar y valorar el presente.",
+  detalle: `Para quienes viven anclados en los recuerdos o en lo que “pudo haber sido”, con melancolía y resistencia al cambio.
+Permite integrar lo vivido sin quedar atrapado en ello y abrirse a crear nuevos recuerdos hoy.`
+},
+{
+  slug: "wild-rose",
+  es: "Rosa Silvestre",
+  en: "Wild Rose",
+  grupo: "Falta de interés en el presente",
+  img: img("wild-rose"),
+  breve: "Apatía y resignación; devuelve interés y motivación vital.",
+  detalle: `Para la indiferencia pasiva y la renuncia silenciosa a mejorar la situación.
+Revitaliza la voluntad, la iniciativa y la participación activa en la propia vida.`
+},
+{
+  slug: "olive",
+  es: "Olivo",
+  en: "Olive",
+  grupo: "Falta de interés en el presente",
+  img: "flores/olive.png",
+  breve: "Agotamiento total cuerpo-mente; restaura la energía vital.",
+  detalle: `Tras largos esfuerzos o convalecencias cuando “no queda gasolina” para nada.
+Ayuda a recuperar fuerzas profundas, descanso reparador y disfrute de la vida.`
+},
+  {
+  slug: "white-chestnut",
+  es: "Castaño de Indias",
+  en: "White Chestnut",
+  grupo: "Falta de interés en el presente",
+  img: "flores/white-chestnut.png",
+  breve: "Pensamientos repetitivos/rumiación; aporta calma y claridad mental.",
+  detalle: `Para el parloteo mental incesante y los pensamientos que dan vueltas sin parar, 
+dificultando concentrarse o dormir. Ayuda a ordenar la mente, aquietar las ideas intrusivas 
+y recuperar paz y enfoque interior.`
+},
+{
+  slug: "mustard",
+  es: "Mostaza",
+  en: "Mustard",
+  grupo: "Falta de interés en el presente",
+  img: "flores/mostaza.png",
+  breve: "Tristeza profunda que aparece sin causa; devuelve serenidad y alegría.",
+  detalle: `Para la melancolía súbita, como una “nube negra” que llega sin motivo aparente 
+y apaga la ilusión. Facilita atravesar el episodio con calma, devolviendo luz interior 
+y estabilidad emocional que no depende de las circunstancias.`
+},
+{
+  slug: "chestnut-bud",
+  es: "Brote de Castaño",
+  en: "Chestnut Bud",
+  grupo: "Falta de interés en el presente",
+  img: "flores/Brote de Castaño (Chestnut Bud).png",
+  breve: "Cuesta aprender de la experiencia; ayuda a integrar lecciones.",
+  detalle: `Para quien repite los mismos errores por falta de observación o reflexión. 
+Favorece la atención consciente, el aprendizaje a partir de lo vivido (propio y ajeno) 
+y la transformación de la experiencia en sabiduría práctica.`
+}
+,
 
   // 4) Soledad
-  { slug: "water-violet", es: "Violeta de Agua", en: "Water Violet", grupo: "Soledad", img: img("water-violet") },
-  { slug: "impatiens", es: "Impaciencia", en: "Impatiens", grupo: "Soledad", img: img("impatiens") },
-  { slug: "heather", es: "Brezo", en: "Heather", grupo: "Soledad", img: img("heather") },
+{
+  slug: "water-violet",
+  es: "Violeta de Agua",
+  en: "Water Violet",
+  grupo: "Soledad",
+  img: "flores/Violeta de Agua (Water Violet).png",
+  breve: "Reservado y autosuficiente; ayuda a abrirse y conectar con humildad.",
+  detalle: `Para quienes prefieren estar solos y pueden volverse distantes o altivos.
+Facilita mantener la calma y dignidad, a la vez que fomenta la cercanía, la empatía
+y la capacidad de pedir/aceptar ayuda cuando hace falta.`, // :contentReference[oaicite:0]{index=0}
+},
+{
+  slug: "impatiens",
+  es: "Impaciencia",
+  en: "Impatiens",
+  grupo: "Soledad",
+  img: "flores/impaciencia.png",
+  breve: "Prisa e irritabilidad ante la lentitud ajena; aporta calma y tolerancia.",
+  detalle: `Para rapidez mental/física, tensión nerviosa y poca paciencia con ritmos lentos.
+Transforma la irritabilidad en amabilidad y el apremio interno en un fluir sereno,
+permitiendo trabajar eficiente pero sin agresividad.`, // :contentReference[oaicite:1]{index=1}
+},
+{
+  slug: "heather",
+  es: "Brezo",
+  en: "Heather",
+  grupo: "Soledad",
+  img: "flores/Brezo (Heather).png",
+  breve: "Necesidad constante de hablar de sí; favorece escucha y empatía.",
+  detalle: `Para el egocentrismo conversacional y el temor a la soledad que impulsa
+a buscar atención continua. Desarrolla la capacidad de escuchar y compartir en equilibrio,
+conectando genuinamente con los demás.`, // :contentReference[oaicite:2]{index=2}
+}
+,
 
   // 5) Hipersensibilidad
   { slug: "agrimony", es: "Agrimonia", en: "Agrimony", grupo: "Hipersensibilidad", img: img("agrimony") },
