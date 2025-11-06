@@ -3,13 +3,16 @@ import Base from "../../layouts/Base.astro";
 import Nav from "../../components/Nav.astro";
 import { flores } from "../../data/flores";
 
-const base = (import.meta as any).env?.BASE_URL || "/";
-const { slug } = Astro.params;
-const flor = flores.find((f) => f.slug === slug);
-
-if (!flor) {
-  throw new Error("Flor no encontrada");
+// Función requerida para rutas dinámicas en Astro
+export async function getStaticPaths() {
+  return flores.map((flor) => ({
+    params: { slug: flor.slug },
+    props: { flor },
+  }));
 }
+
+const base = (import.meta as any).env?.BASE_URL || "/";
+const { flor } = Astro.props;
 
 const title = `${flor.es} — Flores de Bach`;
 const description = `Información básica sobre ${flor.es} (${flor.en}), grupo ${flor.grupo}.`;
@@ -37,5 +40,3 @@ const description = `Información básica sobre ${flor.es} (${flor.en}), grupo $
     </p>
   </main>
 </Base>
-
-export { flores };
