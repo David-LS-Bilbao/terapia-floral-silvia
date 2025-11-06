@@ -9,12 +9,14 @@ export type Grupo =
 
 export interface Flor {
   slug: string;
-  es: string;   // nombre en español
-  en: string;   // nombre en inglés
+  es: string;
+  en: string;
   grupo: Grupo;
-  img?: string; // ruta a imagen en /public/flores/<slug>.jpg (opcional)
-  breve?: string; // resumen de uso (lo iremos completando más adelante)
+  img?: string;
+  breve?: string;      // 1–2 líneas para tarjetas/listado
+  detalle?: string;    // texto largo para la ficha
 }
+
 
 // Usaremos SVG placeholder. Luego reemplazaré por .webp reales sin tocar el código.
 const img = (slug: string) => `flores/${slug}.svg`;
@@ -31,33 +33,119 @@ export const gruposOrden: Grupo[] = [
 
 export const flores: Flor[] = [
   // 1) Miedo
-{ slug: "rock-rose", es: "Heliantemo", en: "Rock Rose", grupo: "Miedo",
-  img: "flores/rock-rose.webp",
-  breve: "Para pánico o terror agudo. Aporta calma y valentía en crisis." }, // :contentReference[oaicite:5]{index=5}
-
-{ slug: "mimulus", es: "Mímulo", en: "Mimulus", grupo: "Miedo",
-  img: "flores/mimulus.webp",
-  breve: "Para miedos concretos (dentista, hablar en público...). Fomenta una valentía tranquila." }, // :contentReference[oaicite:6]{index=6}
-
-{ slug: "cherry-plum", es: "Cerasífera", en: "Cherry Plum", grupo: "Miedo",
-  img: "flores/cherry-plum.webp",
-  breve: "Para el temor a perder el control. Trae serenidad y autocontrol." }, // :contentReference[oaicite:7]{index=7}
-
-{ slug: "aspen", es: "Álamo Temblón", en: "Aspen", grupo: "Miedo",
-  img: "flores/aspen.webp",
-  breve: "Para miedos vagos o inexplicables. Aporta seguridad interior y paz." }, // :contentReference[oaicite:8]{index=8}
-
-{ slug: "red-chestnut", es: "Castaño Rojo", en: "Red Chestnut", grupo: "Miedo",
-  img: "flores/red-chestnut.webp",
-  breve: "Para la preocupación excesiva por los seres queridos. Facilita confianza y cuidado sereno." }, // :contentReference[oaicite:9]{index=9}
+{
+  slug: "rock-rose",
+  es: "Heliantemo",
+  en: "Rock Rose",
+  grupo: "Miedo",
+  img: "flores/rock-rose.webp.png",
+  breve: "Para pánico o terror agudo; aporta calma y valentía en crisis.",
+  detalle: `Para estados de pánico o terror extremo (emergencias, sustos intensos, pesadillas que paralizan).
+Ayuda a recuperar la calma, la presencia de ánimo y el valor para actuar con claridad ante el peligro.`
+},
+{
+  slug: "mimulus",
+  es: "Mímulo",
+  en: "Mimulus",
+  grupo: "Miedo",
+  img: "flores/mimulus.webp.png",
+  breve: "Para miedos concretos y cotidianos; fomenta una valentía tranquila.",
+  detalle: `Indicado cuando hay miedos específicos (dentista, hablar en público, enfermedad, crítica…),
+timidez y sensibilidad elevada. Favorece la confianza para afrontar esas situaciones con serenidad.`
+},
+{
+  slug: "cherry-plum",
+  es: "Cerasífera",
+  en: "Cherry Plum",
+  grupo: "Miedo",
+  img: "flores/cherry-plum.webp.png",
+  breve: "Para el temor a perder el control; trae serenidad y autocontrol.",
+  detalle: `Para tensión mental extrema, impulsos que asustan o miedo a “perder la cabeza”.
+Aporta equilibrio, claridad y dominio interior incluso bajo presión.`
+},
+{
+  slug: "aspen",
+  es: "Álamo Temblón",
+  en: "Aspen",
+  grupo: "Miedo",
+  img: "flores/aspen.png",
+  breve: "Para miedos vagos o inexplicables; aporta seguridad y paz.",
+  detalle: `Miedos indefinidos, aprensión sin causa, escalofríos, inquietud nocturna o sensación de “algo va a pasar”.
+Facilita una confianza interna serena frente a lo desconocido.`
+},
+{
+  slug: "red-chestnut",
+  es: "Castaño Rojo",
+  en: "Red Chestnut",
+  grupo: "Miedo",
+  img: "flores/red-chestnut.png",
+  breve: "Para la preocupación excesiva por los demás; favorece confianza y calma.",
+  detalle: `Ansiedad constante por el bienestar de seres queridos, tendencia a imaginar lo peor.
+Ayuda a cuidar con serenidad, enviando pensamientos de seguridad y respeto por la autonomía del otro.`
+},
 
   // 2) Incertidumbre
-  { slug: "cerato", es: "Ceratostigma", en: "Cerato", grupo: "Incertidumbre", img: img("cerato") },
-  { slug: "scleranthus", es: "Escleranto", en: "Scleranthus", grupo: "Incertidumbre", img: img("scleranthus") },
-  { slug: "gentian", es: "Genciana", en: "Gentian", grupo: "Incertidumbre", img: img("gentian") },
-  { slug: "gorse", es: "Aulaga", en: "Gorse", grupo: "Incertidumbre", img: img("gorse") },
-  { slug: "hornbeam", es: "Hojarazo", en: "Hornbeam", grupo: "Incertidumbre", img: img("hornbeam") },
-  { slug: "wild-oat", es: "Avena Silvestre", en: "Wild Oat", grupo: "Incertidumbre", img: img("wild-oat") },
+{
+  slug: "cerato",
+  es: "Ceratostigma",
+  en: "Cerato",
+  grupo: "Incertidumbre",
+  img: img("cerato"),
+  breve: "Duda de su propio juicio; busca validación constante.",
+  detalle: `Para quienes, aun siendo capaces, desconfían de su criterio y preguntan a otros a cada paso. 
+Ayuda a escuchar y seguir la intuición, sosteniendo decisiones con seguridad tranquila.`
+},
+{
+  slug: "scleranthus",
+  es: "Escleranto",
+  en: "Scleranthus",
+  grupo: "Incertidumbre",
+  img: img("scleranthus"),
+  breve: "Indecisión entre opciones; vaivenes de ánimo/energía.",
+  detalle: `Para la oscilación interna (sí/no) y cambios de humor o energía que dificultan elegir. 
+Favorece equilibrio, concentración y una decisión clara sin dudas intermitentes.`
+},
+{
+  slug: "gentian",
+  es: "Genciana",
+  en: "Gentian",
+  grupo: "Incertidumbre",
+  img: img("gentian"),
+  breve: "Desánimo tras contratiempos; se pierde la fe enseguida.",
+  detalle: `Cuando un tropiezo desmoraliza y aparece el pesimismo. 
+Aporta perseverancia, realismo y ánimo para seguir avanzando paso a paso.`
+},
+{
+  slug: "gorse",
+  es: "Aulaga",
+  en: "Gorse",
+  grupo: "Incertidumbre",
+  img: img("gorse"),
+  breve: "Desesperanza/fatalismo: “ya no hay nada que hacer”.",
+  detalle: `Para la resignación y la visión sombría del futuro. 
+Reaviva la esperanza y la apertura a nuevas posibilidades: “lo intentaré una vez más”.`
+},
+{
+  slug: "hornbeam",
+  es: "Hojarazo",
+  en: "Hornbeam",
+  grupo: "Incertidumbre",
+  img: img("hornbeam"),
+  breve: "Cansancio mental al empezar (síndrome del lunes).",
+  detalle: `Sensación de falta de fuerzas antes de iniciar tareas que luego sí se pueden hacer. 
+Devuelve frescura mental, ganas y agilidad para arrancar sin postergar.`
+},
+{
+  slug: "wild-oat",
+  es: "Avena Silvestre",
+  en: "Wild Oat",
+  grupo: "Incertidumbre",
+  img: img("wild-oat"),
+  breve: "Indecisión vocacional y falta de rumbo; aporta claridad de propósito.",
+  detalle: `Para personas capaces con muchos intereses que no encuentran una dirección definida.
+Genera insatisfacción, probar sin comprometerse y sensación de no encajar. 
+Ayuda a reconocer la propia vocación, enfocar la energía y comprometerse con un camino que dé sentido.`
+},
 
   // 3) Falta de interés en el presente
   { slug: "clematis", es: "Clemátide", en: "Clematis", grupo: "Falta de interés en el presente", img: img("clematis") },
