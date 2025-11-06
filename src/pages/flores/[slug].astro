@@ -1,0 +1,42 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import { flores } from 
+;
+
+const base = import.meta.env.BASE_URL || "/";
+const { slug } = Astro.params;
+const flor = flores.find((f) => f.slug === slug);
+
+if (!flor) {
+  throw new Error("Flor no encontrada");
+}
+
+const title = `${flor.es} — Flores de Bach`;
+const description = `Información básica sobre ${flor.es} (${flor.en}), grupo ${flor.grupo}.`;
+---
+<Base {title} {description}>
+  <Nav />
+  <main class="max-w-3xl mx-auto px-4 py-12 prose">
+    <a href={`${base}flores/`} class="text-sm underline">&larr; Volver al listado</a>
+    <h1>{flor.es}</h1>
+    <p class="text-slate-600"><em>{flor.en}</em> — Grupo: <strong>{flor.grupo}</strong></p>
+
+    {/* Imagen si la subes en /public/flores/<slug>.jpg */}
+    {/* {flor.img && <img src={flor.img} alt={flor.es} class="w-full rounded" loading="lazy" />} */}
+
+    <h2>Usos habituales (resumen)</h2>
+    <p>
+      Próximamente añadiremos una explicación clara y breve en lenguaje sencillo.
+      Este apartado se completará con ejemplos prácticos y dudas frecuentes.
+    </p>
+
+    <h2>Cómo se suele utilizar</h2>
+    <p>
+      Se integra dentro del acompañamiento emocional personalizado.
+      No sustituye tratamiento médico.
+    </p>
+  </main>
+</Base>
+
+export { flores };
