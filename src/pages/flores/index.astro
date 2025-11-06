@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import { flores, gruposOrden, type Grupo } from "../../data/flores";
+
+const base = (import.meta as any).env?.BASE_URL || "/";
+
+const porGrupo: Record<Grupo, typeof flores> = gruposOrden.reduce((acc, g) => {
+  acc[g] = flores.filter((f) => f.grupo === g);
+  return acc;
+}, {} as Record<Grupo, typeof flores>);
+---
+<Base title="Flores de Bach — Catálogo" description="Listado de las 38 Flores de Bach agrupadas por categorías.">
+  <Nav />
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <header class="max-w-3xl mb-8">
+      <h1 class="text-2xl font-semibold">Flores de Bach</h1>
+      <p class="text-slate-600 mt-2">Explora las 38 flores agrupadas por su finalidad.</p>
+    </header>
+
+    <section class="space-y-10">
+      {gruposOrden.map((grupo) => (
+        <div>
+          <h2 class="text-xl font-semibold mb-4">{grupo}</h2>
+          <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {porGrupo[grupo].map((f) => (
+              <li class="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+                <a href={`${base}flores/${f.slug}/`} class="block group">
+                  <div class="h-36 bg-[#FFF7F1] grid place-content-center text-slate-400">
+                    {/* Si subes imágenes a /public/flores/, descomenta: */}
+                    {/* <img src={f.img} alt={f.es} class="w-full h-36 object-cover" loading="lazy" /> */}
+                    <span class="text-sm">Imagen {f.es}</span>
+                  </div>
+                  <div class="p-3">
+                    <h3 class="font-medium text-slate-900">{f.es}</h3>
+                    <p class="text-xs text-slate-600">{f.en}</p>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  </main>
+</Base>

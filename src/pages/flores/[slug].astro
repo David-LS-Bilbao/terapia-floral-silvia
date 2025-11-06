@@ -1,10 +1,9 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Nav from "../../components/Nav.astro";
-import { flores } from 
-;
+import { flores } from "../../data/flores";
 
-const base = import.meta.env.BASE_URL || "/";
+const base = (import.meta as any).env?.BASE_URL || "/";
 const { slug } = Astro.params;
 const flor = flores.find((f) => f.slug === slug);
 
