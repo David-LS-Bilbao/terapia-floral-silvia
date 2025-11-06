@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ceratostigma">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF7F1"/>
+      <stop offset="100%" stop-color="#EAF4EF"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="system-ui, Segoe UI, Roboto" font-size="48" fill="#334155">
+    Ceratostigma
+  </text>
+</svg>

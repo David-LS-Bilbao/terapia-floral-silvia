@@ -1,14 +1,15 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Nav from "../../components/Nav.astro";
-import { flores, gruposOrden, type Grupo } from "../../data/flores";
+import { flores, gruposOrden } from "../../data/flores";
 
 const base = (import.meta as any).env?.BASE_URL || "/";
 
-const porGrupo: Record<Grupo, typeof flores> = gruposOrden.reduce((acc, g) => {
-  acc[g] = flores.filter((f) => f.grupo === g);
-  return acc;
-}, {} as Record<Grupo, typeof flores>);
+// Agrupar por categoría sin tipos estrictos
+const porGrupo: any = {};
+for (const g of gruposOrden) {
+  porGrupo[g] = flores.filter((f) => f.grupo === g);
+}
 ---
 <Base title="Flores de Bach — Catálogo" description="Listado de las 38 Flores de Bach agrupadas por categorías.">
   <Nav />
@@ -26,14 +27,22 @@ const porGrupo: Record<Grupo, typeof flores> = gruposOrden.reduce((acc, g) => {
             {porGrupo[grupo].map((f) => (
               <li class="rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm">
                 <a href={`${base}flores/${f.slug}/`} class="block group">
-                  <div class="h-36 bg-[#FFF7F1] grid place-content-center text-slate-400">
-                    {/* Si subes imágenes a /public/flores/, descomenta: */}
-                    {/* <img src={f.img} alt={f.es} class="w-full h-36 object-cover" loading="lazy" /> */}
-                    <span class="text-sm">Imagen {f.es}</span>
-                  </div>
+                  {f.img ? (
+                    <img
+                      src={`${base}${f.img}`}
+                      alt={`${f.es} — ${f.en}`}
+                      class="w-full h-36 object-cover"
+                      loading="lazy"
+                      width="480"
+                      height="240"
+                    />
+                  ) : (
+                    <div class="h-36 bg-[#FFF7F1]" />
+                  )}
                   <div class="p-3">
                     <h3 class="font-medium text-slate-900">{f.es}</h3>
                     <p class="text-xs text-slate-600">{f.en}</p>
+                    {f.breve && <p class="text-sm text-slate-700 mt-1 line-clamp-2">{f.breve}</p>}
                   </div>
                 </a>
               </li>

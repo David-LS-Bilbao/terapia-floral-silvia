@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen:flores": "node tools/generate_flores_placeholders.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",

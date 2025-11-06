@@ -3,7 +3,6 @@ import Base from "../../layouts/Base.astro";
 import Nav from "../../components/Nav.astro";
 import { flores } from "../../data/flores";
 
-// Función requerida para rutas dinámicas en Astro
 export async function getStaticPaths() {
   return flores.map((flor) => ({
     params: { slug: flor.slug },
@@ -13,9 +12,8 @@ export async function getStaticPaths() {
 
 const base = (import.meta as any).env?.BASE_URL || "/";
 const { flor } = Astro.props;
-
 const title = `${flor.es} — Flores de Bach`;
-const description = `Información básica sobre ${flor.es} (${flor.en}), grupo ${flor.grupo}.`;
+const description = `Información básica sobre ${flor.es} (${flor.en}).`;
 ---
 <Base {title} {description}>
   <Nav />
@@ -24,19 +22,21 @@ const description = `Información básica sobre ${flor.es} (${flor.en}), grupo $
     <h1>{flor.es}</h1>
     <p class="text-slate-600"><em>{flor.en}</em> — Grupo: <strong>{flor.grupo}</strong></p>
 
-    {/* Imagen si la subes en /public/flores/<slug>.jpg */}
-    {/* {flor.img && <img src={flor.img} alt={flor.es} class="w-full rounded" loading="lazy" />} */}
+    {flor.img && (
+      <img
+        src={`${base}${flor.img}`}
+        alt={`${flor.es} — ${flor.en}`}
+        class="w-full rounded my-4"
+        loading="lazy"
+        width="960"
+        height="540"
+      />
+    )}
 
     <h2>Usos habituales (resumen)</h2>
-    <p>
-      Próximamente añadiremos una explicación clara y breve en lenguaje sencillo.
-      Este apartado se completará con ejemplos prácticos y dudas frecuentes.
-    </p>
+    {flor.breve ? <p>{flor.breve}</p> : <p>Pendiente de completar con lenguaje claro.</p>}
 
     <h2>Cómo se suele utilizar</h2>
-    <p>
-      Se integra dentro del acompañamiento emocional personalizado.
-      No sustituye tratamiento médico.
-    </p>
+    <p>Dentro del acompañamiento personalizado. No sustituye tratamiento médico.</p>
   </main>
 </Base>
