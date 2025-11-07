@@ -1,11 +1,55 @@
 ---
 import Base from "../../layouts/Base.astro";
+const EMAIL = "info@[tu-dominio].com";
 ---
-<Base title="Política de Cookies — Silvia Adame">
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-semibold">Política de Cookies</h1>
-    <p class="mt-4 text-slate-700">
-      Contenido provisional. Indicaremos si se usan cookies, de qué tipo y cómo gestionarlas. Para el MVP sin analítica, indicaremos que no se instalan cookies de seguimiento.
+
+<Base title="Política de cookies" description="Información sobre el uso de cookies">
+  <main class="container prose mx-auto py-10">
+    <h1>Política de cookies</h1>
+
+    <p>
+      Este sitio utiliza <strong>cookies técnicas</strong> imprescindibles para su funcionamiento (p. ej., recordar tu elección de consentimiento).
+      No utilizamos cookies de analítica ni publicidad. Si en el futuro se activan, se solicitará tu consentimiento previo y podrás configurarlas.
     </p>
+  <p>Guía AEPD y criterios vigentes sobre consentimiento y uso de cookies.</p>
+
+    <h2>¿Qué es una cookie?</h2>
+    <p>
+      Una cookie es un archivo que se descarga en tu dispositivo al acceder a determinadas páginas web y permite, entre otras cosas,
+      recordar información básica o tus preferencias.
+    </p>
+
+    <h2>Tipos de cookies que puede usar esta web</h2>
+    <ul>
+      <li><strong>Técnicas</strong> (necesarias): habilitan funciones esenciales. Exentas de consentimiento (art. 22.2 LSSI).</li>
+      <li><strong>Preferencias</strong>: recuerdan tus elecciones. (Desactivadas por defecto si no son estrictamente necesarias).</li>
+      <li><strong>Analíticas/medición</strong>: ayudan a mejorar el sitio. <em>Requieren consentimiento</em>. (No activas actualmente).</li>
+      <li><strong>Publicidad/terceros</strong>: perfilado y anuncios. <em>Requieren consentimiento</em>. (No activas actualmente).</li>
+    </ul>
+
+    <h2>Tabla de cookies en uso</h2>
+    <table>
+      <thead><tr><th>Cookie</th><th>Proveedor</th><th>Finalidad</th><th>Duración</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>cookie_consent</td>
+          <td>Propia</td>
+          <td>Recordar la preferencia de cookies (aceptar/rechazar)</td>
+          <td>6 meses</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cómo cambiar o retirar tu consentimiento</h2>
+    <p>
+      Puedes <button id="reopen-consent" type="button">reabrir el panel de cookies</button> en cualquier momento o
+      configurar tu navegador para bloquear/eliminar cookies. Si tienes dudas, escríbenos a <a href={"mailto:"+EMAIL}>{EMAIL}</a>.
+    </p>
+    <script>
+      document.getElementById('reopen-consent')?.addEventListener('click', () => {
+        localStorage.removeItem('cookie_consent');
+        document.dispatchEvent(new CustomEvent('open-cookie-banner'));
+      });
+    </script>
   </main>
 </Base>

@@ -1,11 +1,67 @@
 ---
 import Base from "../../layouts/Base.astro";
+const RESPONSABLE = "Silvia Adame";
+const NIF = "[NIF/NIE]";
+const DIRECCION = "C/ [Dirección], [CP], [Localidad], [Provincia]";
+const EMAIL = "info@[tu-dominio].com";
+const WEB = "https://david-ls-bilbao.github.io/terapia-floral-silvia"; // ajusta
 ---
-<Base title="Aviso Legal — Silvia Adame">
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-semibold">Aviso Legal</h1>
-    <p class="mt-4 text-slate-700">
-      Contenido provisional. Se completará tras la entrevista con la clienta (datos fiscales, responsable, contacto, etc.).
+
+<Base title="Política de privacidad" description="Información sobre protección de datos personales">
+  <main class="container prose mx-auto py-10">
+    <h1>Política de privacidad</h1>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <p>
+      Responsable: <strong>{RESPONSABLE}</strong> (NIF {NIF})<br/>
+      Domicilio: {DIRECCION}<br/>
+      Email: <a href={"mailto:"+EMAIL}>{EMAIL}</a><br/>
+      Web: <a href={WEB}>{WEB}</a>
+    </p>
+
+    <h2>2. Datos tratados, finalidad y base jurídica</h2>
+    <ul>
+      <li>
+        <strong>Consultas por formulario/email</strong> (nombre, email, mensaje): finalidad de responder a tu consulta.
+        <em>Base jurídica</em>: consentimiento (art. 6.1.a RGPD) y/o medidas precontractuales si procede (art. 6.1.b RGPD).
+      </li>
+      <li>
+        <strong>Citas/agenda</strong> (datos de contacto y preferencia de horario): gestionar la solicitud de cita.
+        <em>Base jurídica</em>: ejecución de medidas precontractuales/contrato (art. 6.1.b RGPD).
+      </li>
+      <li>
+        <strong>Cookies técnicas</strong>: funcionamiento básico del sitio y recordar tu elección de cookies.
+        <em>Base jurídica</em>: interés legítimo/servicio solicitado (art. 6.1.f RGPD) y art. 22.2 LSSI (exentas de consentimiento).
+      </li>
+    </ul>
+    <p>
+      No se toman decisiones automatizadas ni se elaboran perfiles con efectos jurídicos. Si en el futuro se activan analíticas o terceros,
+      se actualizará esta política y se pedirá consentimiento previo.
+    </p>
+  <p>Referencia legal: RGPD art. 6 (licitud del tratamiento); LSSI art. 22 (cookies).</p>
+
+    <h2>3. Comunicación y encargados</h2>
+    <p>
+      No se comunican datos a terceros salvo obligación legal o necesidades del servicio (p. ej., alojamiento/hosting como encargado de tratamiento).
+      Se suscribirán contratos de encargo conforme al art. 28 RGPD.
+    </p>
+
+    <h2>4. Conservación</h2>
+    <p>
+      Se conservarán los datos el tiempo imprescindible para atender tu solicitud y, en su caso, mientras exista relación contractual
+      o exigencias legales (fiscales/contables).
+    </p>
+
+    <h2>5. Derechos</h2>
+    <p>
+      Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un email a
+      <a href={"mailto:"+EMAIL}>{EMAIL}</a>. También tienes derecho a presentar una reclamación ante la AEPD
+      (<a href="https://www.aepd.es">www.aepd.es</a>). El consentimiento es revocable en cualquier momento.
+    </p>
+
+    <h2>6. Seguridad</h2>
+    <p>
+      Se aplican medidas técnicas y organizativas adecuadas para garantizar la confidencialidad, integridad y disponibilidad de la información.
     </p>
   </main>
 </Base>
