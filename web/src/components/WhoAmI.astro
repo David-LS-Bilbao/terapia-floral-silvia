@@ -1,0 +1,27 @@
+---
+interface Props {
+  name: string;
+  title?: string;
+  summary?: string;
+  bullets?: string[];
+  photoAlt?: string;
+  photoSrc: any; // import de imagen
+}
+const { name, title = "", summary = "", bullets = [], photoAlt = name, photoSrc } = Astro.props;
+---
+<section class="rounded-2xl bg-white/70 backdrop-blur shadow-sm ring-1 ring-black/5 p-6 md:p-8">
+  <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+    <img src={photoSrc} alt={photoAlt} width="320" height="400"
+         class="w-40 h-40 object-cover rounded-2xl ring-1 ring-black/10 md:w-48 md:h-48" loading="lazy" />
+    <div class="flex-1">
+      <h2 class="text-2xl font-semibold tracking-tight">Quién soy</h2>
+      <p class="mt-1 text-sm text-neutral-500">{title}</p>
+      <p class="mt-4 leading-relaxed">{summary}</p>
+      {bullets.length > 0 && (
+        <ul class="mt-4 list-disc pl-6 space-y-1">
+          {bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      )}
+    </div>
+  </div>
+</section>
