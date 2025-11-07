@@ -1,7 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "lib": ["ES2020", "DOM"]
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve"
   },
   "include": ["src", ".astro/types.d.ts"],
   "exclude": ["dist"]

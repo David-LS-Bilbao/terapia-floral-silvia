@@ -17,6 +17,15 @@ export interface Flor {
   detalle?: string;    // texto largo para la ficha
 }
 
+export interface RescueRemedy {
+  slug: string;
+  es: string;
+  en: string;
+  mezcla: string[];
+  breve: string;
+  detalle: string;
+}
+
 
 // Usaremos SVG placeholder. Luego reemplazaré por .webp reales sin tocar el código.
 const img = (slug: string) => `flores/${slug}.svg`;
@@ -446,7 +455,7 @@ Aporta flexibilidad, disfrute sano y adaptación sin perder principios.`
 ];
 
 // (Opcional) Rescue Remedy, por si lo quieres mostrar aparte
-export const rescueRemedy = {
+export const rescueRemedy: RescueRemedy = {
   slug: "rescue-remedy",
   es: "Remedio de Rescate",
   en: "Rescue Remedy",
