@@ -3,6 +3,9 @@
 
 import "../styles/global.css";
 
+
+
+
 interface Props {
   title?: string;
   description?: string;
@@ -28,11 +31,17 @@ const withBase = (path?: string): string => {
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
+
+
+
+
+
+
   <body class="bg-[#FFF7F1] text-slate-800">
     <slot />
 
     <footer class="bg-slate-900 text-slate-100 mt-16">
-      <div class="max-w-6xl mx-auto px-4 py-8 text-sm flex flex-wrap gap-6 justify-between">
+      <div class="max-w-6xl mx-auto px-4 py-8 text-sm flex flex-wrap gap-6 justify-between items-center">
         <div>© 2025 Terapia Floral Silvia Adame</div>
 
         <nav class="flex gap-4 underline text-slate-300">
@@ -40,6 +49,11 @@ const withBase = (path?: string): string => {
           <a href={withBase("legal/privacidad/")}>Privacidad</a>
           <a href={withBase("legal/cookies/")}>Cookies</a>
         </nav>
+
+        <div class="text-slate-300">
+          Página creada por <strong>David-LS-Bilbao</strong>. Contacto
+          <a class="underline" href="mailto:lopezsotelo77@gmail.com">lopezsotelo77@gmail.com</a>
+        </div>
       </div>
     </footer>
   </body>

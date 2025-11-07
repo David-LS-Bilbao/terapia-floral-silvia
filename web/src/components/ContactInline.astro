@@ -1,0 +1,12 @@
+---
+interface Props {
+  email: string;
+  label?: string;
+}
+const { email, label = "¿Dudas o solicitudes? Escríbenos:" } = Astro.props;
+---
+<div class="mt-6 rounded-lg border border-slate-200 bg-white p-4 text-sm">
+  <p class="m-0">
+    {label} <a class="underline" href={`mailto:${email}`}>{email}</a>
+  </p>
+</div>

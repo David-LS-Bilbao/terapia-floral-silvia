@@ -1,11 +1,63 @@
 ---
 import Base from "../../layouts/Base.astro";
+import ContactInline from "../../components/ContactInline.astro";
+const RESPONSABLE = "Silvia Adame";
+const NIF = "[NIF/NIE]";
+const EMAIL = "lopezsotelo77@gmail.com";
+const DIRECCION = "C/ [Dirección], [CP], [Localidad], [Provincia]";
+const WEB = "https://david-ls-bilbao.github.io/terapia-floral-silvia";
+// @ts-ignore Date es global en tiempo de ejecución; su tipo puede no estar disponible en el chequeo de Astro
+const HOY = new Date().toISOString().split('T')[0];
 ---
-<Base title="Política de Privacidad — Silvia Adame">
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-semibold">Política de Privacidad</h1>
-    <p class="mt-4 text-slate-700">
-      Contenido provisional. Aquí incluiremos finalidad, legitimación, conservación, cesiones, derechos ARSOPL y datos de contacto del responsable.
+<Base title="Política de Privacidad" description="Información sobre cómo tratamos tus datos personales">
+  <main class="max-w-4xl mx-auto px-4 py-12 prose">
+    <h1>Política de Privacidad</h1>
+    <p>Esta política explica cómo tratamos los datos personales que nos facilitas al usar el sitio web o contactar con nosotros.</p>
+
+    <h2>1. Responsable</h2>
+    <p>
+      Responsable: <strong>{RESPONSABLE}</strong> (NIF {NIF})<br />
+      Domicilio: {DIRECCION}<br />
+      Email: <a href={`mailto:${EMAIL}`}>{EMAIL}</a><br />
+      Web: <a href={WEB}>{WEB}</a>
     </p>
+
+    <h2>2. Datos que podemos tratar</h2>
+    <ul>
+      <li><strong>Formulario / email</strong>: nombre, email, contenido del mensaje.</li>
+      <li><strong>Solicitud de cita</strong>: nombre y medio de contacto, disponibilidad.</li>
+      <li><strong>Cookies técnicas</strong>: indispensables para funcionamiento básico.</li>
+    </ul>
+
+    <h2>3. Finalidades y base jurídica</h2>
+    <table>
+      <thead><tr><th>Finalidad</th><th>Datos</th><th>Base jurídica</th></tr></thead>
+      <tbody>
+        <tr><td>Responder consultas</td><td>Nombre, email, mensaje</td><td>Consentimiento (art. 6.1.a RGPD)</td></tr>
+        <tr><td>Gestionar citas</td><td>Contacto, disponibilidad</td><td>Medidas precontractuales / contrato (art. 6.1.b)</td></tr>
+        <tr><td>Cookies técnicas</td><td>Preferencias mínimas</td><td>Interés legítimo / servicio solicitado (art. 6.1.f)</td></tr>
+      </tbody>
+    </table>
+    <p>No se emplean analíticas ni publicidad actualmente. Si se activan en el futuro se solicitará consentimiento previo.</p>
+
+    <h2>4. Conservación</h2>
+    <p>Los datos se conservan el tiempo necesario para atender tu solicitud o mientras exista relación. Determinadas comunicaciones pueden conservarse para cumplir obligaciones legales.</p>
+
+    <h2>5. Cesiones y encargados</h2>
+    <p>No se ceden datos a terceros salvo obligación legal. Proveedores técnicos (hosting, correo) actúan como encargados bajo contrato (art. 28 RGPD).</p>
+
+    <h2>6. Derechos</h2>
+    <p>Puedes ejercer acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. También puedes reclamar ante la AEPD (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+
+    <h2>7. Seguridad</h2>
+    <p>Aplicamos medidas técnicas y organizativas razonables para proteger la información frente a accesos no autorizados, alteración o pérdida.</p>
+
+    <h2>8. Menores</h2>
+    <p>No se dirige a menores de 14 años. Si detectamos datos de un menor sin autorización, se eliminarán.</p>
+
+    <h2>9. Actualizaciones</h2>
+  <p>Podemos actualizar esta política para reflejar cambios normativos o de tratamiento. Última actualización: {HOY}.</p>
+
+    <ContactInline email={EMAIL} />
   </main>
 </Base>
