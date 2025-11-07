@@ -173,7 +173,7 @@ Permite integrar lo vivido sin quedar atrapado en ello y abrirse a crear nuevos 
   es: "Rosa Silvestre",
   en: "Wild Rose",
   grupo: "Falta de interés en el presente",
-  img: img("wild-rose"),
+  img: "flores/wild-rose.png",
   breve: "Apatía y resignación; devuelve interés y motivación vital.",
   detalle: `Para la indiferencia pasiva y la renuncia silenciosa a mejorar la situación.
 Revitaliza la voluntad, la iniciativa y la participación activa en la propia vida.`
@@ -304,21 +304,145 @@ Ayuda a transformar la reactividad en comprensión, compasión y armonía intern
 ,
 
   // 6) Desaliento o desesperación
-  { slug: "larch", es: "Alerce", en: "Larch", grupo: "Desaliento o desesperación", img: img("larch") },
-  { slug: "pine", es: "Pino", en: "Pine", grupo: "Desaliento o desesperación", img: "flores/pino.png" },
-  { slug: "elm", es: "Olmo", en: "Elm", grupo: "Desaliento o desesperación", img: img("elm") },
-  { slug: "sweet-chestnut", es: "Castaño Dulce", en: "Sweet Chestnut", grupo: "Desaliento o desesperación", img: img("sweet-chestnut") },
-  { slug: "star-of-bethlehem", es: "Estrella de Belén", en: "Star of Bethlehem", grupo: "Desaliento o desesperación", img: img("star-of-bethlehem") },
-  { slug: "willow", es: "Sauce", en: "Willow", grupo: "Desaliento o desesperación", img: img("willow") },
-  { slug: "oak", es: "Roble", en: "Oak", grupo: "Desaliento o desesperación", img: img("oak") },
-  { slug: "crab-apple", es: "Manzano Silvestre", en: "Crab Apple", grupo: "Desaliento o desesperación", img: img("crab-apple") },
+{
+  slug: "larch",
+  es: "Alerce",
+  en: "Larch",
+  grupo: "Desaliento o desesperación",
+  img: "flores/larch.png",
+  breve: "Falta de confianza y miedo al fracaso; impulsa a intentarlo con seguridad.",
+  detalle: `Para quien se siente inferior y espera fallar, por lo que ni intenta o no se entrega del todo.
+Ayuda a reconocer capacidades, atreverse y perseverar con fe en el éxito.`
+},
+{
+  slug: "pine",
+  es: "Pino",
+  en: "Pine",
+  grupo: "Desaliento o desesperación",
+  img: "flores/pino.png",
+  breve: "Culpa y autorreproche; fomenta autoaceptación y responsabilidad sana.",
+  detalle: `Para la culpa excesiva (propia o ajena), la autocrítica constante y el sentimiento de no merecer.
+Permite perdonarse, aprender del error y seguir adelante con perspectiva.`
+},
+{
+  slug: "elm",
+  es: "Olmo",
+  en: "Elm",
+  grupo: "Desaliento o desesperación",
+  img: "flores/Elm.png",
+  breve: "Abrumación por exceso de responsabilidades; devuelve confianza y perspectiva.",
+  detalle: `Personas capaces que, por un momento, se sienten superadas por la carga y dudan de su fuerza.
+Ayuda a delegar, pedir apoyo y ver los retos como manejables.`
+},
+{
+  slug: "sweet-chestnut",
+  es: "Castaño Dulce",
+  en: "Sweet Chestnut",
+  grupo: "Desaliento o desesperación",
+  img: "flores/Sweet Chestnut.png",
+  breve: "Angustia extrema y desesperación; trae luz, esperanza y fortaleza interior.",
+  detalle: `Para la “noche oscura del alma”, cuando parece no haber salida.
+Acompaña a atravesar la crisis y renacer con paz y fe renovadas.`
+},
+
+ {
+  slug: "star-of-bethlehem",
+  es: "Estrella de Belén",
+  en: "Star of Bethlehem",
+  grupo: "Desaliento o desesperación",
+  img: "flores/star-of-bethlehem.png",
+  breve: "Consola shock/trauma y alivia la pena profunda.",
+  detalle: `Para el impacto tras noticias graves, pérdidas o accidentes y para secuelas de traumas antiguos.
+Actúa como bálsamo que ayuda a integrar la experiencia, liberar el dolor y recuperar paz interior.`
+}, // basado en tu doc. :contentReference[oaicite:0]{index=0}
+
+{
+  slug: "willow",
+  es: "Sauce",
+  en: "Willow",
+  grupo: "Desaliento o desesperación",
+  img: "flores/willow.png",
+  breve: "Resentimiento y autocompasión; fomenta aceptación y perdón.",
+  detalle: `Para la amargura del “¿por qué a mí?”, rencor y queja constante tras una adversidad.
+Ayuda a soltar el victimismo, recuperar responsabilidad personal y abrirse al buen ánimo.`
+}, // basado en tu doc. :contentReference[oaicite:1]{index=1}
+
+{
+  slug: "oak",
+  es: "Roble",
+  en: "Oak",
+  grupo: "Desaliento o desesperación",
+  img: "flores/oak.png",
+  breve: "Luchador incansable que ignora el agotamiento; equilibra fuerza y descanso.",
+  detalle: `Para quienes siguen tirando del carro aunque estén extenuados y les cuesta pedir ayuda.
+Sostiene la perseverancia con sabiduría: reconocer límites, delegar y recargar energía.`
+}, // basado en tu doc. :contentReference[oaicite:2]{index=2}
+
+{
+  slug: "crab-apple",
+  es: "Manzano Silvestre",
+  en: "Crab Apple",
+  grupo: "Desaliento o desesperación",
+  img: "flores/crab-apple.png",
+  breve: "Sensación de impureza y fijación en detalles; depura y da aceptación.",
+  detalle: `Para la obsesión por pequeñas imperfecciones, vergüenza o necesidad de “limpieza”.
+Devuelve perspectiva y autoaceptación, ayudando a ver la propia pureza esencial.`
+} ,// basado en tu doc. :contentReference[oaicite:3]{index=3}
+
 
   // 7) Preocupación excesiva por los demás
-  { slug: "chicory", es: "Achicoria", en: "Chicory", grupo: "Preocupación excesiva por los demás", img: img("chicory") },
-  { slug: "vervain", es: "Verbena", en: "Vervain", grupo: "Preocupación excesiva por los demás", img: img("vervain") },
-  { slug: "vine", es: "Vid", en: "Vine", grupo: "Preocupación excesiva por los demás", img: img("vine") },
-  { slug: "beech", es: "Haya", en: "Beech", grupo: "Preocupación excesiva por los demás", img: img("beech") },
-  { slug: "rock-water", es: "Agua de Roca", en: "Rock Water", grupo: "Preocupación excesiva por los demás", img: img("rock-water") },
+  {
+  slug: "chicory",
+  es: "Achicoria",
+  en: "Chicory",
+  grupo: "Preocupación excesiva por los demás",
+  img: "flores/Chicory.png",
+  breve: "Apego posesivo y expectativa de reciprocidad.",
+  detalle: `Tendencia a “dar” esperando algo a cambio, controlar o reclamar atención/afecto.
+Favorece el amor generoso, la seguridad interna y relaciones más libres.`
+},
+{
+  slug: "vervain",
+  es: "Verbena",
+  en: "Vervain",
+  grupo: "Preocupación excesiva por los demás",
+  img: "flores/vervain.png",
+  breve: "Exceso de entusiasmo; querer convencer a toda costa.",
+  detalle: `Idealismo intenso, tensión nerviosa y dificultad para parar.
+Aporta calma, flexibilidad y capacidad de influir sin imponer.`
+},
+{
+  slug: "vine",
+  es: "Vid",
+  en: "Vine",
+  grupo: "Preocupación excesiva por los demás",
+  img: "flores/vine.png",
+  breve: "Autoridad dominante; transforma en liderazgo respetuoso.",
+  detalle: `Firmeza que puede volverse autoritarismo o intransigencia.
+Desarrolla autoridad serena, escucha y guía inspiradora.`
+},
+{
+  slug: "beech",
+  es: "Haya",
+  en: "Beech",
+  grupo: "Preocupación excesiva por los demás",
+  img: "flores/beech.png",
+  breve: "Crítica e intolerancia; fomenta comprensión y tolerancia.",
+  detalle: `Facilidad para juzgar defectos ajenos y poca paciencia con lo diferente.
+Ayuda a empatizar, aceptar matices y ver lo valioso en cada persona.`
+},
+{
+  slug: "rock-water",
+  es: "Agua de Roca",
+  en: "Rock Water",
+  grupo: "Preocupación excesiva por los demás",
+  img: "flores/rock-water.png",
+  breve: "Autoexigencia rígida y perfeccionismo ascético.",
+  detalle: `Normas internas muy estrictas, negarse placeres o descanso.
+Aporta flexibilidad, disfrute sano y adaptación sin perder principios.`
+}
+
+,
 ];
 
 // (Opcional) Rescue Remedy, por si lo quieres mostrar aparte
@@ -327,4 +451,10 @@ export const rescueRemedy = {
   es: "Remedio de Rescate",
   en: "Rescue Remedy",
   mezcla: ["star-of-bethlehem", "rock-rose", "impatiens", "cherry-plum", "clematis"],
+  breve:
+    "Fórmula de uso puntual para situaciones de shock, estrés intenso o nerviosismo.",
+  detalle:
+    "Mezcla tradicional de 5 esencias de Bach (Star of Bethlehem, Rock Rose, Impatiens, Cherry Plum y Clematis). " +
+    "Se usa como apoyo emocional inmediato ante imprevistos, sobresaltos o momentos de gran tensión. " +
+    "No sustituye un tratamiento médico ni un acompañamiento personalizado."
 };
