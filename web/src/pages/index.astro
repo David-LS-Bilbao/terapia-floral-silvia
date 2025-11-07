@@ -4,15 +4,20 @@ import Nav from "../components/Nav.astro";
 import { flores, gruposOrden, rescueRemedy } from "../data/flores";
 
 
+//const base = (import.meta as any).env.BASE_URL || "/";
 
+const base = import.meta.env.BASE_URL; // sin "as any" ni fallback
 
-const base = (import.meta as any).env.BASE_URL || "/";
 
 // Contacto (usa los definitivos que ya manejas)
 const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
 
 // Links internos
 const linkServicios = `${base}servicios/`;
+const heroImg = "home/hero.webp";
+const servicioFloresImg = "home/servicio-flores.webp";
+const servicioMindfulnessImg = "home/servicio-mindfulness.webp";
+
 const linkQueEs = `${base}que-es/`;
 const linkMindfulness = `${base}mindfulness/`;
 const linkContacto = `${base}contacto/`;
@@ -21,19 +26,21 @@ const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
 
 <Base
   title="Terapia Floral Silvia Adame — Flores de Bach en Valle de Mena y online"
-  description="Acompañamiento emocional con Flores de Bach y Mindfulness. Atención en Bizkaia y online."
+  description="Acompañamiento emocional con Flores de Bach y Mindfulness. Atención  personal en la zona del Valle de Mena (Burgos) y tambien online."
 >
   <Nav />
 
   <!-- HERO -->
   <header class="relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">
+
       <!-- fondo suave -->
       <div class="h-full w-full bg-[#FFF7F1]" />
       <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full opacity-30 blur-3xl bg-[#9FB8AD]" />
       <div class="absolute -bottom-24 -left-12 w-72 h-72 rounded-full opacity-40 blur-3xl bg-[#C77DFF]" />
     </div>
 
+    <!-- Contenido principal -->
     <section class="relative max-w-6xl mx-auto px-4 pt-16 pb-12">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
@@ -41,7 +48,7 @@ const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
             Bienestar emocional con <span class="text-[#9FB8AD]">Flores de Bach</span> y <span class="text-[#C77DFF]">Mindfulness</span>
           </h1>
           <p class="mt-4 text-slate-700">
-            Acompañamiento cercano y personalizado. Sesiones en Bizkaia y modalidad online.
+            Acompañamiento cercano y personalizado. Sesiones en la zona del Valle de Mena (Burgos) y modalidad online.
           </p>
 
           <div class="mt-6 flex flex-wrap gap-3">
@@ -64,7 +71,7 @@ const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
           <ul class="mt-6 text-sm text-slate-600 grid sm:grid-cols-3 gap-3">
             <li class="rounded-lg bg-white border border-slate-200 p-3">
               <p class="font-medium text-slate-800">Horario</p>
-              <p>L–V · 10:00–20:00</p>
+              <p>lunes a Viernes · de 10:00 a 20:00</p>
             </li>
             <li class="rounded-lg bg-white border border-slate-200 p-3">
               <p class="font-medium text-slate-800">Zona</p>
@@ -78,39 +85,22 @@ const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
         </div>
 
         <!-- Ilustración / placeholder -->
-        <div class="order-first md:order-last">
-          <div class="aspect-[4/3] rounded-2xl border border-slate-200 bg-white shadow-sm grid place-content-center text-slate-400">
-            Imagen/ilustración (luego)
-          </div>
-        </div>
-      </div>
+     <div class="order-first md:order-last">
+  <div class="aspect-[4/3] rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+    <img
+      src={`${base}${heroImg}`}
+      alt="Terapia Floral y Mindfulness"
+      class="w-full h-full object-cover"
+      width="1200" height="900" loading="lazy"
+    />
+  </div>
+</div>
     </section>
   </header>
 
   <!-- BLOQUES PRINCIPALES -->
   <main class="max-w-6xl mx-auto px-4 py-12 space-y-12">
 
-    <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm mb-8">
-  <h2 class="text-xl font-semibold">Rescue Remedy (Remedio de Rescate)</h2>
-  <p class="mt-2 text-slate-700">{rescueRemedy.breve}</p>
-  <p class="mt-2 text-slate-600 text-sm">{rescueRemedy.detalle}</p>
-
-  <div class="mt-3 text-sm text-slate-700">
-    <span class="font-medium">Componentes:</span>
-    <ul class="mt-1 flex flex-wrap gap-2">
-      {
-        rescueRemedy.mezcla.map((slug) => {
-          const f = flores.find((x) => x.slug === slug);
-          return f && (
-            <li class="after:content-[','] last:after:content-['']">
-              <a class="underline" href={`${base}flores/${f.slug}/`}>{f.es}</a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </div>
-</section>
 
 
     <!-- Tarjetas: Servicios principales -->
@@ -119,10 +109,16 @@ const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
       <p class="mt-1 text-slate-600">Comienza por donde mejor encaje contigo.</p>
 
       <div class="mt-6 grid md:grid-cols-2 gap-6">
+
         <!-- Tarjeta Flores de Bach -->
         <a href={linkServicios} class="block group rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition overflow-hidden">
-          <div class="h-40 bg-[#F7F0FF] grid place-content-center text-slate-500">
-            Foto de gotero / flor (luego)
+          <div class="h-40 overflow-hidden bg-slate-100">
+              <img
+                src={`${base}${servicioFloresImg}`}
+                alt="Flores de Bach"
+                class="w-full h-full object-cover"
+                width="1200" height="400" loading="lazy"
+              />
           </div>
           <div class="p-5">
             <h3 class="text-lg font-semibold text-slate-900">Terapia Floral · Flores de Bach</h3>
@@ -137,8 +133,15 @@ const linkFlores = `${base}flores/`; // lo puedes comentar si aún no existe
 
         <!-- Tarjeta Mindfulness -->
         <a href={linkMindfulness} class="block group rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition overflow-hidden">
-          <div class="h-40 bg-[#EAF4EF] grid place-content-center text-slate-500">
-            Foto de respiración/conexión (luego)
+         <div class="h-40 overflow-hidden bg-slate-100">
+                  <img
+                    src={`${base}${servicioMindfulnessImg}`}
+                    alt="Mindfulness"
+                    class="w-full h-full object-cover"
+                    width="1200" height="400" loading="lazy"
+                  />
+
+
           </div>
           <div class="p-5">
             <h3 class="text-lg font-semibold text-slate-900">Mindfulness</h3>

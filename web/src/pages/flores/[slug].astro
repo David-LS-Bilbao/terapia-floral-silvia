@@ -5,6 +5,8 @@ import Nav from "../../components/Nav.astro";
 import { flores } from "../../data/flores";
 
 export async function getStaticPaths() {
+
+  
   // @ts-ignore
   return flores.map((flor) => ({
     params: { slug: flor.slug },
@@ -45,9 +47,9 @@ const description = `Información básica sobre ${flor.es} (${flor.en}).`;
 
   <h2>Usos habituales (resumen)</h2>
   {flor.breve ? <p>{flor.breve}</p> : <p>Pendiente de completar con lenguaje claro.</p>}
-
+<!--
   <h2>Cómo se suele utilizar</h2>
   <p>Dentro del acompañamiento personalizado. No sustituye tratamiento médico.</p>
-</main>
+-->
 
 </Base>
