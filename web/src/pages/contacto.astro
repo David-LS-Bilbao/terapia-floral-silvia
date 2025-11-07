@@ -1,51 +1,92 @@
 ---
 import Base from "../layouts/Base.astro";
-import Nav from "../components/Nav.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import WhoAmI from "../components/WhoAmI.astro";
+import silvia from "../assets/silvia.png"; // coloca la foto en /web/src/assets/silvia.png
 
-const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20pedir%20cita%20o%20informaci%C3%B3n.";
 const email = "burdeos.3@hotmail.com";
+
+// FAKE hasta recibir datos reales:
+const nombre = "Silvia Adame";
+const titulo = "Terapeuta Floral · Mindfulness";
+const resumen = "Acompaño procesos emocionales con Flores de Bach, escucha activa y técnicas de atención plena. Sesiones presenciales en Bizkaia y online.";
+const formacion = [
+  "Formación en Terapia Floral (Flores de Bach, 2022–2024)",
+  "Curso de Mindfulness y Gestión Emocional (120h)",
+  "Atención y acompañamiento a personas en procesos de cambio",
+];
+
+const site = (import.meta as any).env.BASE_URL || "/";
 ---
 
-<Base title="Contacto — Silvia Adame" description="Pide información o reserva tu cita por WhatsApp o email. Atención en Bizkaia y online.">
-  <Nav />
+<Base title="Contacto" description="Pide tu cita con Silvia Adame — Flores de Bach y Mindfulness">
+  <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <!-- Cabecera -->
+    <header class="mb-8 md:mb-12">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Contacto</h1>
+      <p class="mt-2 text-neutral-600">Bizkaia (y online). Burgos próximamente.</p>
+    </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
-    <!-- Columna: CTA contacto directo -->
-    <section class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
-      <h1 class="text-2xl font-semibold">Pide tu cita o información</h1>
-      <p class="mt-2 text-slate-600">Bizkaia (y online). Burgos próximamente.</p>
+    <!-- Grid principal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <!-- CTA de contacto -->
+      <section class="rounded-2xl bg-white/70 backdrop-blur shadow-sm ring-1 ring-black/5 p-6 md:p-8">
+        <h2 class="text-xl md:text-2xl font-semibold">Pide tu cita o información</h2>
+        <p class="mt-1 text-neutral-600">Te respondo en el mismo día laboral.</p>
 
-      <div class="mt-4 space-y-3">
-        <a
-          class="block text-center rounded-xl px-4 py-3 bg-[#9FB8AD] text-white"
-          href={whatsapp}
-          aria-label="Abrir WhatsApp para contactar con Silvia"
-        >
-          WhatsApp
-        </a>
+        <div class="mt-6 flex flex-col gap-3">
+          <a href={whatsapp} target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium bg-[--btn] text-white hover:opacity-95 transition"
+             style="--btn:#8aa896">
+            WhatsApp
+          </a>
 
-        <a
-          class="block text-center rounded-xl px-4 py-3 bg-[#C77DFF] text-white break-all"
-          href={`mailto:${email}?subject=Información%20Terapia%20Floral`}
-          aria-label={`Enviar email a ${email}`}
-        >
-          {email}
-        </a>
-      </div>
+          <a href={`mailto:${email}`} class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium bg-[--btn] text-white hover:opacity-95 transition"
+             style="--btn:#b081f2">
+            {email}
+          </a>
+        </div>
 
-      <p class="mt-4 text-xs text-slate-500">
-        Al contactar aceptas la Política de privacidad.
-      </p>
-    </section>
+        <p class="mt-3 text-xs text-neutral-500">
+          Al contactar aceptas la <a class="underline" href={site + "privacidad/"}>Política de privacidad</a>.
+        </p>
 
-    <!-- Columna: Placeholder de calendario -->
-    <section class="rounded-2xl border border-dashed border-slate-300 p-6 bg-[#FFFAFE] text-slate-500">
-      <p class="font-medium">Hueco para calendario embebido</p>
-      <p class="text-sm mt-2">Insertaremos Calendly / Cal.com (MVP).</p>
-      <div class="mt-6 h-56 bg-white rounded-xl grid place-content-center text-sm border border-slate-200">
-        Widget de reservas
-      </div>
-    </section>
+        <div class="mt-6">
+          <SocialLinks
+            facebook="https://facebook.com/usuario.de.silvia" 
+            instagram="https://instagram.com/usuario.de.silvia"
+            tiktok="https://www.tiktok.com/@usuario.de.silvia"
+            class="text-neutral-700"
+            size={22} />
+        </div>
+      </section>
+
+      <!-- Quién soy + foto (sustituye al calendario) -->
+      <WhoAmI
+        name={nombre}
+        title={titulo}
+        summary={resumen}
+        bullets={formacion}
+        photoSrc={silvia}
+        photoAlt="Silvia Adame durante una sesión" />
+    </div>
+
+    <!-- SEO Schema -->
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": nombre,
+        "jobTitle": titulo,
+        "description": resumen,
+        "email": `mailto:${email}`,
+        "sameAs": [
+          "https://facebook.com/usuario.de.silvia",
+          "https://instagram.com/usuario.de.silvia",
+          "https://www.tiktok.com/@usuario.de.silvia"
+        ]
+      })}
+    </script>
   </main>
 </Base>
-
