@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+
+// @ts-ignore
+const BASE = ((import.meta as any).env?.BASE_URL ?? "/").replace(/\/+$/, "/");
+// @ts-ignore
+const link = (p="") => `${BASE}${p.replace(/^\/+/, "")}`;
+const heroImg = "home/hero.webp";
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
+const linkServicios = link("servicios/");
+---
+<Base title="Hero B — Demo" description="Demo minimal del hero">
+  <Nav />
+  <header class="relative isolate min-h-[86vh] overflow-hidden">
+    <img src={link(heroImg)} alt="Meditación al atardecer" class="absolute inset-0 -z-10 h-full w-full object-cover" width="2400" height="1600" />
+    <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,6,23,0.70)_0%,rgba(2,6,23,0.45)_40%,rgba(2,6,23,0.15)_60%,rgba(255,255,255,0)_100%)]"></div>
+
+    <section class="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div class="max-w-2xl">
+        <h1 class="brand-title text-4xl md:text-6xl font-semibold leading-tight text-white">
+          Bienestar emocional con <span class="text-[#9FB8AD]">Flores de Bach</span> y <span class="text-[#C77DFF]">Mindfulness</span>
+        </h1>
+        <p class="brand-text mt-5 text-white/90 text-lg">Acompañamiento respetuoso y sencillo. Valle de Mena (Burgos) y online.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href={whatsapp} class="brand-text rounded-xl bg-[#3B755F] px-6 py-3 text-white font-medium hover:opacity-90">Pedir cita</a>
+          <a href={linkServicios} class="brand-text rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-white backdrop-blur-md hover:bg-white/15">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+  </header>
+</Base>
