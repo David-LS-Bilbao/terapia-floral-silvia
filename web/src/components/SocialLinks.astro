@@ -7,7 +7,8 @@ interface Props {
   size?: number;
 }
 const { facebook, instagram, tiktok, class:klass = "", size = 22 } = Astro.props;
-const iconCls = "w-["+size+"px] h-["+size+"px]";
+// Usar clases fijas de Tailwind en lugar de dinámicas
+const iconCls = size <= 16 ? "w-4 h-4" : size <= 20 ? "w-5 h-5" : size <= 24 ? "w-6 h-6" : size <= 32 ? "w-8 h-8" : "w-12 h-12";
 ---
 <nav class={`flex items-center gap-4 ${klass}`} aria-label="Redes sociales">
   {facebook && (

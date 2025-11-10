@@ -2,7 +2,9 @@
 import Base from "../layouts/Base.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import WhoAmI from "../components/WhoAmI.astro";
-import silvia from "../assets/silvia.png"; // coloca la foto en /web/src/assets/silvia.png
+
+const base = (import.meta as any).env?.BASE_URL || "/";
+const silvia = base + "silvia.png";
 
 const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20pedir%20cita%20o%20informaci%C3%B3n.";
 const email = "burdeos.3@hotmail.com";
@@ -10,7 +12,7 @@ const email = "burdeos.3@hotmail.com";
 // FAKE hasta recibir datos reales:
 const nombre = "Silvia Adame";
 const titulo = "Terapeuta Floral · Mindfulness";
-const resumen = "Acompaño procesos emocionales con Flores de Bach, escucha activa y técnicas de atención plena. Sesiones presenciales en Bizkaia y online.";
+const resumen = "Acompaño procesos emocionales con Flores de Bach, escucha activa y técnicas de atención plena. Sesiones presenciales en Valle de Mena y online.";
 const formacion = [
   "Formación en Terapia Floral (Flores de Bach, 2022–2024)",
   "Curso de Mindfulness y Gestión Emocional (120h)",
@@ -25,7 +27,7 @@ const site = (import.meta as any).env.BASE_URL || "/";
     <!-- Cabecera -->
     <header class="mb-8 md:mb-12">
       <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Contacto</h1>
-      <p class="mt-2 text-neutral-600">Bizkaia (y online). Burgos próximamente.</p>
+      <p class="mt-2 text-neutral-600">Valle de Mena (y online).</p>
     </header>
 
     <!-- Grid principal -->
@@ -37,13 +39,11 @@ const site = (import.meta as any).env.BASE_URL || "/";
 
         <div class="mt-6 flex flex-col gap-3">
           <a href={whatsapp} target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium bg-[--btn] text-white hover:opacity-95 transition"
-             style="--btn:#8aa896">
+             class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium bg-green-600 text-white hover:bg-green-700 transition">
             WhatsApp
           </a>
 
-          <a href={`mailto:${email}`} class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium bg-[--btn] text-white hover:opacity-95 transition"
-             style="--btn:#b081f2">
+          <a href={`mailto:${email}`} class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium bg-purple-500 text-white hover:bg-purple-600 transition">
             {email}
           </a>
         </div>
@@ -57,19 +57,19 @@ const site = (import.meta as any).env.BASE_URL || "/";
             facebook="https://facebook.com/usuario.de.silvia" 
             instagram="https://instagram.com/usuario.de.silvia"
             tiktok="https://www.tiktok.com/@usuario.de.silvia"
-            class="text-neutral-700"
-            size={22} />
+            class="text-neutral-800 justify-center gap-8"
+            size={32} />
         </div>
       </section>
 
-      <!-- Quién soy + foto (sustituye al calendario) -->
+      <!-- Quién soy + foto  -->
       <WhoAmI
         name={nombre}
         title={titulo}
         summary={resumen}
         bullets={formacion}
         photoSrc={silvia}
-        photoAlt="Silvia Adame durante una sesión" />
+        photoAlt="Silvia Adame" />
     </div>
 
     <!-- SEO Schema -->
