@@ -18,10 +18,9 @@ const {
 
 // Helper para respetar el base path en GitHub Pages
 const withBase = (path?: string): string => {
-  // Para desarrollo local usamos "/" y para producción GitHub Pages usa "/terapia-floral-silvia/"
-  const base = "/terapia-floral-silvia/";
+  const base = (import.meta as any).env?.BASE_URL || "/";
   if (!path) return base;
-  return base + path;
+  return base.endsWith('/') ? base + path : base + '/' + path;
 };
 ---
 <html lang="es">

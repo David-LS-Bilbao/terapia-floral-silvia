@@ -1,12 +1,15 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", ".astro/types.d.ts"],
-  "exclude": ["dist"]
+  "include": ["src/**/*", ".astro/types.d.ts"],
+  "exclude": ["dist", "node_modules"]
 }

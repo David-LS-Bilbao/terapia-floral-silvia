@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const base = "/terapia-floral-silvia/";
+const base = (import.meta as any).env?.BASE_URL || "/";
 // @ts-ignore
 const { flor } = Astro.props;
 const title = `${flor.es} — Flores de Bach`;
