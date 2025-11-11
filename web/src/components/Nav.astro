@@ -15,7 +15,7 @@ const here = normalize(Astro.url.pathname);
 
 // Links del sitio (añade/quita según tus páginas)
 const links = [
-  { href: normalize(`${base}`),                label: "Inicio" },
+  { href: normalize(`${base}hero-b/`),         label: "Inicio" },
   { href: normalize(`${base}servicios/`),      label: "Servicios" },
   { href: normalize(`${base}contacto/`),       label: "Contacto" },
   // { href: normalize(`${base}flores/`),      label: "Flores de Bach" }, // cuando la habilites
@@ -28,7 +28,7 @@ const isActive = (href: string) => here === href;
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
    
     <!-- Logo / Marca -->
-    <a href={base} class="flex items-center gap-3 font-semibold text-slate-800" aria-label="Ir al inicio">
+    <a href={`${base}hero-b/`} class="flex items-center gap-3 font-semibold text-slate-800" aria-label="Ir al inicio">
       <Logo size="small" priority={true} />
       <span>Terapias Naturales - Silvia Adame</span>
     </a>
