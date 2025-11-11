@@ -28,6 +28,16 @@ const withBase = (path?: string): string => {
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
+
+
+<script type="module">
+  import initScrollAnimations from "../scripts/scroll-animate.js";
+  initScrollAnimations();
+</script>
+
+
+
+
   <body class="bg-[#FFF7F1] text-slate-800">
     <slot />
 
