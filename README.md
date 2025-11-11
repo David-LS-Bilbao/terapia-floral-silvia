@@ -1,43 +1,96 @@
-# Astro Starter Kit: Minimal
+# 🌸 Terapia Floral Silvia Adame
 
-```sh
-npm create astro@latest -- --template minimal
-```
+> Sitio web oficial de **Silvia Adame** - Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción®
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![Deploy to GitHub Pages](https://github.com/David-LS-Bilbao/terapia-floral-silvia/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/David-LS-Bilbao/terapia-floral-silvia/actions)
+[![Astro](https://img.shields.io/badge/Built%20with-Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-## 🚀 Project Structure
+## 🌟 Acerca del Proyecto
 
-Inside of your Astro project, you'll see the following folders and files:
+Sitio web profesional para **Silvia Adame**, terapeuta especializada en:
+- 🌼 **Terapia Floral de Bach** - 38 esencias florales para el equilibrio emocional
+- 🧘‍♀️ **Mindfulness** - Técnicas de atención plena y gestión emocional
+- 🧠 **Bioneuroemoción®** - Comprensión del origen emocional de los síntomas
+
+### ✨ Características
+
+- **Responsive Design** - Optimizado para todos los dispositivos
+- **Rendimiento Optimizado** - Construido con Astro para carga ultra-rápida
+- **Accesibilidad** - Cumple estándares WCAG para accesibilidad web
+- **SEO Optimizado** - Meta tags, schema markup y sitemap incluidos
+- **Catálogo Completo** - Información detallada de las 38 Flores de Bach
+- **Integración Multimedia** - Videos explicativos y animaciones suaves
+- **Formulario de Contacto** - Enlaces directos a WhatsApp y redes sociales
+
+## 🚀 Demo en Vivo
+
+🔗 **[https://david-ls-bilbao.github.io/terapia-floral-silvia/](https://david-ls-bilbao.github.io/terapia-floral-silvia/)**
+
+## 📂 Estructura del Repositorio
+
+El proyecto está organizado con el código principal en el directorio `/web/`:
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+terapia-floral-silvia/
+├── web/                          # 👈 Proyecto principal
+│   ├── src/                     # Código fuente Astro
+│   ├── public/                  # Archivos estáticos 
+│   ├── tests/                   # Tests automatizados
+│   └── package.json             # Dependencias del proyecto
+└── README.md                    # Este archivo
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Desarrollo
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Para trabajar en el proyecto:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+# Clonar el repositorio
+git clone https://github.com/David-LS-Bilbao/terapia-floral-silvia.git
 
-## 🧞 Commands
+# Navegar al directorio del proyecto
+cd terapia-floral-silvia/web
 
-All commands are run from the root of the project, from a terminal:
+# Instalar dependencias
+pnpm install
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+# Iniciar servidor de desarrollo
+pnpm dev
+```
 
-## 👀 Want to learn more?
+## 📋 Información Completa
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Para documentación técnica completa, ver: **[/web/README.md](./web/README.md)**
+
+## 🎯 Características Destacadas
+
+- **🌼 Catálogo Completo**: Las 38 Flores de Bach con información detallada
+- **🧘‍♀️ Páginas Informativas**: Mindfulness, Bioneuroemoción® y Terapia Floral
+- **📱 Totalmente Responsive**: Optimizado para móviles, tablets y desktop
+- **⚡ Ultra Rápido**: Construido con Astro para máximo rendimiento  
+- **🎬 Multimedia**: Videos explicativos integrados
+- **📞 Contacto Directo**: Enlaces a WhatsApp y redes sociales
+
+## 🛠️ Tecnologías
+
+- **Framework**: Astro 5.15.5
+- **Estilos**: Tailwind CSS 4.1.17  
+- **Lenguaje**: TypeScript
+- **Testing**: Vitest + Playwright
+- **Deploy**: GitHub Pages
+
+## 📧 Contacto
+
+**Silvia Adame** - Terapeuta Floral
+- 📞 WhatsApp: +34 687 235 652
+- 📧 Email: burdeos.3@hotmail.com
+- 📍 Valle de Mena, Bizkaia
+
+**Desarrollador**
+- 👨‍💻 David López-Sotelo
+- � [lopezsotelo77@gmail.com](mailto:lopezsotelo77@gmail.com)
+
+---
+
+© 2025 Terapia Floral Silvia Adame. Todos los derechos reservados.
