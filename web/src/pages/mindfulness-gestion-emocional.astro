@@ -34,6 +34,51 @@ const jsonLd = JSON.stringify({
     <article
       class="rounded-2xl bg-white border border-slate-200 shadow-sm p-6 md:p-10 space-y-10"
     >
+
+
+
+
+          <!-- 🎥 Vídeo integrador Mindfulness + Terapia Floral + Bioneuroemoción -->
+<section data-animate="fadeInUp" class="mb-16 opacity-0">
+  <h2 class="text-2xl font-semibold mb-6 flex items-center">
+    <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+      <span class="text-purple-600 font-semibold">🎥</span>
+    </span>
+    Mindfulness, Terapia Floral y Bioneuroemoción
+  </h2>
+
+  <div class="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
+    <video
+      controls
+      preload="metadata"
+      poster={`${BASE_URL}media/Mindfulness_Terapias-poster.jpg`}
+      class="w-full h-auto rounded-xl"
+      aria-label="Vídeo explicativo sobre Mindfulness, Terapia Floral y Bioneuroemoción con Silvia Adame"
+    >
+      <source src={`${BASE_URL}media/Mindfulness_Terapias.webm`} type="video/webm" />
+      <source src={`${BASE_URL}media/Mindfulness_Terapias-optimized.mp4`} type="video/mp4" />
+      Tu navegador no soporta vídeo HTML5.
+      <a href={`${BASE_URL}media/Mindfulness_Terapias-optimized.mp4`}>Descargar vídeo</a>.
+    </video>
+  </div>
+
+  <p class="mt-6 text-slate-700 leading-relaxed text-lg">
+    En este vídeo, <strong>un experto</strong> explica cómo integra el 
+    <strong>Mindfulness</strong>, la <strong>Terapia Floral de Bach</strong> y la 
+    <strong>Bioneuroemoción</strong> como pilares de un mismo enfoque orientado al equilibrio emocional.  
+    A través de estas herramientas, enseña a gestionar las emociones con conciencia, 
+    reconectar con el bienestar interior y acompañar los procesos personales desde la amabilidad y la comprensión.
+  </p>
+</section>
+
+
+
+
+
+
+
+
+
       <!-- Qué es -->
       <section id="que-es">
         <h2 class="text-2xl font-semibold mb-2">Qué es Mindfulness</h2>
@@ -135,6 +180,16 @@ const jsonLd = JSON.stringify({
             class="inline-flex items-center rounded-xl px-5 py-3 bg-purple-600 text-white font-medium hover:bg-purple-700 transition"
           >
             Pedir una sesión
+          </a>
+        </div>
+        
+      <!-- boton inicio -->
+       <div class="mt-8 text-center">
+          <a
+            href={BASE_URL}
+            class="inline-flex items-center rounded-xl px-5 py-3 bg-slate-100 text-slate-800 font-medium hover:bg-slate-200 transition"
+          >
+            ← Volver al inicio
           </a>
         </div>
       </section>
