@@ -1,57 +1,115 @@
 ---
+// imports y variables como los tenías arriba en el archivo
 import Base from "../layouts/Base.astro";
-
 import Nav from "../components/Nav.astro";
-
-
 
 const base = (import.meta as any).env.BASE_URL || "/";
 const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
 ---
+
 <Base title="Servicios — Silvia Adame" description="Sesiones de Terapia Floral (Flores de Bach) y Mindfulness. Atención en Bizkaia y online.">
   <Nav />
   <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
-    <section class="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
-      <h1 class="text-2xl font-semibold">Servicios</h1>
-      <p class="mt-2 text-slate-600">Acompañamiento cercano y práctico. Sin tecnicismos.</p>
 
-      <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <!-- Flores de Bach -->
-        <article class="rounded-xl border border-slate-200 p-5 bg-[#F7F0FF]/40">
-          <h2 class="text-lg font-semibold">Terapia Floral (Flores de Bach)</h2>
-          <ul class="mt-2 list-disc ml-5 text-slate-700 space-y-1">
-            <li>Sesión inicial: valoración y objetivo.</li>
-            <li>Entrega de preparado personalizado.</li>
-            <li>Seguimiento por WhatsApp.</li>
-          </ul>
-          <div class="mt-4 flex gap-3">
-            <a href={`${base}que-es/`} class="text-sm underline">¿Qué es la Terapia Floral?</a>
-            <a href={whatsapp} class="text-sm underline">Pedir cita</a>
-          </div>
-        </article>
+    <!-- ======================================================
+         Section principal:
+         - Panel blanco ocupa el ancho del "main"
+         - Dentro del panel centramos el contenido con `max-w-3xl mx-auto`
+         - Grid mantiene la simetría y las tarjetas/botones tendrán
+           la misma anchura en cada columna.
+         ====================================================== -->
+    <section class="rounded-2xl bg-white border border-slate-200 p-8 shadow-sm">
+      <!-- Contenedor interior centrado -->
+      <div class="mx-auto max-w-4xl">
+        <div class="text-center mb-8">
+          <h1 class="text-2xl font-semibold">Servicios</h1>
+          <p class="mt-2 text-slate-600">Acompañamiento cercano y práctico. Sin tecnicismos.</p>
+        </div>
 
-        <!-- Mindfulness -->
-        <article class="rounded-xl border border-slate-200 p-5 bg-[#EAF4EF]/60">
-          <h2 class="text-lg font-semibold">Mindfulness</h2>
-          <ul class="mt-2 list-disc ml-5 text-slate-700 space-y-1">
-            <li>Ejercicios sencillos y progresivos.</li>
-            <li>Estrategias de respiración y presencia.</li>
-            <li>Hábitos para casa, con seguimiento.</li>
-          </ul>
-          <div class="mt-4 flex gap-3">
-            <a href={`${base}mindfulness/`} class="text-sm underline">Saber más</a>
-            <a href={whatsapp} class="text-sm underline">Pedir cita</a>
-          </div>
-        </article>
+        <!-- Grid: 2 cols en md, centrado. Al estar dentro de un max-w centrado,
+             todo quedará centrado respecto al panel. gap = 6. -->
+        <div class="mt-6 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <!-- Tarjeta 1 (fila 1, col 1) -->
+          <article class="rounded-xl border border-slate-200 p-5 bg-[#F7F0FF]/40">
+            <h2 class="text-lg font-semibold">Terapia Floral (Flores de Bach)</h2>
+            <ul class="mt-2 list-disc ml-5 text-slate-700 space-y-1">
+              <li>Sesión inicial: valoración y objetivo.</li>
+              <li>Entrega de preparado personalizado.</li>
+              <li>Seguimiento por WhatsApp.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+              <a href={`${base}que-es/`} class="text-sm underline">¿Qué es la Terapia Floral?</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 (fila 1, col 2) -->
+          <article class="rounded-xl border border-slate-200 p-5 bg-[#EAF4EF]/60">
+            <h2 class="text-lg font-semibold">Mindfulness</h2>
+            <ul class="mt-2 list-disc ml-5 text-slate-700 space-y-1">
+              <li>Ejercicios sencillos y progresivos.</li>
+              <li>Estrategias de respiración y presencia.</li>
+              <li>Hábitos para casa, con seguimiento.</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+              <a href={`${base}mindfulness/`} class="text-sm underline">Saber más</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Botones de exploración -->
+        <div class="mt-8 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <a
+            href={`${base}flores/`}
+            class="block rounded-xl border border-purple-200 p-5 bg-[#F7F0FF]/40 hover:bg-[#EFEAFF]/60 transition-all duration-200 hover:shadow-lg hover:border-purple-300"
+            aria-label="Explorar el catálogo de Flores de Bach"
+          >
+            <div class="flex items-center gap-4">
+              <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22Z" fill="#E879F9" opacity="0.2"/>
+                <path d="M12 8L14.5 10.5L12 13L9.5 10.5L12 8Z" fill="#A855F7"/>
+                <path d="M12 13L14.5 15.5L12 18L9.5 15.5L12 13Z" fill="#9333EA"/>
+                <path d="M8 12L10.5 14.5L13 12L10.5 9.5L8 12Z" fill="#7C3AED"/>
+                <path d="M16 12L18.5 14.5L21 12L18.5 9.5L16 12Z" fill="#7C3AED"/>
+                <path d="M12 6L14.5 8.5L12 11L9.5 8.5L12 6Z" fill="#8B5CF6"/>
+                <circle cx="12" cy="12" r="2" fill="#FCD34D"/>
+              </svg>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-800">Explorar Flores de Bach</h3>
+                <p class="text-sm text-slate-600 mt-1">Descubre las 38 esencias florales y sus usos</p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href={`${base}bioneuroemocion/`}
+            class="block rounded-xl border border-orange-200 p-5 bg-[#FFF7ED]/60 hover:bg-[#FEF3E2]/80 transition-all duration-200 hover:shadow-lg hover:border-orange-300"
+            aria-label="Conocer más sobre bioneuroemoción@"
+          >
+            <div class="flex items-center gap-4">
+              <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#F97316" opacity="0.3"/>
+                <circle cx="9" cy="8" r="2" fill="#EA580C"/>
+                <circle cx="15" cy="8" r="2" fill="#DC2626"/>
+                <path d="M12 11c-1.5 0-2.7.8-3.2 2H6v2h2.8c.5 1.2 1.7 2 3.2 2s2.7-.8 3.2-2H18v-2h-2.8c-.5-1.2-1.7-2-3.2-2z" fill="#F59E0B"/>
+                <path d="M8 12h8M10 14h4" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-800">bioneuroemoción@</h3>
+                <p class="text-sm text-slate-600 mt-1">Comprende la conexión emocional de los síntomas</p>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- CTA final -->
+    <!-- CTA final (igual que antes) -->
     <section class="text-center rounded-2xl bg-white border border-slate-200 p-6">
       <h3 class="text-xl font-semibold">¿Hablamos?</h3>
       <p class="mt-1 text-slate-600">Te explico el proceso y resolvemos dudas.</p>
       <a href={whatsapp} class="inline-block mt-4 px-5 py-3 rounded-xl bg-[#9FB8AD] text-white shadow hover:opacity-90">
-        Pedir cita por WhatsApp
+        Pedir información por WhatsApp
       </a>
     </section>
   </main>
