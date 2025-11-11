@@ -1,0 +1,172 @@
+---
+import Base from "../layouts/Base.astro";
+
+const BASE_URL = import.meta.env.BASE_URL || "/";
+
+const title = "Mindfulness y Gestión Emocional — Silvia Adame";
+const description =
+  "Resumen del enfoque de Silvia Adame sobre Mindfulness, gestión emocional y Psicología Positiva. Qué es, qué no es, beneficios y aplicaciones prácticas.";
+
+// JSON-LD como cadena segura
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  author: {
+    "@type": "Person",
+    name: "Silvia Adame",
+  },
+});
+---
+
+<Base title={title} description={description}>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <!-- Cabecera -->
+    <header class="text-center">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">{title}</h1>
+      <p class="mt-3 text-neutral-600 max-w-2xl mx-auto">
+        Un recorrido práctico por los fundamentos del Mindfulness, su relación
+        con la gestión emocional y la Psicología Positiva.
+      </p>
+    </header>
+
+    <!-- Contenedor principal -->
+    <article
+      class="rounded-2xl bg-white border border-slate-200 shadow-sm p-6 md:p-10 space-y-10"
+    >
+      <!-- Qué es -->
+      <section id="que-es">
+        <h2 class="text-2xl font-semibold mb-2">Qué es Mindfulness</h2>
+        <p class="text-slate-700">
+          Mindfulness es la práctica de prestar atención al momento presente con
+          una actitud de apertura y aceptación. Aunque tiene raíces en las
+          tradiciones orientales, hoy se aplica en contextos terapéuticos,
+          educativos y laborales para mejorar la salud y el bienestar.
+        </p>
+        <p class="text-slate-700 mt-3">
+          La neurociencia ha demostrado que su práctica regular fortalece los
+          circuitos cerebrales que regulan las emociones, favoreciendo una mayor
+          calma y claridad mental.
+        </p>
+      </section>
+
+      <!-- Qué no es -->
+      <section id="que-no-es">
+        <h2 class="text-2xl font-semibold mb-2">Qué no es Mindfulness</h2>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+          <li>No es simplemente relajación, aunque puede aportar calma.</li>
+          <li>
+            No consiste en dejar la mente en blanco, sino en observar los
+            pensamientos sin juzgarlos.
+          </li>
+          <li>
+            No implica resignarse, sino aceptar para transformar la experiencia
+            con consciencia y elección.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Beneficios -->
+      <section id="beneficios">
+        <h2 class="text-2xl font-semibold mb-2">Beneficios</h2>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+          <li>Reducción del estrés y la ansiedad.</li>
+          <li>Mejor atención, creatividad y toma de decisiones.</li>
+          <li>Incremento de la resiliencia y bienestar general.</li>
+          <li>Disminución del dolor crónico y del insomnio.</li>
+        </ul>
+      </section>
+
+      <!-- Aplicaciones -->
+      <section id="aplicaciones">
+        <h2 class="text-2xl font-semibold mb-2">Aplicaciones del Mindfulness</h2>
+        <p class="text-slate-700 mb-3">
+          La práctica se integra hoy en día en numerosos ámbitos:
+        </p>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+          <li>
+            <strong>Sanidad:</strong> mejora del manejo del dolor, la ansiedad y
+            la depresión.
+          </li>
+          <li>
+            <strong>Educación:</strong> fomenta la atención, la empatía y la
+            convivencia.
+          </li>
+          <li>
+            <strong>Empresas:</strong> reduce el estrés laboral y mejora la
+            productividad.
+          </li>
+          <li>
+            <strong>Deporte:</strong> ayuda a la concentración y la regulación
+            emocional.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Gestión emocional -->
+      <section id="gestion-emocional">
+        <h2 class="text-2xl font-semibold mb-2">
+          Gestión emocional y Psicología Positiva
+        </h2>
+        <p class="text-slate-700">
+          Mindfulness nos enseña a observar los pensamientos y emociones con
+          distancia y sin juicio, generando el espacio necesario para elegir una
+          respuesta más consciente. Esta pausa entre estímulo y reacción nos
+          permite actuar desde la calma en lugar del impulso.
+        </p>
+        <p class="text-slate-700 mt-3">
+          La Psicología Positiva complementa este trabajo mediante el desarrollo
+          de las fortalezas personales: recursos internos como la gratitud, la
+          curiosidad o la compasión, que favorecen la resiliencia y el equilibrio
+          emocional.
+        </p>
+      </section>
+
+      <!-- Ejercicio breve -->
+      <section id="ejercicio">
+        <h2 class="text-2xl font-semibold mb-2">
+          Ejercicio sencillo de atención plena
+        </h2>
+        <ol class="list-decimal ml-5 text-slate-700 space-y-2">
+          <li>Siéntate cómodamente con la espalda recta.</li>
+          <li>
+            Lleva la atención a tu respiración, observando cómo entra y sale el
+            aire.
+          </li>
+          <li>
+            Cuando aparezcan pensamientos, reconócelos con amabilidad y vuelve a
+            la respiración.
+          </li>
+          <li>Practica durante 5 minutos al día.</li>
+        </ol>
+      </section>
+
+      <!-- Conclusión -->
+      <section id="conclusion">
+        <h2 class="text-2xl font-semibold mb-2">Conclusión</h2>
+        <p class="text-slate-700">
+          Mindfulness es más que una técnica: es una forma de vivir con
+          consciencia, presencia y amabilidad hacia uno mismo. En las sesiones
+          que realizo, integro esta práctica con herramientas de gestión
+          emocional y Psicología Positiva para acompañar procesos de cambio
+          personales y promover bienestar duradero.
+        </p>
+
+        <div class="mt-6 text-center">
+          <a
+            href={BASE_URL + "contacto/"}
+            class="inline-flex items-center rounded-xl px-5 py-3 bg-purple-600 text-white font-medium hover:bg-purple-700 transition"
+          >
+            Pedir una sesión de Mindfulness
+          </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- SEO Schema -->
+  <script type="application/ld+json" is:inline>
+    {@html jsonLd}
+  </script>
+</Base>
