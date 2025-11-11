@@ -36,8 +36,64 @@ const linkContacto = `${base}contacto/`;
           El Mindfulness es un concepto que se traduce del vocablo pali Sati, que significa "atención plena" o "conciencia". Su forma moderna, o secular, fue desarrollada por Jon Kabat-Zinn en la Universidad de Massachusetts a partir de las tradiciones budistas orientales, dando origen al programa MBSR (Reducción del Estrés Basada en el Mindfulness) en 1979.
         </p>
       </div>
-
       <div class="space-y-8">
+
+
+
+
+
+        
+
+
+        <!-- 🎥 Vídeo resumen Mindfulness con scroll reveal -->
+<section data-animate="fadeInUp" class="mb-16">
+  <h2 class="text-2xl font-medium text-slate-800 mb-6 flex items-center">
+    <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+      <span class="text-green-600 font-semibold">🎥</span>
+    </span>
+    Mindfulness y Bienestar Emocional
+  </h2>
+
+  <div class="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
+    <video
+      controls
+      preload="metadata"
+      poster={`${base}media/Mindfulness_Resumen-poster.jpg`}
+      class="w-full h-auto rounded-xl"
+      aria-label="Vídeo resumen sobre Mindfulness con Silvia Adame"
+      width="800"
+      height="450"
+    >
+      <source src={`${base}media/Mindfulness_Resumen.webm`} type="video/webm" />
+      <source src={`${base}media/Mindfulness_Resumen-optimized.mp4`} type="video/mp4" />
+      Tu navegador no soporta vídeo HTML5.
+      <a href={`${base}media/Mindfulness_Resumen-optimized.mp4`}>Descargar vídeo</a>.
+    </video>
+  </div>
+
+  <p class="mt-6 text-slate-700 leading-relaxed text-lg">
+    En este vídeo, <strong>Silvia Adame</strong> explica cómo el 
+    <strong>Mindfulness</strong> puede ayudarte a reducir el estrés, 
+    mejorar la concentración y reconectar con tu equilibrio interior.  
+    A través de la práctica de la atención plena, Silvia enseña a observar los pensamientos y emociones sin juicio, 
+    cultivando una presencia más consciente y compasiva en la vida diaria.
+  </p>
+
+  <div class="mt-8">
+    <a href={whatsapp}
+       class="inline-flex items-center gap-2 px-5 py-3 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg font-medium transition-colors">
+      🌿 Pedir información o cita
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
         <section>
           <h2 class="text-2xl font-medium text-slate-800 mb-4 flex items-center">
             <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">

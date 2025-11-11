@@ -3,11 +3,10 @@ import Base from "../layouts/Base.astro";
 
 const BASE_URL = import.meta.env.BASE_URL || "/";
 
-const title = "Mindfulness y Gestión Emocional — Silvia Adame";
+const title = "Mindfulness, Terapia Floral y Bioneuroemoción — Silvia Adame";
 const description =
-  "Resumen del enfoque de Silvia Adame sobre Mindfulness, gestión emocional y Psicología Positiva. Qué es, qué no es, beneficios y aplicaciones prácticas.";
+  "Resumen del enfoque integrado de Silvia Adame: Mindfulness, Terapia Floral (Flores de Bach) y Bioneuroemoción para la gestión emocional y el bienestar.";
 
-// JSON-LD como cadena segura
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
@@ -26,8 +25,8 @@ const jsonLd = JSON.stringify({
     <header class="text-center">
       <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">{title}</h1>
       <p class="mt-3 text-neutral-600 max-w-2xl mx-auto">
-        Un recorrido práctico por los fundamentos del Mindfulness, su relación
-        con la gestión emocional y la Psicología Positiva.
+        Un recorrido práctico por el enfoque integrado: Mindfulness, Terapia Floral (Flores de Bach) y Bioneuroemoción para apoyar procesos
+        de gestión emocional y bienestar.
       </p>
     </header>
 
@@ -39,15 +38,12 @@ const jsonLd = JSON.stringify({
       <section id="que-es">
         <h2 class="text-2xl font-semibold mb-2">Qué es Mindfulness</h2>
         <p class="text-slate-700">
-          Mindfulness es la práctica de prestar atención al momento presente con
-          una actitud de apertura y aceptación. Aunque tiene raíces en las
-          tradiciones orientales, hoy se aplica en contextos terapéuticos,
-          educativos y laborales para mejorar la salud y el bienestar.
+          Mindfulness es la práctica de prestar atención al momento presente con una actitud de apertura y aceptación. Aunque tiene raíces
+          en tradiciones contemplativas, hoy se utiliza en contextos terapéuticos y educativos con un enfoque laico y práctico.
         </p>
         <p class="text-slate-700 mt-3">
-          La neurociencia ha demostrado que su práctica regular fortalece los
-          circuitos cerebrales que regulan las emociones, favoreciendo una mayor
-          calma y claridad mental.
+          La práctica sostenida favorece la regulación emocional y la claridad mental, reforzando la comunicación entre las áreas cerebrales
+          implicadas en la emoción y el control.
         </p>
       </section>
 
@@ -55,15 +51,9 @@ const jsonLd = JSON.stringify({
       <section id="que-no-es">
         <h2 class="text-2xl font-semibold mb-2">Qué no es Mindfulness</h2>
         <ul class="list-disc ml-5 text-slate-700 space-y-2">
-          <li>No es simplemente relajación, aunque puede aportar calma.</li>
-          <li>
-            No consiste en dejar la mente en blanco, sino en observar los
-            pensamientos sin juzgarlos.
-          </li>
-          <li>
-            No implica resignarse, sino aceptar para transformar la experiencia
-            con consciencia y elección.
-          </li>
+          <li>No es solo relajación, aunque puede generar calma.</li>
+          <li>No supone vaciar la mente; consiste en observar pensamientos y sensaciones sin juzgarlos.</li>
+          <li>No es resignación: aceptamos lo que ocurre para poder transformarlo desde la conciencia.</li>
         </ul>
       </section>
 
@@ -72,36 +62,48 @@ const jsonLd = JSON.stringify({
         <h2 class="text-2xl font-semibold mb-2">Beneficios</h2>
         <ul class="list-disc ml-5 text-slate-700 space-y-2">
           <li>Reducción del estrés y la ansiedad.</li>
-          <li>Mejor atención, creatividad y toma de decisiones.</li>
+          <li>Mejora de la atención, claridad y toma de decisiones.</li>
           <li>Incremento de la resiliencia y bienestar general.</li>
-          <li>Disminución del dolor crónico y del insomnio.</li>
+          <li>Apoyo en el manejo del dolor crónico y la calidad del sueño.</li>
         </ul>
       </section>
 
       <!-- Aplicaciones -->
       <section id="aplicaciones">
         <h2 class="text-2xl font-semibold mb-2">Aplicaciones del Mindfulness</h2>
-        <p class="text-slate-700 mb-3">
-          La práctica se integra hoy en día en numerosos ámbitos:
-        </p>
+        <p class="text-slate-700 mb-3">Se integra hoy en día en múltiples ámbitos:</p>
         <ul class="list-disc ml-5 text-slate-700 space-y-2">
-          <li>
-            <strong>Sanidad:</strong> mejora del manejo del dolor, la ansiedad y
-            la depresión.
-          </li>
-          <li>
-            <strong>Educación:</strong> fomenta la atención, la empatía y la
-            convivencia.
-          </li>
-          <li>
-            <strong>Empresas:</strong> reduce el estrés laboral y mejora la
-            productividad.
-          </li>
-          <li>
-            <strong>Deporte:</strong> ayuda a la concentración y la regulación
-            emocional.
-          </li>
+          <li><strong>Sanidad:</strong> apoyo a pacientes y profesionales en la regulación del estrés y dolor.</li>
+          <li><strong>Educación:</strong> mejora de la atención, autocontrol y convivencia en el aula.</li>
+          <li><strong>Empresas:</strong> herramientas para reducir el estrés laboral y mejorar el rendimiento.</li>
+          <li><strong>Deporte:</strong> entrenamiento de la concentración y la gestión emocional en competición.</li>
         </ul>
+      </section>
+
+      <!-- Terapia Floral -->
+      <section id="terapia-floral">
+        <h2 class="text-2xl font-semibold mb-2">Terapia Floral (Flores de Bach)</h2>
+        <p class="text-slate-700">
+          La Terapia Floral utiliza esencias naturales para apoyar estados emocionales específicos. Silvia elabora preparados personalizados
+          tras una valoración, orientados a acompañar procesos como la ansiedad, inseguridad, tristeza o bloqueos emocionales.
+        </p>
+        <p class="text-slate-700 mt-3">
+          Estas esencias se integran como un recurso complementario —no sustituyen tratamiento médico— y actúan facilitando equilibrio emocional,
+          mayor claridad y sostenimiento durante el proceso terapéutico.
+        </p>
+      </section>
+
+      <!-- Bioneuroemoción -->
+      <section id="bioneuroemocion">
+        <h2 class="text-2xl font-semibold mb-2">Bioneuroemoción</h2>
+        <p class="text-slate-700">
+          La Bioneuroemoción explora la relación entre las emociones, las experiencias de vida y las respuestas del cuerpo. A través de esta
+          metodología se trabaja la toma de conciencia sobre patrones repetitivos y el significado emocional de los síntomas.
+        </p>
+        <p class="text-slate-700 mt-3">
+          Silvia emplea herramientas de Bioneuroemoción para acompañar la interpretación de vivencias emocionales y facilitar cambios apreciables
+          en la forma de relacionarse con el propio cuerpo y las experiencias.
+        </p>
       </section>
 
       <!-- Gestión emocional -->
@@ -110,47 +112,21 @@ const jsonLd = JSON.stringify({
           Gestión emocional y Psicología Positiva
         </h2>
         <p class="text-slate-700">
-          Mindfulness nos enseña a observar los pensamientos y emociones con
-          distancia y sin juicio, generando el espacio necesario para elegir una
-          respuesta más consciente. Esta pausa entre estímulo y reacción nos
-          permite actuar desde la calma en lugar del impulso.
+          Mindfulness aporta el entrenamiento atencional que permite generar el espacio entre estímulo y respuesta. En ese intervalo, la persona
+          puede elegir una respuesta más consciente. La Psicología Positiva, por su parte, trabaja las fortalezas personales para potenciar
+          recursos internos como la gratitud, la curiosidad o la compasión.
         </p>
         <p class="text-slate-700 mt-3">
-          La Psicología Positiva complementa este trabajo mediante el desarrollo
-          de las fortalezas personales: recursos internos como la gratitud, la
-          curiosidad o la compasión, que favorecen la resiliencia y el equilibrio
-          emocional.
+          La integración de estas herramientas favorece el autoconocimiento, la resiliencia y un bienestar más estable en el tiempo.
         </p>
-      </section>
-
-      <!-- Ejercicio breve -->
-      <section id="ejercicio">
-        <h2 class="text-2xl font-semibold mb-2">
-          Ejercicio sencillo de atención plena
-        </h2>
-        <ol class="list-decimal ml-5 text-slate-700 space-y-2">
-          <li>Siéntate cómodamente con la espalda recta.</li>
-          <li>
-            Lleva la atención a tu respiración, observando cómo entra y sale el
-            aire.
-          </li>
-          <li>
-            Cuando aparezcan pensamientos, reconócelos con amabilidad y vuelve a
-            la respiración.
-          </li>
-          <li>Practica durante 5 minutos al día.</li>
-        </ol>
       </section>
 
       <!-- Conclusión -->
       <section id="conclusion">
-        <h2 class="text-2xl font-semibold mb-2">Conclusión</h2>
+        <h2 class="text-2xl font-semibold mb-2">Conclusión: un enfoque integrado</h2>
         <p class="text-slate-700">
-          Mindfulness es más que una técnica: es una forma de vivir con
-          consciencia, presencia y amabilidad hacia uno mismo. En las sesiones
-          que realizo, integro esta práctica con herramientas de gestión
-          emocional y Psicología Positiva para acompañar procesos de cambio
-          personales y promover bienestar duradero.
+          El acompañamiento de Silvia combina Mindfulness, Terapia Floral y Bioneuroemoción para ofrecer un camino completo hacia el bienestar
+          emocional. Cada proceso se diseña de forma personalizada, adaptando técnicas y recursos según las necesidades y objetivos de la persona.
         </p>
 
         <div class="mt-6 text-center">
@@ -158,7 +134,7 @@ const jsonLd = JSON.stringify({
             href={BASE_URL + "contacto/"}
             class="inline-flex items-center rounded-xl px-5 py-3 bg-purple-600 text-white font-medium hover:bg-purple-700 transition"
           >
-            Pedir una sesión de Mindfulness
+            Pedir una sesión
           </a>
         </div>
       </section>
@@ -170,3 +146,4 @@ const jsonLd = JSON.stringify({
     {@html jsonLd}
   </script>
 </Base>
+
