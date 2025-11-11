@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
 const RESPONSABLE = "Silvia Adame";
 const NIF = "[NIF/NIE]";
 const DIRECCION = "C/ [Dirección], [CP], [Localidad], [Provincia]";
@@ -8,6 +9,7 @@ const WEB = "https://david-ls-bilbao.github.io/terapia-floral-silvia"; // ajusta
 ---
 
 <Base title="Aviso legal" description="Información legal y condiciones de uso del sitio web">
+  <Nav />
   <main class="container prose mx-auto py-10">
     <h1>Aviso legal</h1>
 

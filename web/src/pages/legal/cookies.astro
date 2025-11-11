@@ -1,9 +1,11 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
 const EMAIL = "info@[tu-dominio].com";
 ---
 
 <Base title="Política de cookies" description="Información sobre el uso de cookies">
+  <Nav />
   <main class="container prose mx-auto py-10">
     <h1>Política de cookies</h1>
 
@@ -45,7 +47,7 @@ const EMAIL = "info@[tu-dominio].com";
       Puedes <button id="reopen-consent" type="button">reabrir el panel de cookies</button> en cualquier momento o
       configurar tu navegador para bloquear/eliminar cookies. Si tienes dudas, escríbenos a <a href={"mailto:"+EMAIL}>{EMAIL}</a>.
     </p>
-    <script>
+    <script is:inline>
       document.getElementById('reopen-consent')?.addEventListener('click', () => {
         localStorage.removeItem('cookie_consent');
         document.dispatchEvent(new CustomEvent('open-cookie-banner'));

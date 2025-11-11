@@ -66,21 +66,27 @@ const isActive = (href: string) => here === href;
   <!-- Menú móvil overlay -->
   <div 
     id="mobile-menu-overlay"
-    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
+    class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
   >
     <nav 
-      class="absolute top-0 right-0 h-full w-64 bg-[#FFF7F1] shadow-xl transform translate-x-full transition-transform duration-300"
+      class="absolute top-0 right-0 h-full w-72 bg-white/95 backdrop-blur-md shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300"
       aria-label="Navegación móvil"
     >
-      <div class="p-6 pt-20">
+      <!-- Header del menú móvil -->
+      <div class="bg-gradient-to-r from-[#3B755F] to-[#9FB8AD] px-6 py-5 text-white">
+        <h2 class="text-lg font-semibold">Navegación</h2>
+        <p class="text-sm opacity-90">Terapias Naturales</p>
+      </div>
+      
+      <div class="p-6">
         {/* @ts-ignore */}
         {links.map((l) => (
           <a
             href={l.href}
-            class={`block py-3 px-4 mb-2 rounded-lg text-lg transition-colors ${
+            class={`block py-4 px-5 mb-3 rounded-xl text-lg font-medium transition-all duration-200 ${
               isActive(l.href) 
-                ? "bg-slate-100 text-slate-900 font-semibold" 
-                : "text-slate-700 hover:bg-slate-50"
+                ? "bg-[#3B755F] text-white shadow-lg scale-105" 
+                : "text-slate-800 hover:bg-[#9FB8AD]/20 hover:text-[#3B755F] hover:scale-102"
             }`}
             aria-current={isActive(l.href) ? "page" : undefined}
           >
@@ -92,13 +98,19 @@ const isActive = (href: string) => here === href;
   </div>
 </header>
 
-<script>
+<script is:inline>
   // Menú móvil interactivo
-  document.addEventListener('DOMContentLoaded', function() {
+  function initMobileMenu() {
     const menuButton = document.getElementById('mobile-menu-button');
     const menuOverlay = document.getElementById('mobile-menu-overlay');
     const menuNav = menuOverlay?.querySelector('nav');
     const menuLines = document.querySelectorAll('.mobile-menu-line');
+    
+    // Si no encontramos los elementos, salir
+    if (!menuButton || !menuOverlay || !menuNav) {
+      console.warn('Mobile menu elements not found');
+      return;
+    }
     
     let isOpen = false;
 
@@ -158,7 +170,14 @@ const isActive = (href: string) => here === href;
         toggleMenu();
       }
     });
-  });
+  }
+
+  // Inicializar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
 </script>
 
 

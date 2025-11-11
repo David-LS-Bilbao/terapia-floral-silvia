@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import WhoAmI from "../components/WhoAmI.astro";
 
@@ -26,6 +27,7 @@ const site = (import.meta as any).env.BASE_URL || "/";
 ---
 
 <Base title="Contacto" description="Pide tu cita con Silvia Adame — Flores de Bach y Mindfulness">
+  <Nav />
   <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
     <!-- Cabecera -->
     <header class="mb-8 md:mb-12">
