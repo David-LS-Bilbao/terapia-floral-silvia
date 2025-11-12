@@ -10,18 +10,19 @@
 
 Sitio web profesional para **Silvia Adame**, terapeuta especializada en:
 - 🌼 **Terapia Floral de Bach** - 38 esencias florales para el equilibrio emocional
-- 🧘‍♀️ **Mindfulness** - Técnicas de atención plena y gestión emocional
+- 🧘‍♀️ **Mindfulness y Gestión Emocional** - Técnicas de atención plena y reducción del estrés
 - 🧠 **Bioneuroemoción®** - Comprensión del origen emocional de los síntomas
 
 ### ✨ Características
 
-- **Responsive Design** - Optimizado para todos los dispositivos
+- **Responsive Design** - Optimizado para todos los dispositivos (móvil, tablet, desktop)
 - **Rendimiento Optimizado** - Construido con Astro para carga ultra-rápida
 - **Accesibilidad** - Cumple estándares WCAG para accesibilidad web
 - **SEO Optimizado** - Meta tags, schema markup y sitemap incluidos
 - **Catálogo Completo** - Información detallada de las 38 Flores de Bach
-- **Integración Multimedia** - Videos explicativos y animaciones suaves
-- **Formulario de Contacto** - Enlaces directos a WhatsApp y redes sociales
+- **Página de Tarifas** - Precios transparentes de sesiones y bonos
+- **Integración WhatsApp** - Contacto directo para reservar citas
+- **Menú Móvil Mejorado** - Navegación fluida en dispositivos móviles
 
 ## 🚀 Demo en Vivo
 
@@ -48,6 +49,8 @@ terapia-floral-silvia/
 │   │   └── media/               # Videos y multimedia
 │   ├── src/
 │   │   ├── components/          # Componentes reutilizables
+│   │   │   ├── ContactInline.astro
+│   │   │   ├── CookieConsent.astro
 │   │   │   ├── Logo.astro
 │   │   │   ├── Nav.astro
 │   │   │   ├── SocialLinks.astro
@@ -61,11 +64,13 @@ terapia-floral-silvia/
 │   │   │   ├── legal/           # Páginas legales
 │   │   │   ├── bioneuroemocion.astro
 │   │   │   ├── contacto.astro
-│   │   │   ├── hero-b.astro     # Página principal
+│   │   │   ├── hero-b.astro     # Página principal (landing)
 │   │   │   ├── index.astro      # Redirección
+│   │   │   ├── mindfulness-gestion-emocional.astro
 │   │   │   ├── mindfulness.astro
 │   │   │   ├── que-es.astro
-│   │   │   └── servicios.astro
+│   │   │   ├── servicios.astro
+│   │   │   └── tarifas.astro    # Precios y servicios
 │   │   └── styles/
 │   │       └── global.css       # Estilos globales y animaciones
 │   ├── tests/                   # Tests automatizados
@@ -110,11 +115,20 @@ El sitio se despliega automáticamente en **GitHub Pages** mediante GitHub Actio
 - **Texto**: Inter (Sans-serif limpia)
 
 ### Características UX
-- **Navegación intuitiva** con breadcrumbs
+- **Navegación intuitiva** con menú responsive
+- **Menú móvil mejorado** con overlay y animaciones suaves
+- **Hero landing optimizado** con imagen de fondo y texto legible
 - **Animaciones suaves** de scroll reveal
 - **Carga progresiva** de imágenes
-- **Formularios accesibles**
+- **Botones de acción claros** (WhatsApp, contacto, tarifas)
 - **Enlaces externos** seguros (`rel="noopener"`)
+
+## 💰 Servicios y Tarifas
+
+- **Sesión Individual**: 58€ (Flores de Bach, Mindfulness o Combinada)
+- **Bono 4 Sesiones**: 195€ (48,75€/sesión)
+- **Esencias Florales**: 12€ (envío incluido)
+- **Primera consulta gratuita**: 15 minutos por teléfono/WhatsApp
 
 ## 📱 Redes Sociales
 
