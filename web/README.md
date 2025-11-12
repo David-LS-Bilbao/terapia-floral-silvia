@@ -114,15 +114,24 @@ El proyecto incluye testing automatizado completo:
 - `tests/url.spec.ts` - 2 tests de normalización de URLs
 
 ### Tests End-to-End (Playwright)
-- Navegación y renderizado de páginas
-- Formularios y enlaces
-- Responsive design
+- **60 tests E2E en total** - Cobertura completa ✅
+- `tests/e2e-home.spec.ts` - 10 tests para página principal (hero-b)
+- `tests/e2e-contact.spec.ts` - 22 tests para página de contacto
+- `tests/e2e-sitemap-robots.spec.ts` - 13 tests para SEO (sitemap.xml, robots.txt)
+- `tests/e2e-404.spec.ts` - 15 tests para página 404 personalizada
+
+**Ver documentación completa:** [`tests/E2E_TESTS_README.md`](tests/E2E_TESTS_README.md)
 
 ### Cobertura
 - ✅ Funciones helper (URL building, slug normalization, email validation)
 - ✅ Edge cases (empty strings, special characters, múltiples slashes)
 - ✅ Boundary conditions (exact length, single character)
 - ✅ Real-world scenarios (flower names, email formats)
+- ✅ Navegación y flujos de usuario (home → contacto → tarifas)
+- ✅ Enlaces externos (WhatsApp, mailto, redes sociales)
+- ✅ SEO (sitemap, robots.txt, meta tags, schema markup)
+- ✅ Responsive design (móvil, tablet, desktop)
+- ✅ Error handling (página 404 personalizada)
 
 ## 🚀 Deploy Automático
 

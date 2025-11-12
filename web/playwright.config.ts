@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
-  testMatch: '**/e2e.spec.ts', // Solo archivos específicos de e2e
+  testMatch: '**/*.e2e*.spec.ts', // Match all e2e test files
   timeout: 30_000,
   expect: {
     timeout: 5000,
