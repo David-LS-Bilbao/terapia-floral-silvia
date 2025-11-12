@@ -125,7 +125,7 @@ El sitio se despliega automáticamente en **GitHub Pages** mediante GitHub Actio
 ## 📧 Contacto Profesional
 
 - **WhatsApp**: +34 687 235 652
-- **Email**: burdeos.3@hotmail.com
+- **Email**: biomiflor@hotmail.com
 - **Ubicación**: Valle de Mena, Bizkaia (Presencial y Online)
 
 ## 👨‍💻 Desarrollado por

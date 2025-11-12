@@ -1,4 +1,3 @@
-
 ---
 import Logo from "./Logo.astro";
 
@@ -52,23 +51,24 @@ const isActive = (href: string) => here === href;
 
     <!-- Botón hamburguesa móvil -->
     <button 
-      id="mobile-menu-button"
-      class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1"
+      data-mobile-menu-toggle
+      class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 z-50 relative"
       aria-label="Abrir menú de navegación"
       aria-expanded="false"
     >
-      <span class="mobile-menu-line w-6 h-0.5 bg-slate-700 transition-all duration-300"></span>
-      <span class="mobile-menu-line w-6 h-0.5 bg-slate-700 transition-all duration-300"></span>
-      <span class="mobile-menu-line w-6 h-0.5 bg-slate-700 transition-all duration-300"></span>
+      <span class="mobile-menu-line w-6 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
+      <span class="mobile-menu-line w-6 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
+      <span class="mobile-menu-line w-6 h-0.5 bg-slate-700 transition-all duration-300 origin-center"></span>
     </button>
   </div>
 
   <!-- Menú móvil overlay -->
   <div 
-    id="mobile-menu-overlay"
+    data-mobile-menu-overlay
     class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 opacity-0 invisible transition-all duration-300 md:hidden"
   >
     <nav 
+      data-mobile-menu-panel
       class="absolute top-0 right-0 h-full w-72 bg-white/95 backdrop-blur-md shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300"
       aria-label="Navegación móvil"
     >
@@ -83,6 +83,7 @@ const isActive = (href: string) => here === href;
         {links.map((l) => (
           <a
             href={l.href}
+            data-mobile-menu-link
             class={`block py-4 px-5 mb-3 rounded-xl text-lg font-medium transition-all duration-200 ${
               isActive(l.href) 
                 ? "bg-[#3B755F] text-white shadow-lg scale-105" 
@@ -98,87 +99,188 @@ const isActive = (href: string) => here === href;
   </div>
 </header>
 
-<script is:inline>
-  // Menú móvil interactivo
-  function initMobileMenu() {
-    const menuButton = document.getElementById('mobile-menu-button');
-    const menuOverlay = document.getElementById('mobile-menu-overlay');
-    const menuNav = menuOverlay?.querySelector('nav');
-    const menuLines = document.querySelectorAll('.mobile-menu-line');
-    
-    // Si no encontramos los elementos, salir
-    if (!menuButton || !menuOverlay || !menuNav) {
-      console.warn('Mobile menu elements not found');
-      return;
-    }
-    
-    let isOpen = false;
+<script>
+  // Clase para manejar el menú móvil de forma más robusta
+  class MobileMenu {
+    private button: HTMLElement | null = null;
+    private overlay: HTMLElement | null = null;
+    private panel: HTMLElement | null = null;
+    private lines: NodeListOf<HTMLElement> | null = null;
+    private isOpen: boolean = false;
+    private initialized: boolean = false;
 
-    function toggleMenu() {
-      isOpen = !isOpen;
+    constructor() {
+      this.init();
+    }
+
+    init() {
+      // Prevenir doble inicialización
+      if (this.initialized) return;
       
-      if (isOpen) {
-        // Abrir menú
-        menuOverlay?.classList.remove('opacity-0', 'invisible');
-        menuNav?.classList.remove('translate-x-full');
-        menuButton?.setAttribute('aria-expanded', 'true');
-        
-        // Animar hamburguesa a X
-        if (menuLines[0]) menuLines[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-        if (menuLines[1]) menuLines[1].style.opacity = '0';
-        if (menuLines[2]) menuLines[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-        
-        // Bloquear scroll del body
-        document.body.style.overflow = 'hidden';
+      // Buscar elementos
+      this.button = document.querySelector('[data-mobile-menu-toggle]');
+      this.overlay = document.querySelector('[data-mobile-menu-overlay]');
+      this.panel = document.querySelector('[data-mobile-menu-panel]');
+      this.lines = document.querySelectorAll('.mobile-menu-line');
+      
+      // Si no encontramos los elementos esenciales, salir
+      if (!this.button || !this.overlay || !this.panel) {
+        // Solo mostrar warning en development
+        if (import.meta.env.DEV) {
+          console.warn('Mobile menu: elementos no encontrados');
+        }
+        return;
+      }
+      
+      this.setupEventListeners();
+      this.initialized = true;
+    }
+
+    setupEventListeners() {
+      if (!this.button || !this.overlay) return;
+
+      // Click en botón hamburguesa
+      this.button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.toggle();
+      });
+
+      // Click en overlay para cerrar
+      this.overlay.addEventListener('click', (e) => {
+        if (e.target === this.overlay) {
+          this.close();
+        }
+      });
+
+      // Click en enlaces del menú
+      const menuLinks = document.querySelectorAll('[data-mobile-menu-link]');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          this.close();
+        });
+      });
+
+      // Tecla Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen) {
+          this.close();
+        }
+      });
+
+      // Resize: cerrar menú si se vuelve a desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && this.isOpen) {
+          this.close();
+        }
+      });
+    }
+
+    toggle() {
+      if (this.isOpen) {
+        this.close();
       } else {
-        // Cerrar menú
-        menuOverlay?.classList.add('opacity-0', 'invisible');
-        menuNav?.classList.add('translate-x-full');
-        menuButton?.setAttribute('aria-expanded', 'false');
-        
-        // Restaurar hamburguesa
-        menuLines.forEach(line => {
+        this.open();
+      }
+    }
+
+    open() {
+      if (!this.button || !this.overlay || !this.panel || this.isOpen) return;
+      
+      this.isOpen = true;
+      
+      // Mostrar overlay y panel
+      this.overlay.classList.remove('opacity-0', 'invisible');
+      this.panel.classList.remove('translate-x-full');
+      this.button.setAttribute('aria-expanded', 'true');
+      
+      // Animar hamburguesa a X
+      if (this.lines && this.lines.length >= 3) {
+        this.lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        this.lines[1].style.opacity = '0';
+        this.lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      }
+      
+      // Bloquear scroll
+      document.body.style.overflow = 'hidden';
+    }
+
+    close() {
+      if (!this.button || !this.overlay || !this.panel || !this.isOpen) return;
+      
+      this.isOpen = false;
+      
+      // Ocultar overlay y panel
+      this.overlay.classList.add('opacity-0', 'invisible');
+      this.panel.classList.add('translate-x-full');
+      this.button.setAttribute('aria-expanded', 'false');
+      
+      // Restaurar hamburguesa
+      if (this.lines) {
+        this.lines.forEach(line => {
           line.style.transform = '';
           line.style.opacity = '';
         });
-        
-        // Restaurar scroll del body
-        document.body.style.overflow = '';
       }
+      
+      // Restaurar scroll
+      document.body.style.overflow = '';
     }
 
-    // Event listeners
-    menuButton?.addEventListener('click', toggleMenu);
-    
-    // Cerrar al hacer clic en el overlay
-    menuOverlay?.addEventListener('click', function(e) {
-      if (e.target === menuOverlay) {
-        toggleMenu();
+    // Método para limpiar event listeners si es necesario
+    destroy() {
+      if (this.isOpen) {
+        this.close();
       }
-    });
+      this.initialized = false;
+    }
+  }
+
+  // Función para inicializar de forma segura
+  function initMobileMenu() {
+    // Solo inicializar si estamos en el browser y no hay ya una instancia
+    if (typeof window === 'undefined') return;
     
-    // Cerrar al hacer clic en un enlace
-    menuOverlay?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        toggleMenu();
-      });
-    });
-    
-    // Cerrar con tecla Escape
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && isOpen) {
-        toggleMenu();
-      }
-    });
+    // Usar un namespace global para evitar múltiples instancias
+    if (!(window as any).__mobileMenu) {
+      (window as any).__mobileMenu = new MobileMenu();
+    }
   }
 
   // Inicializar cuando el DOM esté listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initMobileMenu);
   } else {
+    // DOM ya cargado
     initMobileMenu();
   }
+
+  // Reinicializar en navegación SPA (si usas View Transitions)
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>
+
+<style>
+  /* Mejoras CSS para animaciones más suaves */
+  [data-mobile-menu-overlay] {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  [data-mobile-menu-panel] {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mobile-menu-line {
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Asegurar que el botón esté por encima del overlay */
+  [data-mobile-menu-toggle] {
+    position: relative;
+    z-index: 51;
+  }
+</style>
 
 
 
