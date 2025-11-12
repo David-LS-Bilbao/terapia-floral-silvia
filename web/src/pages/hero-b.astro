@@ -6,7 +6,8 @@ import Nav from "../components/Nav.astro";
 const BASE = ((import.meta as any).env?.BASE_URL ?? "/").replace(/\/+$/, "/");
 // @ts-ignore
 const link = (p="") => `${BASE}${p.replace(/^\/+/, "")}`;
-const heroImg = "home/servicio-mindfulness.webp";
+//const heroImg = "home/servicio-mindfulness.webp";
+const heroImg = "home/portadaBuena.webp";
 const logoLotus = "brand/logo-lotus.png";
 const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%2Fcita...";
 const linkServicios = link("servicios/");
@@ -22,14 +23,26 @@ const linkServicios = link("servicios/");
     width="2400" height="1600" loading="eager" decoding="async"
   />
 
-  <!-- Degradado para legibilidad del texto -->
-  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,12,20,0.72)_0%,rgba(7,12,20,0.48)_42%,rgba(7,12,20,0.18)_62%,rgba(255,255,255,0)_100%)]"></div>
+  <!-- Degradado para legibilidad del texto (más claro) -->
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,12,20,0.35)_0%,rgba(7,12,20,0.25)_42%,rgba(7,12,20,0.10)_62%,rgba(255,255,255,0)_100%)]"></div>
 
   <section class="relative mx-auto max-w-6xl px-4 py-16 md:py-24 flex items-center justify-center min-h-[80vh]">
     <div class="text-center max-w-4xl mx-auto">
-      <!-- Logo Lotus centrado en la parte superior -->
+      <!-- Eyebrow opcional -->
+      <p class="eyebrow text-white text-center text-[clamp(0.875rem,2.5vw,1.125rem)] font-medium tracking-wide mb-4">Terapias naturales y acompañamiento emocional con Silvia Adame</p>
+
+      <h1 class="brand-title text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.15] text-fuchsia-600 drop-shadow-[0_2px_10px_rgba(0,0,0,.25)] text-center mx-auto max-w-4xl font-bold mb-6"
+          style="
+            text-shadow: 1px 1px 2px black, 2px 2px 4px black, 3px 3px 6px black;
+          ">
+        Bienestar emocional con<br/>
+        Flores de Bach y<br/>
+        Mindfulness
+      </h1>
+
+      <!-- Logo Lotus centrado debajo del título -->
       <div class="mb-8 flex justify-center">
-        <div class="w-40 h-40 md:w-52 md:h-52 flex items-center justify-center">
+        <div class="w-44 h-44 md:w-60 md:h-60 flex items-center justify-center">
           <img
             src={link(logoLotus)}
             alt="Logo Terapias Naturales Silvia Adame - Flor de Loto"
@@ -39,15 +52,8 @@ const linkServicios = link("servicios/");
         </div>
       </div>
 
-      <!-- Eyebrow opcional -->
-      <p class="eyebrow text-white text-center text-[clamp(0.875rem,2.5vw,1.125rem)] font-medium tracking-wide mb-4">Terapias naturales y acompañamiento emocional con Silvia Adame</p>
-
-      <h1 class="brand-title text-[clamp(1.75rem,4vw,3.5rem)] leading-[1.15] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,.25)] text-center mx-auto max-w-4xl font-bold mb-6">
-        Bienestar emocional con <span class="text-white">Flores de Bach y Mindfulness</span>
-      </h1>
-
-      <p class="brand-text text-white text-[clamp(0.95rem,2.5vw,1.125rem)] leading-relaxed text-center max-w-3xl mx-auto mb-8">
-        "Bienestar Integral y Equilibrio Emocional. Te acompaño en el camino hacia la serenidad y el autoconocimiento a través de terapias naturales. Mi enfoque combina la técnica de la Atención Plena (Mindfulness), que ayuda a reducir el estrés y la ansiedad y a centrarte en el momento presente, con la Terapia Floral de Bach, un sistema vibracional diseñado para armonizar la personalidad y restaurar tu equilibrio psicoemocional. Recuerda que la práctica continua y tu compromiso son clave para lograr la transformación."
+      <p class="brand-text text-white text-[clamp(1.125rem,2.75vw,1.375rem)] leading-relaxed text-center max-w-3xl mx-auto mb-8 font-light bg-black/30 backdrop-blur-sm px-6 py-5 rounded-2xl border border-white/10">
+        Te acompaño en el camino hacia la serenidad y el autoconocimiento a través de terapias naturales. Mi enfoque combina la <strong class="font-semibold">Atención Plena (Mindfulness)</strong>, que ayuda a reducir el estrés y la ansiedad, con la <strong class="font-semibold">Terapia Floral de Bach</strong>, un sistema vibracional diseñado para armonizar tu equilibrio psicoemocional. La práctica continua y tu compromiso son clave para lograr la transformación.
       </p>
 
       <div class="flex flex-wrap gap-4 justify-center items-center">

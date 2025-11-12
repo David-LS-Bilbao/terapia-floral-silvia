@@ -6,13 +6,23 @@ interface Props {
   bullets?: string[];
   photoAlt?: string;
   photoSrc: any; // import de imagen
+  showTarifasButton?: boolean;
+  tarifasLink?: string;
 }
-const { name, title = "", summary = "", bullets = [], photoAlt = name, photoSrc } = Astro.props;
+const { name, title = "", summary = "", bullets = [], photoAlt = name, photoSrc, showTarifasButton = false, tarifasLink = "" } = Astro.props;
 ---
 <section class="rounded-2xl bg-white/70 backdrop-blur shadow-sm ring-1 ring-black/5 p-6 md:p-8">
   <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-    <img src={photoSrc} alt={photoAlt} width="320" height="400"
-         class="w-40 h-40 object-cover rounded-2xl ring-1 ring-black/10 md:w-48 md:h-48" loading="lazy" />
+    <div class="flex flex-col items-center gap-4">
+      <img src={photoSrc} alt={photoAlt} width="320" height="400"
+           class="w-40 h-40 object-cover rounded-2xl ring-1 ring-black/10 md:w-48 md:h-48" loading="lazy" />
+      {showTarifasButton && tarifasLink && (
+        <a href={tarifasLink} 
+           class="inline-flex items-center justify-center px-6 py-2.5 bg-emerald-400 hover:bg-emerald-500 text-slate-800 font-medium rounded-lg transition-colors shadow-sm hover:shadow-md text-sm">
+          Ver Servicios y Tarifas
+        </a>
+      )}
+    </div>
     <div class="flex-1">
       <h2 class="text-2xl font-semibold tracking-tight">Quién soy</h2>
       <p class="mt-1 text-sm text-neutral-500">{title}</p>
