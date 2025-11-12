@@ -52,7 +52,7 @@ const isActive = (href: string) => here === href;
     <!-- Botón hamburguesa móvil -->
     <button 
       data-mobile-menu-toggle
-      class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 z-50 relative"
+      class="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 z-[110] relative"
       aria-label="Abrir menú de navegación"
       aria-expanded="false"
     >
@@ -65,7 +65,7 @@ const isActive = (href: string) => here === href;
   <!-- Menú móvil overlay -->
   <div 
     data-mobile-menu-overlay
-    class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-40 opacity-0 invisible pointer-events-none transition-all duration-300 md:hidden"
+    class="fixed inset-0 bg-slate-900/95 backdrop-blur-sm z-[100] opacity-0 invisible pointer-events-none transition-all duration-300 md:hidden"
   >
     <nav 
       data-mobile-menu-panel
@@ -190,7 +190,7 @@ const isActive = (href: string) => here === href;
       this.isOpen = true;
       
       // Mostrar overlay y panel
-      this.overlay.classList.remove('opacity-0', 'invisible');
+      this.overlay.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
       this.panel.classList.remove('translate-x-full');
       this.button.setAttribute('aria-expanded', 'true');
       
@@ -211,7 +211,7 @@ const isActive = (href: string) => here === href;
       this.isOpen = false;
       
       // Ocultar overlay y panel
-      this.overlay.classList.add('opacity-0', 'invisible');
+      this.overlay.classList.add('opacity-0', 'invisible', 'pointer-events-none');
       this.panel.classList.add('translate-x-full');
       this.button.setAttribute('aria-expanded', 'false');
       
@@ -278,7 +278,16 @@ const isActive = (href: string) => here === href;
   /* Asegurar que el botón esté por encima del overlay */
   [data-mobile-menu-toggle] {
     position: relative;
-    z-index: 51;
+    z-index: 110;
+  }
+  
+  /* Asegurar que el overlay tenga z-index alto */
+  [data-mobile-menu-overlay] {
+    z-index: 100;
+  }
+  
+  [data-mobile-menu-panel] {
+    z-index: 101;
   }
 </style>
 
