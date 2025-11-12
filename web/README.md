@@ -59,6 +59,10 @@ terapia-floral-silvia/
 │   │   │   └── flores.ts        # Datos de las 38 Flores de Bach
 │   │   ├── layouts/
 │   │   │   └── Base.astro       # Layout principal
+│   │   ├── lib/                 # 🆕 Funciones helper utilities
+│   │   │   ├── url.ts           # Utilidades de URL y paths
+│   │   │   ├── utils.ts         # Utilidades generales
+│   │   │   └── README.md        # Documentación de utilidades
 │   │   ├── pages/               # Páginas del sitio
 │   │   │   ├── flores/          # Catálogo de flores
 │   │   │   ├── legal/           # Páginas legales
@@ -74,6 +78,12 @@ terapia-floral-silvia/
 │   │   └── styles/
 │   │       └── global.css       # Estilos globales y animaciones
 │   ├── tests/                   # Tests automatizados
+│   │   ├── lib/                 # 🆕 Tests de utilidades
+│   │   │   ├── url.spec.ts      # Tests para url.ts (13 tests)
+│   │   │   └── utils.spec.ts    # Tests para utils.ts (25 tests)
+│   │   ├── e2e.spec.ts          # Tests end-to-end
+│   │   ├── smoke.spec.ts        # Tests de humo
+│   │   └── url.spec.ts          # Tests básicos de URL
 │   └── tools/                   # Herramientas de desarrollo
 └── README.md
 ```
@@ -88,8 +98,31 @@ Todos los comandos se ejecutan desde el directorio `/web/`:
 | `pnpm dev` | Inicia el servidor de desarrollo en `localhost:4321` |
 | `pnpm build` | Construye el sitio para producción en `./dist/` |
 | `pnpm preview` | Vista previa del build local |
-| `pnpm test` | Ejecuta tests unitarios con Vitest |
+| `pnpm test` | Ejecuta tests unitarios con Vitest (43 tests) |
 | `pnpm test:e2e` | Ejecuta tests end-to-end con Playwright |
+| `pnpm test tests/lib/` | Ejecuta solo tests de utilidades helper |
+
+## 🧪 Testing
+
+El proyecto incluye testing automatizado completo:
+
+### Tests Unitarios (Vitest)
+- **43 tests en total** - Todos pasando ✅
+- `tests/lib/url.spec.ts` - 13 tests para utilidades de URL
+- `tests/lib/utils.spec.ts` - 25 tests para utilidades generales
+- `tests/smoke.spec.ts` - 3 tests de verificación básica
+- `tests/url.spec.ts` - 2 tests de normalización de URLs
+
+### Tests End-to-End (Playwright)
+- Navegación y renderizado de páginas
+- Formularios y enlaces
+- Responsive design
+
+### Cobertura
+- ✅ Funciones helper (URL building, slug normalization, email validation)
+- ✅ Edge cases (empty strings, special characters, múltiples slashes)
+- ✅ Boundary conditions (exact length, single character)
+- ✅ Real-world scenarios (flower names, email formats)
 
 ## 🚀 Deploy Automático
 
