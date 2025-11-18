@@ -4,9 +4,11 @@ import Nav from "../components/Nav.astro";
 
 const BASE_URL = (import.meta as any).env.BASE_URL || "/";
 
-const title = "Mindfulness, Terapia Floral y Bioneuroemoción — Silvia Adame";
+const title = "Mindfulness, Terapia Floral y Gestión Emocional | Enfoque Integrativo - Silvia Adame";
 const description =
-  "Resumen del enfoque integrado de Silvia Adame: Mindfulness, Terapia Floral (Flores de Bach) y Bioneuroemoción para la gestión emocional y el bienestar.";
+  "Enfoque integrativo: Mindfulness, Flores de Bach y acompañamiento emocional para bienestar y autoconocimiento. Sesiones en Valle de Mena y online.";
+
+const keywords = "mindfulness gestión emocional, terapia floral integrativa, flores de bach mindfulness, desarrollo personal, bienestar emocional, valle de mena";
 
 // @ts-ignore
 const jsonLd = JSON.stringify({
@@ -21,7 +23,7 @@ const jsonLd = JSON.stringify({
 });
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} keywords={keywords} type="article">
   <Nav />
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
     <!-- Cabecera -->
