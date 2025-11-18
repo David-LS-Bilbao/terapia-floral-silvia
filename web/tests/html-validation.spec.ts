@@ -73,7 +73,7 @@ describe('HTML Validation Tests', () => {
   });
 
   describe('Canonical Links', () => {
-    const expectedBaseURL = 'https://david-ls-bilbao.github.io/terapia-floral-silvia';
+    const expectedBaseURL = 'https://terapias-naturales-silvia.github.io';
 
     it('should have at least one HTML file to test', () => {
       expect(htmlFiles.length).toBeGreaterThan(0);

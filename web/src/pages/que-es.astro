@@ -58,25 +58,19 @@ const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%
   </p>
 
   <div class="mt-6">
-    <a href={whatsapp}
+    <a href={`${base}contacto/`}
        class="inline-flex items-center gap-2 px-5 py-3 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg font-medium transition-colors">
       🌿 Pedir información o cita
     </a>
   </div>
 </section>
 
-
-
-
-
-
-
-        
         <section>
           <h2 class="text-2xl font-medium text-slate-800 mb-4 flex items-center">
             <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
               <span class="text-purple-600 font-semibold">1</span>
             </span>
+            
             Definición y Composición
           </h2>
           <div class="pl-11 space-y-4">
@@ -161,11 +155,13 @@ const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%
           </div>
         </section>
 
+        <!-- Botones de navegación -->
         <div class="flex flex-col sm:flex-row gap-4 pt-8 border-t border-slate-200">
           <a href={`${base}servicios/`} 
              class="inline-flex items-center justify-center px-6 py-3 bg-purple-100 hover:bg-purple-200 text-purple-800 rounded-lg transition-colors duration-200 font-medium">
             ← Volver a Servicios
           </a>
+          <!-- Botón Explorar Flores de Bach -->
           <a href={`${base}flores/`} 
              class="inline-flex items-center justify-center px-6 py-3 gap-3 bg-[#F7F0FF] hover:bg-[#EFEAFF] text-purple-700 rounded-lg transition-colors duration-200 font-medium border border-purple-200">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

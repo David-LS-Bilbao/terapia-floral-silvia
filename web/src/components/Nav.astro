@@ -71,26 +71,35 @@ const isActive = (href: string) => here === href;
   >
     <nav 
       data-mobile-menu-panel
-      class="absolute top-0 right-0 h-full w-72 bg-white/95 supports-[backdrop-filter]:backdrop-blur-md shadow-xl shadow-slate-800/10 border-l border-slate-200 transform translate-x-full transition-transform duration-300"
+      class="absolute top-0 right-0 h-full w-80 bg-white shadow-2xl border-l-2 border-[#3B755F] transform translate-x-full transition-transform duration-300"
       aria-label="Navegación móvil"
       aria-hidden="true"
     >
-      <!-- Header del menú móvil -->
-      <div class="bg-gradient-to-r from-[#3B755F] to-[#9FB8AD] px-6 py-5 text-white">
+      <!-- Header del menú móvil con botón cerrar -->
+      <div class="bg-gradient-to-r from-[#3B755F] to-[#9FB8AD] px-6 py-5 text-white relative">
+        <button 
+          data-mobile-menu-close
+          class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-lg bg-white/20 hover:bg-white/30 transition-colors"
+          aria-label="Cerrar menú"
+        >
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
         <h2 class="text-lg font-semibold">Navegación</h2>
         <p class="text-sm opacity-90">Terapias Naturales</p>
       </div>
       
-      <div class="p-6">
+      <div class="p-6 bg-white">
         {/* @ts-ignore */}
         {links.map((l) => (
           <a
             href={l.href}
             data-mobile-menu-link
-            class={`block py-4 px-5 mb-3 rounded-xl text-lg font-medium transition-all duration-200 ${
+            class={`block py-4 px-5 mb-3 rounded-xl text-lg font-semibold transition-all duration-200 border-2 ${
               isActive(l.href) 
-                ? "bg-[#3B755F] text-white shadow-lg scale-105" 
-                : "text-slate-800 hover:bg-[#9FB8AD]/20 hover:text-[#3B755F] hover:scale-102"
+                ? "bg-[#3B755F] text-white border-[#3B755F] shadow-lg" 
+                : "bg-white text-[#3B755F] border-[#9FB8AD] hover:bg-[#3B755F] hover:text-white hover:border-[#3B755F]"
             }`}
             aria-current={isActive(l.href) ? "page" : undefined}
           >
@@ -113,6 +122,7 @@ const isActive = (href: string) => here === href;
     const button = document.querySelector('[data-mobile-menu-toggle]');
     const overlay = document.querySelector('[data-mobile-menu-overlay]');
     const panel = document.querySelector('[data-mobile-menu-panel]');
+    const closeBtn = document.querySelector('[data-mobile-menu-close]');
     const lines = document.querySelectorAll('.mobile-menu-line');
     if (!button || !overlay || !panel) {
       if (import.meta && import.meta.env && import.meta.env.DEV) {
@@ -189,6 +199,11 @@ const isActive = (href: string) => here === href;
 
     // listeners
     button.addEventListener('click', toggleMenu);
+    
+    // Botón cerrar
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeMenu);
+    }
 
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) closeMenu();
@@ -221,13 +236,14 @@ const isActive = (href: string) => here === href;
 </script>
 
 <style>
-  /* Mejoras CSS para animaciones más suaves */
+  /* Mejoras CSS para animaciones más suaves y mejor visibilidad */
   [data-mobile-menu-overlay] {
     transition: opacity 0.28s ease-in-out, visibility 0.28s ease-in-out;
   }
   
   [data-mobile-menu-panel] {
     transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff !important; /* Fondo blanco sólido */
   }
   
   .mobile-menu-line {
@@ -250,20 +266,11 @@ const isActive = (href: string) => here === href;
   [data-mobile-menu-panel] {
     z-index: 101;
   }
-
-  /* Modo oscuro para el panel móvil */
-  @media (prefers-color-scheme: dark) {
-    [data-mobile-menu-panel] {
-      background: linear-gradient(180deg, rgba(8,10,12,0.92), rgba(18,20,22,0.95));
-      color: #fff;
-      border-left-color: rgba(255,255,255,0.06);
-    }
-    [data-mobile-menu-panel] a {
-      color: #e6f6ef;
-    }
-    [data-mobile-menu-panel] a:hover {
-      color: #d5f0e3;
-    }
+  
+  /* Mejorar visibilidad de enlaces móviles */
+  [data-mobile-menu-link] {
+    display: block;
+    text-align: center;
   }
 </style>
 
