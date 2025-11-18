@@ -1,5 +1,5 @@
 ---
-// Redirect automático a hero-b
+// Mostrar pantalla de carga antes de redirigir
 const base = (import.meta as any).env.BASE_URL || "/";
 
 // Helper para respetar el base path
@@ -8,8 +8,7 @@ const withBase = (path: string): string => {
   return base.endsWith('/') ? base + path : base + '/' + path;
 };
 
-// Redirección del lado del servidor
-return Astro.redirect(`${base}hero-b/`);
+// NO hacer redirect del servidor, dejar que lo haga el cliente con delay
 ---
 
 <!DOCTYPE html>
@@ -17,7 +16,8 @@ return Astro.redirect(`${base}hero-b/`);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cargando...</title>
+  <title>Terapias Naturales Silvia Adame</title>
+  <meta name="description" content="Terapia Floral de Bach, Mindfulness y Bioneuroemoción®">
   <style>
     * {
       margin: 0;
@@ -32,11 +32,12 @@ return Astro.redirect(`${base}hero-b/`);
       justify-content: center;
       min-height: 100vh;
       font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
     }
     
     .loader-container {
       text-align: center;
-      animation: fadeIn 0.3s ease-in;
+      animation: fadeIn 0.5s ease-in;
     }
     
     .logo {
@@ -44,30 +45,42 @@ return Astro.redirect(`${base}hero-b/`);
       height: 200px;
       margin: 0 auto;
       animation: pulse 2s ease-in-out infinite;
-      filter: drop-shadow(0 0 20px rgba(159, 184, 173, 0.3));
+      filter: drop-shadow(0 0 30px rgba(159, 184, 173, 0.4));
     }
     
     .loading-text {
       color: #9FB8AD;
       font-size: 1.2rem;
       margin-top: 2rem;
-      opacity: 0.8;
+      opacity: 0.9;
+      animation: textPulse 1.5s ease-in-out infinite;
     }
     
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { 
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to { 
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     
     @keyframes pulse {
       0%, 100% { 
         transform: scale(1);
-        opacity: 1;
+        filter: drop-shadow(0 0 30px rgba(159, 184, 173, 0.4));
       }
       50% { 
-        transform: scale(1.05);
-        opacity: 0.8;
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 40px rgba(159, 184, 173, 0.6));
       }
+    }
+    
+    @keyframes textPulse {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.5; }
     }
   </style>
 </head>
@@ -78,14 +91,14 @@ return Astro.redirect(`${base}hero-b/`);
       alt="Terapias Naturales Silvia Adame" 
       class="logo"
     />
-    <p class="loading-text">Cargando...</p>
+    <p class="loading-text">Bienvenido...</p>
   </div>
   
   <script define:vars={{ base }}>
-    // Fallback de redirección del lado del cliente por si acaso
+    // Redirección después de 5 segundos
     setTimeout(() => {
       window.location.href = base + 'hero-b/';
-    }, 100);
+    }, 5000);
   </script>
 </body>
 </html>
