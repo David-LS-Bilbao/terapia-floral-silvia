@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://david-ls-bilbao.github.io/terapia-floral-silvia/sitemap-index.xml
