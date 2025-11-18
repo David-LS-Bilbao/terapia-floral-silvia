@@ -3,18 +3,25 @@
 /// <reference types="astro/client" />
 
 import "../styles/global.css";
-
-
-
+import SEO from "../components/SEO.astro";
+import Analytics from "../components/Analytics.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  keywords?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = "Terapia Floral Silvia Adame",
-  description = "Flores de Bach en Bizkaia y online."
+  title = "Terapia Floral Silvia Adame | Flores de Bach en Bizkaia",
+  description = "Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción® en Valle de Mena, Bizkaia. Consultas presenciales y online.",
+  image,
+  type = 'website',
+  keywords,
+  noindex = false
 } = Astro.props;
 
 // Helper para respetar el base path en GitHub Pages
@@ -26,39 +33,32 @@ const withBase = (path?: string): string => {
 ---
 <html lang="es">
   <head>
-
-<!-- Tipografías de marca -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href={`https://terapias-naturales-silvia.github.io${Astro.url.pathname}`} />
+    <!-- SEO Component with enhanced meta tags -->
+    <SEO 
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      keywords={keywords}
+      noindex={noindex}
+    />
+    
+    <!-- Google Analytics -->
+    <Analytics />
+
+    <!-- Tipografías de marca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Favicon y iconos -->
     <link rel="icon" type="image/x-icon" href={withBase("favicon.ico")} />
     <link rel="icon" type="image/png" sizes="192x192" href={withBase("icon-192.png")} />
     <link rel="apple-touch-icon" href={withBase("icon-192.png")} />
     <link rel="mask-icon" href={withBase("maskable-512.png")} color="#9FB8AD" />
-    
-    <!-- Meta tags para redes sociales -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={withBase("og-image-1200x630.png")} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Terapia Floral Silvia Adame" />
-    
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={withBase("og-image-1200x630.png")} />
     
     <!-- Theme color -->
     <meta name="theme-color" content="#9FB8AD" />
