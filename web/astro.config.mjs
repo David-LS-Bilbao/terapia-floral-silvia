@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   //site: 'https://david-ls-bilbao.github.io',
     site: 'https://terapias-naturales-silvia.github.io',
-    base: '/terapia-floral-silvia/',
+    base: '/',
   vite: { plugins: [tailwindcss()] },
   integrations: [sitemap()],
 });
