@@ -2,7 +2,9 @@
 
 > Sitio web oficial de **Silvia Adame** - Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción®
 
-[![Deploy to GitHub Pages](https://github.com/David-LS-Bilbao/terapia-floral-silvia/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/David-LS-Bilbao/terapia-floral-silvia/actions)
+[![Deploy to GitHub Pages](https://github.com/terapias-naturales-silvia/terapias-naturales-silvia.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/terapias-naturales-silvia/terapias-naturales-silvia.github.io/actions/workflows/deploy.yml)
+[![Tests](https://img.shields.io/badge/Tests-Vitest%20%2B%20Playwright-success?logo=checkmarx&logoColor=white)](https://github.com/terapias-naturales-silvia/terapias-naturales-silvia.github.io/actions/workflows/deploy.yml)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-222222?logo=github&logoColor=white)](https://terapias-naturales-silvia.github.io/)
 [![Astro](https://img.shields.io/badge/Built%20with-Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
@@ -26,7 +28,7 @@ Sitio web profesional para **Silvia Adame**, terapeuta especializada en:
 
 ## 🚀 Demo en Vivo
 
-🔗 **[https://david-ls-bilbao.github.io/terapia-floral-silvia/](https://david-ls-bilbao.github.io/terapia-floral-silvia/)**
+🔗 **[https://terapias-naturales-silvia.github.io/](https://terapias-naturales-silvia.github.io/)**
 
 ## �️ Tecnologías Utilizadas
 
