@@ -1,0 +1,73 @@
+---
+// @ts-nocheck
+/**
+ * Schema.org Service Component
+ * Structured data para servicios de terapia
+ */
+
+interface Props {
+  name: string;
+  description: string;
+  price: string;
+  currency?: string;
+  duration?: string;
+  availability?: string;
+  provider?: {
+    name?: string;
+    phone?: string;
+    email?: string;
+  };
+  areaServed?: string[];
+  serviceType?: string;
+  image?: string;
+}
+
+const {
+  name,
+  description,
+  price,
+  currency = "EUR",
+  duration = "60 min",
+  availability = "Mo-Fr 09:00-20:00",
+  provider = {
+    name: "Silvia Adame",
+    phone: "+34687235652",
+    email: "biomiflor@hotmail.com"
+  },
+  areaServed = ["Valle de Mena", "Bizkaia", "Online"],
+  serviceType = "TherapeuticService",
+  image = "/og-image-1200x630.png"
+} = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": name,
+  "description": description,
+  "serviceType": serviceType,
+  "image": image,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": provider.name,
+    "telephone": provider.phone,
+    "email": provider.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Valle de Mena",
+      "addressRegion": "Bizkaia",
+      "addressCountry": "ES"
+    }
+  },
+  "areaServed": areaServed,
+  "offers": {
+    "@type": "Offer",
+    "price": price,
+    "priceCurrency": currency,
+    "availability": availability,
+    "availabilityEnds": "23:00:00",
+    "availabilityStarts": "09:00:00"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
