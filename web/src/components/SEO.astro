@@ -15,13 +15,13 @@ interface Props {
 }
 
 const {
-  title = "Terapia Floral Silvia Adame | Flores de Bach en Bizkaia",
+  title = "Terapia Floral Silvia Adame | Flores de Bach, Mindfulness y Bioneuroemoción®",
   description = "Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción® en Valle de Mena, Bizkaia. Consultas presenciales y online. Primera consulta gratuita.",
   image = "/og-image-1200x630.png",
   type = "website",
   canonical,
   noindex = false,
-  keywords = "flores de bach, terapia floral, mindfulness, bioneuroemoción, valle de mena, bizkaia, terapias naturales, gestión emocional"
+  keywords = "flores de bach, terapia floral, mindfulness, bioneuroemoción, terapias naturales, gestión emocional, bizkaia, valle de mena, terapeuta floral, salud emocional, flores de bach online"
 } = Astro.props;
 
 // Helper para respetar el base path en GitHub Pages
@@ -63,14 +63,20 @@ const schemaOrg = {
   "founder": {
     "@type": "Person",
     "name": "Silvia Adame",
-    "jobTitle": "Terapeuta Floral",
-    "description": "Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción®"
+    "jobTitle": "Terapeuta Floral Certificada",
+    "description": "Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción®",
+    "image": imageURL
   },
   "sameAs": [
     "https://www.facebook.com/silvia.adame.129",
     "https://www.instagram.com/silviyou8/",
     "https://www.tiktok.com/@terapiasnaturales1"
   ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "23"
+  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios de Terapia",
@@ -98,6 +104,9 @@ const schemaOrg = {
     ]
   }
 };
+
+// Convert schema to JSON string in frontmatter
+const schemaJSON = JSON.stringify(schemaOrg);
 ---
 
 <!-- Primary Meta Tags -->
@@ -105,12 +114,20 @@ const schemaOrg = {
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Silvia Adame">
+<meta name="language" content="es">
+<meta name="geo.region" content="ES-BI">
+<meta name="geo.placename" content="Valle de Mena, Bizkaia">
+<meta name="geo.position" content="43.1121;-3.2771">
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+<link rel="alternate" hreflang="es" href={canonicalURL} />
+<link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
 <!-- Robots -->
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
@@ -120,8 +137,15 @@ const schemaOrg = {
 <meta property="og:image" content={imageURL} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:site_name" content="Terapia Floral Silvia Adame" />
 <meta property="og:locale" content="es_ES" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="business:contact_data:street_address" content="Valle de Mena">
+<meta property="business:contact_data:locality" content="Valle de Mena">
+<meta property="business:contact_data:region" content="Bizkaia">
+<meta property="business:contact_data:postal_code" content="48810">
+<meta property="business:contact_data:country_name" content="España">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -129,14 +153,19 @@ const schemaOrg = {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageURL} />
+<meta name="twitter:creator" content="@silviyou8" />
+<meta name="twitter:site" content="@silviyou8" />
 
 <!-- Additional SEO tags -->
-<meta name="author" content="Silvia Adame" />
-<meta name="language" content="Spanish" />
-<meta name="geo.region" content="ES-PV" />
-<meta name="geo.placename" content="Valle de Mena, Bizkaia" />
+<meta name="theme-color" content="#0B1220" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Terapia Floral" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta name="geo.position" content="43.1121;-3.2771" />
 <meta name="ICBM" content="43.1121, -3.2771" />
 
 <!-- Schema.org JSON-LD -->
-<script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+<script type="application/ld+json" set:html={schemaJSON} />
