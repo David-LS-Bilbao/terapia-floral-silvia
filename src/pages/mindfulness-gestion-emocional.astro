@@ -1,0 +1,209 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+
+const BASE_URL = (import.meta as any).env.BASE_URL || "/";
+
+const title = "Mindfulness, Terapia Floral y Gestión Emocional | Enfoque Integrativo - Silvia Adame";
+const description =
+  "Enfoque integrativo: Mindfulness, Flores de Bach y acompañamiento emocional para bienestar y autoconocimiento. Sesiones en Valle de Mena y online.";
+
+const keywords = "mindfulness gestión emocional, terapia floral integrativa, flores de bach mindfulness, desarrollo personal, bienestar emocional, valle de mena";
+
+// @ts-ignore
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  author: {
+    "@type": "Person",
+    name: "Silvia Adame",
+  },
+});
+---
+
+<Base title={title} description={description} keywords={keywords} type="article">
+  <Nav />
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <!-- Cabecera -->
+    <header class="text-center">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">{title}</h1>
+      <p class="mt-2 text-neutral-600 max-w-2xl mx-auto">
+        Un recorrido práctico por el enfoque integrado: Mindfulness, Terapia Floral (Flores de Bach) y Bioneuroemoción® para apoyar procesos
+        de bienestar, calma y autoconocimiento en la vida diaria.
+      </p>
+    </header>
+
+    <!-- Contenedor principal -->
+    <article
+      class="rounded-2xl bg-white border border-slate-200 shadow-sm p-6 md:p-10 space-y-10"
+    >
+
+
+
+
+          <!-- 🎥 Vídeo integrador Mindfulness + Terapia Floral + Bioneuroemoción -->
+<section data-animate="fadeInUp" class="mb-16 opacity-0">
+  <h2 class="text-2xl font-semibold mb-6 flex items-center">
+    <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+      <span class="text-purple-600 font-semibold">🎥</span>
+    </span>
+    Mindfulness, Terapia Floral y Bioneuroemoción®
+  </h2>
+
+  <div class="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
+    <video
+      controls
+      preload="metadata"
+      poster={`${BASE_URL}media/Mindfulness_Terapias-poster.jpg`}
+      class="w-full h-auto rounded-xl"
+      aria-label="Vídeo explicativo sobre Mindfulness, Terapia Floral y Bioneuroemoción® con Silvia Adame"
+    >
+      <source src={`${BASE_URL}media/Mindfulness_Terapias.webm`} type="video/webm" />
+      <source src={`${BASE_URL}media/Mindfulness_Terapias-optimized.mp4`} type="video/mp4" />
+      Tu navegador no soporta vídeo HTML5.
+      <a href={`${BASE_URL}media/Mindfulness_Terapias-optimized.mp4`}>Descargar vídeo</a>.
+    </video>
+  </div>
+
+  <p class="mt-6 text-slate-700 leading-relaxed text-lg">
+    En este vídeo, <strong>un experto</strong> explica cómo integra el 
+    <strong>Mindfulness</strong>, la <strong>Terapia Floral de Bach</strong> y la 
+    <strong>Bioneuroemoción®</strong> como pilares de un mismo enfoque orientado al equilibrio emocional.  
+    A través de estas herramientas, enseña a gestionar las emociones con conciencia, 
+    reconectar con el bienestar interior y acompañar los procesos personales desde la amabilidad y la comprensión.
+  </p>
+</section>
+
+
+
+
+
+
+
+
+
+      <!-- Qué es -->
+      <section id="que-es">
+        <h2 class="text-2xl font-semibold mb-2">Qué es Mindfulness</h2>
+        <p class="text-slate-700">
+          Mindfulness es la práctica de prestar atención al momento presente con una actitud de apertura y aceptación. Aunque tiene raíces
+          en tradiciones contemplativas, hoy se utiliza en contextos terapéuticos y educativos con un enfoque laico y práctico.
+        </p>
+        <p class="text-slate-700 mt-3">
+          La práctica sostenida favorece la regulación emocional y la claridad mental, reforzando la comunicación entre las áreas cerebrales
+          implicadas en la emoción y el control.
+        </p>
+      </section>
+
+      <!-- Qué no es -->
+      <section id="que-no-es">
+        <h2 class="text-2xl font-semibold mb-2">Qué no es Mindfulness</h2>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+          <li>No es solo relajación, aunque puede generar calma.</li>
+          <li>No supone vaciar la mente; consiste en observar pensamientos y sensaciones sin juzgarlos.</li>
+          <li>No es resignación: aceptamos lo que ocurre para poder transformarlo desde la conciencia.</li>
+        </ul>
+      </section>
+
+      <!-- Beneficios -->
+      <section id="beneficios">
+        <h2 class="text-2xl font-semibold mb-2">Beneficios</h2>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+          <li>Reducción del estrés y la ansiedad.</li>
+          <li>Mejora de la atención, claridad y toma de decisiones.</li>
+          <li>Incremento de la resiliencia y bienestar general.</li>
+          <li>Apoyo en el manejo del dolor crónico y la calidad del sueño.</li>
+        </ul>
+      </section>
+
+      <!-- Aplicaciones -->
+      <section id="aplicaciones">
+        <h2 class="text-2xl font-semibold mb-2">Aplicaciones del Mindfulness</h2>
+        <p class="text-slate-700 mb-3">Se integra hoy en día en múltiples ámbitos:</p>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+          <li><strong>Sanidad:</strong> apoyo a pacientes y profesionales en la regulación del estrés y dolor.</li>
+          <li><strong>Educación:</strong> mejora de la atención, autocontrol y convivencia en el aula.</li>
+          <li><strong>Empresas:</strong> herramientas para reducir el estrés laboral y mejorar el rendimiento.</li>
+          <li><strong>Deporte:</strong> entrenamiento de la concentración y la gestión emocional en competición.</li>
+        </ul>
+      </section>
+
+      <!-- Terapia Floral -->
+      <section id="terapia-floral">
+        <h2 class="text-2xl font-semibold mb-2">Terapia Floral (Flores de Bach)</h2>
+        <p class="text-slate-700">
+          La Terapia Floral utiliza esencias naturales para apoyar estados emocionales específicos. Silvia elabora preparados personalizados
+          tras una valoración, orientados a acompañar procesos como la ansiedad, inseguridad, tristeza o bloqueos emocionales.
+        </p>
+        <p class="text-slate-700 mt-3">
+          Estas esencias se integran como un recurso complementario —no sustituyen tratamiento médico— y actúan facilitando equilibrio emocional,
+          mayor claridad y sostenimiento durante el proceso terapéutico.
+        </p>
+      </section>
+
+      <!-- Bioneuroemoción -->
+      <section id="bioneuroemocion">
+        <h2 class="text-2xl font-semibold mb-2">Bioneuroemoción®</h2>
+        <p class="text-slate-700">
+          La Bioneuroemoción® explora la relación entre las emociones, las experiencias de vida y las respuestas del cuerpo. A través de esta
+          metodología se trabaja la toma de conciencia sobre patrones repetitivos y el significado emocional de los síntomas.
+        </p>
+        <p class="text-slate-700 mt-3">
+          Silvia emplea herramientas de Bioneuroemoción® para acompañar la interpretación de vivencias emocionales y facilitar cambios apreciables
+          en la forma de relacionarse con el propio cuerpo y las experiencias.
+        </p>
+      </section>
+
+      <!-- Gestión emocional -->
+      <section id="gestion-emocional">
+        <h2 class="text-2xl font-semibold mb-2">
+          Gestión emocional y Psicología Positiva
+        </h2>
+        <p class="text-slate-700">
+          Mindfulness aporta el entrenamiento atencional que permite generar el espacio entre estímulo y respuesta. En ese intervalo, la persona
+          puede elegir una respuesta más consciente. La Psicología Positiva, por su parte, trabaja las fortalezas personales para potenciar
+          recursos internos como la gratitud, la curiosidad o la compasión.
+        </p>
+        <p class="text-slate-700 mt-3">
+          La integración de estas herramientas favorece el autoconocimiento, la resiliencia y un bienestar más estable en el tiempo.
+        </p>
+      </section>
+
+      <!-- Conclusión -->
+      <section id="conclusion">
+        <h2 class="text-2xl font-semibold mb-2">Conclusión: un enfoque integrado</h2>
+        <p class="text-slate-700">
+          El acompañamiento de Silvia combina Mindfulness, Terapia Floral y Bioneuroemoción® para ofrecer un camino completo hacia el bienestar
+          emocional. Cada proceso se diseña de forma personalizada, adaptando técnicas y recursos según las necesidades y objetivos de la persona.
+        </p>
+
+        <div class="mt-6 text-center">
+          <a
+            href={BASE_URL + "contacto/"}
+            class="inline-flex items-center rounded-xl px-5 py-3 bg-purple-600 text-white font-medium hover:bg-purple-700 transition"
+          >
+            Pedir una sesión
+          </a>
+        </div>
+        
+      <!-- boton inicio -->
+       <div class="mt-8 text-center">
+          <a
+            href={BASE_URL}
+            class="inline-flex items-center rounded-xl px-5 py-3 bg-slate-100 text-slate-800 font-medium hover:bg-slate-200 transition"
+          >
+            ← Volver al inicio
+          </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- SEO Schema -->
+  <script type="application/ld+json" is:inline>
+    {@html jsonLd}
+  </script>
+</Base>
+

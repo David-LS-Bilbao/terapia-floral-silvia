@@ -1,0 +1,104 @@
+---
+// Mostrar pantalla de carga antes de redirigir
+const base = (import.meta as any).env.BASE_URL || "/";
+
+// Helper para respetar el base path
+const withBase = (path: string): string => {
+  if (!path) return base;
+  return base.endsWith('/') ? base + path : base + '/' + path;
+};
+
+// NO hacer redirect del servidor, dejar que lo haga el cliente con delay
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terapias Naturales Silvia Adame</title>
+  <meta name="description" content="Terapia Floral de Bach, Mindfulness y Bioneuroemoción®">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #0B1220;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+    }
+    
+    .loader-container {
+      text-align: center;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      animation: pulse 2s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px rgba(159, 184, 173, 0.4));
+    }
+    
+    .loading-text {
+      color: #9FB8AD;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      opacity: 0.9;
+      animation: textPulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes fadeIn {
+      from { 
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to { 
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { 
+        transform: scale(1);
+        filter: drop-shadow(0 0 30px rgba(159, 184, 173, 0.4));
+      }
+      50% { 
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 40px rgba(159, 184, 173, 0.6));
+      }
+    }
+    
+    @keyframes textPulse {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <img 
+      src={withBase("brand/logo-lotus.png")} 
+      alt="Terapias Naturales Silvia Adame" 
+      class="logo"
+    />
+    <p class="loading-text">Bienvenido...</p>
+  </div>
+  
+  <script define:vars={{ base }}>
+    // Redirección después de 5 segundos
+    setTimeout(() => {
+      window.location.href = base + 'hero-b/';
+    }, 5000);
+  </script>
+</body>
+</html>

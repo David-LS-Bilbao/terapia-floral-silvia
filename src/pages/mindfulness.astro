@@ -1,0 +1,240 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+
+const base = (import.meta as any).env.BASE_URL || "/";
+
+// Contacto
+const whatsapp = "https://wa.me/34687235652?text=Hola%20Silvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20Mindfulness...";
+const linkContacto = `${base}contacto/`;
+---
+
+<Base
+  title="Mindfulness y Gestión Emocional | Silvia Adame - Bizkaia"
+  description="Aprende Mindfulness con Silvia Adame. Reduce estrés, mejora atención plena y bienestar emocional. Sesiones presenciales en Valle de Mena y online."
+  keywords="mindfulness, atención plena, gestión emocional, reducción estrés, meditación, bizkaia, valle de mena"
+>
+  <Nav />
+
+  <!-- HERO -->
+  <header class="bg-gradient-to-br from-[#EAF4EF] to-[#FFF7F1] border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+      <h1 class="text-3xl md:text-4xl font-semibold text-slate-900">
+        Mindfulness
+      </h1>
+      <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">
+        Aprende a conectar con el momento presente, reducir el estrés y cultivar una vida más consciente y equilibrada.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <div class="prose prose-lg max-w-none">
+      <h2 class="text-3xl font-medium text-slate-800 mb-8">¿Qué es Mindfulness?</h2>
+      
+      <div class="bg-green-50 p-6 rounded-lg mb-8 border-l-4 border-green-300">
+        <p class="text-lg leading-relaxed mb-0 font-light italic text-slate-700">
+          El Mindfulness es un concepto que se traduce del vocablo pali Sati, que significa "atención plena" o "conciencia". Su forma moderna, o secular, fue desarrollada por Jon Kabat-Zinn en la Universidad de Massachusetts a partir de las tradiciones budistas orientales, dando origen al programa MBSR (Reducción del Estrés Basada en el Mindfulness) en 1979.
+        </p>
+      </div>
+      <div class="space-y-8">
+
+
+        <!-- 🎥 Vídeo resumen Mindfulness con scroll reveal -->
+<section data-animate="fadeInUp" class="mb-16">
+  <h2 class="text-2xl font-medium text-slate-800 mb-6 flex items-center">
+    <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+      <span class="text-green-600 font-semibold">🎥</span>
+    </span>
+    Mindfulness y Bienestar Emocional
+  </h2>
+
+  <div class="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
+    <video
+      controls
+      preload="metadata"
+      poster={`${base}media/Mindfulness_Resumen-poster.jpg`}
+      class="w-full h-auto rounded-xl"
+      aria-label="Vídeo resumen sobre Mindfulness con Silvia Adame"
+      width="800"
+      height="450"
+    >
+      <source src={`${base}media/Mindfulness_Resumen.webm`} type="video/webm" />
+      <source src={`${base}media/Mindfulness_Resumen-optimized.mp4`} type="video/mp4" />
+      Tu navegador no soporta vídeo HTML5.
+      <a href={`${base}media/Mindfulness_Resumen-optimized.mp4`}>Descargar vídeo</a>.
+    </video>
+  </div>
+
+  <p class="mt-6 text-slate-700 leading-relaxed text-lg">
+    En este vídeo, <strong>Silvia Adame</strong> explica cómo el 
+    <strong>Mindfulness</strong> puede ayudarte a reducir el estrés, 
+    mejorar la concentración y reconectar con tu equilibrio interior.  
+    A través de la práctica de la atención plena, Silvia enseña a observar los pensamientos y emociones sin juicio, 
+    cultivando una presencia más consciente y compasiva en la vida diaria.
+  </p>
+
+  <div class="mt-8">
+
+    <a href={`${base}contacto/`}
+       class="inline-flex items-center gap-2 px-5 py-3 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg font-medium transition-colors">
+      🌿 Pedir información o cita
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+        <section>
+          <h2 class="text-2xl font-medium text-slate-800 mb-4 flex items-center">
+            <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-green-600 font-semibold">1</span>
+            </span>
+            Definición y Esencia
+          </h2>
+          <div class="pl-11 space-y-4">
+            <div class="bg-white p-4 rounded-lg border border-slate-200">
+              <h4 class="font-medium text-slate-700 mb-2">• Estado Mental:</h4>
+              <p class="text-slate-600 leading-relaxed">Mindfulness es el estado mental que emerge cuando se presta atención de manera continua e intencional al momento presente.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-slate-200">
+              <h4 class="font-medium text-slate-700 mb-2">• Actitud:</h4>
+              <p class="text-slate-600 leading-relaxed">Esta atención se cultiva con apertura y sin juicios. Es una experiencia meramente contemplativa.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-slate-200">
+              <h4 class="font-medium text-slate-700 mb-2">• Cualidad vs. Práctica:</h4>
+              <p class="text-slate-600 leading-relaxed">El Mindfulness es una cualidad o estado de conciencia. También se le considera una filosofía o modo de vida que se aplica a todos los momentos de la vida.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-slate-200">
+              <h4 class="font-medium text-slate-700 mb-2">• Objetivo Principal:</h4>
+              <p class="text-slate-600 leading-relaxed">Permite desconectar el "piloto automático" que nos lleva a realizar tareas rutinarias sin prestar atención y colocarse en "modo ser". El propósito no es cambiar nada ni forzar la relajación, sino ser lo más consciente posible de lo que se percibe.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-medium text-slate-800 mb-4 flex items-center">
+            <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-green-600 font-semibold">2</span>
+            </span>
+            Componentes y Actitudes Fundamentales
+          </h2>
+          <div class="pl-11">
+            <p class="text-slate-700 mb-4">La práctica implica cultivar ciertas actitudes para sostener la conciencia:</p>
+            <div class="space-y-4">
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">1. Atención al Presente (Aquí y Ahora):</h4>
+                <p class="text-slate-600 leading-relaxed">El Mindfulness siempre se centra en vivir con plenitud el momento presente.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">2. No Juzgar:</h4>
+                <p class="text-slate-600 leading-relaxed">Implica mantener una mirada imparcial, observando sensaciones, pensamientos o sentimientos sin valorarlos ni criticarlos.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">3. Aceptación:</h4>
+                <p class="text-slate-600 leading-relaxed">Es la aceptación radical de la experiencia tal cual se produce. No es resignación, sino tomar conciencia de las cosas como son para poder actuar en consecuencia.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">4. Mente de Principiante:</h4>
+                <p class="text-slate-600 leading-relaxed">Estar atento y curioso ante la experiencia presente, explorando cada momento como si fuera la primera vez.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">5. No Esforzarse:</h4>
+                <p class="text-slate-600 leading-relaxed">Significa dejar ser y no luchar por conseguir un estado ideal o no apegarse a los resultados. El no-esfuerzo tiene que ver con la cualidad atemporal del "ahora".</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">6. Paciencia:</h4>
+                <p class="text-slate-600 leading-relaxed">Demuestra que se comprende y asume que las cosas se desarrollarán a su debido tiempo.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">7. Dejar Ir (Letting Go):</h4>
+                <p class="text-slate-600 leading-relaxed">No aferrarse a pensamientos, ideas o cuestiones del pasado o futuro, y centrarse en la experiencia presente.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-medium text-slate-800 mb-4 flex items-center">
+            <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-green-600 font-semibold">3</span>
+            </span>
+            Práctica y Anclaje
+          </h2>
+          <div class="pl-11">
+            <p class="text-slate-700 mb-4">El Mindfulness se puede practicar de forma formal (sesiones dedicadas, como la meditación guiada) e informal (integrada en la vida cotidiana).</p>
+            <div class="space-y-4">
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">• Punto de Anclaje:</h4>
+                <p class="text-slate-600 leading-relaxed">La respiración es el ancla principal. Siempre está presente y permite volver a enfocar la atención cuando la mente divaga. Otros objetos de anclaje pueden ser el cuerpo, los sonidos o un objeto.</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-slate-200">
+                <h4 class="font-medium text-slate-700 mb-2">• Prácticas Comunes:</h4>
+                <p class="text-slate-600 leading-relaxed">Incluyen el escaneo corporal (body scan), la atención a la respiración, la alimentación consciente (Mindful Eating), la atención a los sonidos, y prácticas para lidiar con emociones difíciles como "Suavizar, Calmar y Permitir".</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-medium text-slate-800 mb-4 flex items-center">
+            <span class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-blue-600 font-semibold">+</span>
+            </span>
+            Beneficios Comprobados
+          </h2>
+          <div class="pl-11">
+            <p class="text-slate-700 mb-4">La práctica regular del Mindfulness tiene beneficios para la salud física y mental:</p>
+            <div class="space-y-4">
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h4 class="font-medium text-blue-800 mb-2">• Regulación Emocional:</h4>
+                <p class="text-blue-700 leading-relaxed">Permite una mejor gestión de las emociones, cultivando la amabilidad y la autocompasión.</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h4 class="font-medium text-blue-800 mb-2">• Reducción de Estrés y Ansiedad:</h4>
+                <p class="text-blue-700 leading-relaxed">El MBSR ha demostrado ser eficaz para reducir significativamente el estrés y la ansiedad. La práctica ayuda a mantener la calma.</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h4 class="font-medium text-blue-800 mb-2">• Función Cognitiva:</h4>
+                <p class="text-blue-700 leading-relaxed">Con práctica continuada (aprox. 8–12 semanas), diversos estudios señalan una disminución de la reactividad —y en algunos casos del volumen— de la amígdala (vinculada al estrés y emociones negativas), junto con un aumento de la actividad y conectividad de la corteza prefrontal, asociada a la atención, la toma de decisiones y la autorregulación.</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h4 class="font-medium text-blue-800 mb-2">• Bienestar Físico:</h4>
+                <p class="text-blue-700 leading-relaxed">Disminuye los niveles de cortisol y reduce la presión arterial, alivia el dolor crónico y el insomnio.</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <h4 class="font-medium text-blue-800 mb-2">• Autoconocimiento y Creatividad:</h4>
+                <p class="text-blue-700 leading-relaxed">Favorece el autoconocimiento, el desarrollo de la creatividad, y la capacidad de elegir libremente la forma de afrontar situaciones difíciles.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-xl border border-green-200">
+          <h2 class="text-2xl font-medium text-slate-800 mb-4">💫 Metáfora del Río</h2>
+          <div class="bg-white/70 p-6 rounded-lg border-l-4 border-green-400">
+            <p class="text-slate-700 leading-relaxed italic">
+              El Mindfulness se puede entender como el acto de observar un río (tu mente): normalmente estamos dentro del río, siendo arrastrados por las corrientes de pensamientos, emociones y preocupaciones. El Mindfulness es la práctica de salirse a la orilla y observar el flujo del agua (los pensamientos) sin saltar de nuevo, lo que te permite decidir conscientemente cómo y cuándo interactuar con la corriente sin ser arrastrado por ella.
+            </p>
+          </div>
+        </section>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-8 border-t border-slate-200">
+          <a href={`${base}servicios/`} 
+             class="inline-flex items-center justify-center px-6 py-3 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg transition-colors duration-200 font-medium">
+            ← Volver a Servicios
+          </a>
+          <a href={whatsapp} 
+             class="inline-flex items-center justify-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 font-medium">
+            💬 Pedir cita por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Base>

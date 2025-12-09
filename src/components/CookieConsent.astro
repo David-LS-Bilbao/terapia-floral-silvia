@@ -1,0 +1,47 @@
+---
+const CONSENT_KEY = "cookie_consent"; // "accepted" | "rejected"
+const show = !(typeof window !== "undefined" && localStorage.getItem(CONSENT_KEY));
+---
+
+{show && (
+  <div id="cookie-banner" style="
+    position:fixed; inset:auto 0 0 0; padding:1rem; background:#111; color:#fff; z-index:9999;
+    display:flex; gap:1rem; align-items:center; justify-content:center; flex-wrap:wrap;">
+    <div style="max-width:800px">
+      Usamos <strong>cookies técnicas</strong> para que el sitio funcione y recordar tu elección.
+      (No cargamos analíticas ni publicidad por defecto).
+      Lee la <a href="/cookies/" style="text-decoration:underline; color:#fff">Política de cookies</a>.
+    </div>
+    <div style="display:flex; gap:.5rem">
+      <button id="cc-accept" style="padding:.5rem 1rem">Aceptar</button>
+      <button id="cc-reject" style="padding:.5rem 1rem; background:#444; color:#fff">Rechazar</button>
+      <a href="/cookies/" style="padding:.5rem 1rem; background:#222; color:#fff">Configurar</a>
+    </div>
+  </div>
+)}
+
+<script>
+  // Reabrir desde otras partes
+  document.addEventListener('open-cookie-banner', () => {
+    document.getElementById('cookie-banner')?.style.setProperty('display','flex');
+  });
+
+  const key = "{CONSENT_KEY}";
+  const accept = () => {
+    localStorage.setItem(key, "accepted");
+    document.getElementById('cookie-banner')?.remove();
+    // Aquí podrías inicializar scripts que requieren consentimiento:
+    // if (!window.__gaLoaded) { loadGA(); }
+  };
+  const reject = () => {
+    localStorage.setItem(key, "rejected");
+    document.getElementById('cookie-banner')?.remove();
+    // Asegura no cargar scripts de terceros si rechazado.
+  };
+
+  document.getElementById('cc-accept')?.addEventListener('click', accept);
+  document.getElementById('cc-reject')?.addEventListener('click', reject);
+
+  // Bloqueo preventivo: evita cargar scripts no esenciales hasta que haya decisión
+  // (tu Base.astro debe condicionar sus <script> de terceros a localStorage.getItem(key)==="accepted")
+</script>
