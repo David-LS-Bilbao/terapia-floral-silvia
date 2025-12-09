@@ -1,5 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "target": "ES2022",
@@ -9,8 +8,12 @@
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src", ".astro/types.d.ts"],
-  "exclude": ["dist"]
+  "exclude": ["dist", "node_modules"]
 }

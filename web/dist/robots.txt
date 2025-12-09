@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://terapias-naturales-silvia.github.io/sitemap-index.xml
+Sitemap: https://silvia-adame-terapiasnaturales.vercel.app/sitemap-index.xml
