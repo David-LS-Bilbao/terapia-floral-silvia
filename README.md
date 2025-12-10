@@ -1,6 +1,7 @@
 # 🌸 Terapia Floral Silvia Adame
 
 > Sitio web oficial de **Silvia Adame** - Especialista en Terapia Floral de Bach, Mindfulness y Bioneuroemoción®
+> Plataforma profesional con información sobre terapias naturales y bienestar emocional
 
 [![Deploy to GitHub Pages](https://github.com/David-LS-Bilbao/terapia-floral-silvia/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/David-LS-Bilbao/terapia-floral-silvia/actions)
 [![Astro](https://img.shields.io/badge/Built%20with-Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build)
