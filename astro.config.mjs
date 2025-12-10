@@ -7,5 +7,11 @@ export default defineConfig({
   site: 'https://silvia-adame-terapiasnaturales.vercel.app',
   base: '/',
   vite: { plugins: [tailwindcss()] },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    })
+  ],
 });

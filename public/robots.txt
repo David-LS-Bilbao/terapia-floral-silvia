@@ -3,4 +3,4 @@ Allow: /
 # Bloquear rutas administrativas
 Disallow: /admin/
 Disallow: /private/
-Sitemap: https://silvia-adame-terapiasnaturales.vercel.app/sitemap-index.xml
+Sitemap: https://silvia-adame-terapiasnaturales.vercel.app/sitemap-0.xml
