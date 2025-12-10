@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
-Sitemap: https://david-ls-bilbao.github.io/terapia-floral-silvia/sitemap-index.xml
+
+# Evitar que rastreen áreas privadas
+Disallow: /admin/
+Disallow: /private/
+
+# Nota: no bloqueamos .xml para que Google pueda leer el sitemap
+# Sitemap
+Sitemap: https://silvia-adame-terapiasnaturales.vercel.app/sitemap-index.xml
