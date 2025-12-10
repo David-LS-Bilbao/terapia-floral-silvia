@@ -1,10 +1,6 @@
 User-agent: *
 Allow: /
-
-# Evitar que rastreen áreas privadas
+# Bloquear rutas administrativas
 Disallow: /admin/
 Disallow: /private/
-
-# Nota: no bloqueamos .xml para que Google pueda leer el sitemap
-# Sitemap
 Sitemap: https://silvia-adame-terapiasnaturales.vercel.app/sitemap-index.xml
